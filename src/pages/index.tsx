@@ -3,6 +3,7 @@ import theme from "@/styles/theme";
 import {
   ChakraProvider,
   Box,
+  Divider,
   Spacer,
   Image,
   Text,
@@ -16,6 +17,7 @@ import {
   CardHeader,
   CardFooter,
   Heading,
+  Center,
 } from "@chakra-ui/react";
 import Header from "@/components/header";
 import UnityGame from "@/components/unitygame";
@@ -23,11 +25,14 @@ import Form from "@/components/form";
 import Footer from "@/components/footer";
 import Anim from "@/components/anim";
 import MainCard from "@/components/maincard";
+import VideoPlayer from "@/components/videoplayercards";
+import CustomSpacerOne from "@/components/spacer";
+import { transform } from "typescript";
 
 export default function Home() {
   return (
     <ChakraProvider theme={theme}>
-      {/*PAGE INFORMATION*/}
+      {/*info*/}
       <Head>
         <title>visuarte Solutions</title>
         <meta name="description" content="visuarte Solutions Application" />
@@ -35,7 +40,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/*HEADER*/}
+      {/*header*/}
       <Header
         logo={<Image src="logo.png" w="20" alt="visuarte" />}
         navItems={[
@@ -46,111 +51,111 @@ export default function Home() {
         ]}
       />
 
-    <Anim/>
-
-      {/*BACKGROUND*/}
-      <Box bgGradient="linear(to-t, #151515, #484848)" id="unserearbeit">
-        <Spacer h={1100} />
+      {/*bg*/}
+      <Box
+        bgGradient="linear(to-t, #151515, #484848)"
+        id="unserearbeit"
+        alignContent="center"
+      >
+        <Spacer height={50} />
         <UnityGame />
 
-        <MainCard/>
-        <Stack spacing={4} margin="5" my={19} mt="2160px" 
-        zIndex={6}>
-          {/*CARDS*/}
-          <Stack direction="row" zIndex={9998}>
-            <Box w="50vw">
-              <Card h="100%" id="exponate">
-                <CardBody>
-                  <iframe
-                    src="https://player.vimeo.com/video/586284805"
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </CardBody>
-              </Card>
-            </Box>
-            <Spacer />
-            <Box w="50vw">
-              <Card h="100%">
-                <CardBody>
-                  <Grid templateColumns="repeat(3, 1fr)" gap={1} h="100%">
-                    {[
-                      "portfolio-image-1.jpg",
-                      "portfolio-image-2.jpg",
-                      "portfolio-image-3.jpg",
-                      "portfolio-image-4.jpg",
-                      "portfolio-image-5.jpg",
-                      "portfolio-image-6.jpg",
-                    ].map((imagePath, i) => (
-                      <GridItem key={i}>
-                        <Image
-                          src={imagePath}
-                          alt={`Image ${i + 1}`}
-                          boxSize="15vw"
-                          objectFit="cover"
-                          borderRadius="5"
-                        />
-                      </GridItem>
-                    ))}
-                  </Grid>
-                </CardBody>
-              </Card>
-            </Box>
-          </Stack>
+        <Center>
+          <Stack
+            spacing={4}
+            margin="5"
+            my={19}
+            zIndex={6}
+            minWidth="50vh"
+            maxW="130vh"
+          >
+            <CustomSpacerOne />
 
-          <Card zIndex={1}  id="kontakt" >
-            <CardHeader>
-              <Heading size="l" color="grey" marginBottom={4}>
-                Kontakt
-              </Heading>
-              <Heading size="xl">Zu Ihrem Projekt</Heading>
-              <Heading size="l" color="grey">
-                Holen Sie uns mit ein paar Angaben einfach mal unverbindlich ab,
-                was Sie beschäftigt
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Form />
-            </CardBody>
-          </Card>
+            {/*maincard*/}
+            <Card
+              size="lg"
+              transition="transform .5s"
+              _hover={{
+                transform: "scale(1.01)",
+              }}
+            >
+              <CardHeader>
+                <Heading size="xl">Was wir tun</Heading>
+                <Heading size="l" color="grey">
+                  Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20
+                  Jahren mediale Erlebniswelten - und das mit System.
+                </Heading>
+              </CardHeader>
+              <CardBody mb="25">
+                <Image
+                  src="/grafik-webseite.png"
+                  margin="auto"
+                  maxWidth="100%"
+                  display="block"
+                />
+              </CardBody>
+            </Card>
 
-          <Stack direction="row" id="agentur" zIndex={1}>
-            <Box w="50vw">
-              <Card h="100%">
-                <CardBody>
-                  <iframe
-                    src="https://player.vimeo.com/video/586284805"
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
-                    objectFit="cover"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </CardBody>
-              </Card>
-            </Box>
-            <Spacer />
-            <Box w="50vw">
-              <Link href="https://visuarte.com" isExternal>
+            <CustomSpacerOne />
+
+            {/*projectsamples*/}
+            <VideoPlayer />
+
+            <CustomSpacerOne />
+            {/*contact*/}
+
+            <Form />
+
+            <CustomSpacerOne />
+            {/*link*/}
+            <Stack direction="row" id="agentur" zIndex={1}>
+              <Box w="50vw">
                 <Card h="100%">
                   <CardBody>
                     <iframe
-                      src="https://visuarte.com"
+                      src="https://player.vimeo.com/video/586284805"
                       width="100%"
-                      scrolling="no"
-                      height="500vw"
-                      style={{ pointerEvents: "none" }}
-                    />
+                      height="100%"
+                      frameborder="0"
+                      objectFit="cover"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
                   </CardBody>
                 </Card>
-              </Link>
-            </Box>
+              </Box>
+              <Spacer />
+              <Box w="50vw">
+                <Link href="https://visuarte.com" isExternal>
+                  <Card h="100%">
+                    <CardBody textAlign="center">
+                      <iframe
+                        src="https://visuarte.com"
+                        width="100%"
+                        scrolling="no"
+                        height="500vw"
+                        style={{ pointerEvents: "none" }}
+                      />
+                      <Center>
+                        <Divider
+                          borderWidth={1.5}
+                          color="black"
+                          my={5}
+                          width="100%"
+                          borderRadius="md"
+                        />
+                      </Center>
+                      <Text fontSize="sm">
+                        20 Jahre Erfahrung - HIER bekommen Sie einen Einblick in
+                        unsere medialen Erlebniswelten
+                      </Text>
+                    </CardBody>
+                  </Card>
+                </Link>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
+        </Center>
 
         {/*FOOTER*/}
         <Spacer h={400} />

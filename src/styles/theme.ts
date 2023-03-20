@@ -4,5 +4,5 @@ const theme = extendTheme({
     heading: 'Avenir',
     body: 'Avenir',
   },
-});
+})
 export default theme;
