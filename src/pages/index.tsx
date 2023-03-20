@@ -46,6 +46,8 @@ export default function Home() {
         ]}
       />
 
+    <Anim/>
+
       {/*BACKGROUND*/}
       <Box bgGradient="linear(to-t, #151515, #484848)" id="unserearbeit">
         <Spacer h={1100} />
