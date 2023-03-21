@@ -56,6 +56,7 @@ export default function MainCard() {
             margin="auto"
             maxWidth="100%"
             display="block"
+            alt="kernkompetenzen"
           />
         </CardBody>
       </Card>

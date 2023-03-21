@@ -2,7 +2,7 @@ import React from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Box, Center } from "@chakra-ui/react";
 
-function App() {
+export default function UnityGame() {
   const boxRef = React.useRef<HTMLDivElement>(null);
 
   const { unityProvider } = useUnityContext({
@@ -22,6 +22,4 @@ function App() {
       />
     </Box></Center>
   );
-}
-
-export default App;
+};

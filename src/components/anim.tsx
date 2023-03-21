@@ -45,6 +45,7 @@ export default function Anim() {
         top="-1vh"
         w="100%"
         zIndex={1}
+        alt="Background"
       />
       <Box
         ref={gradientBoxRef}

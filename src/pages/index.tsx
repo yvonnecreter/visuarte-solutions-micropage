@@ -23,11 +23,8 @@ import Header from "@/components/header";
 import UnityGame from "@/components/unitygame";
 import Form from "@/components/form";
 import Footer from "@/components/footer";
-import Anim from "@/components/anim";
-import MainCard from "@/components/maincard";
 import VideoPlayer from "@/components/videoplayercards";
 import CustomSpacerOne from "@/components/spacer";
-import { transform } from "typescript";
 
 export default function Home() {
   return (
@@ -92,6 +89,7 @@ export default function Home() {
                   margin="auto"
                   maxWidth="100%"
                   display="block"
+                  alt="kernkompetenzen"
                 />
               </CardBody>
             </Card>
@@ -116,10 +114,8 @@ export default function Home() {
                       src="https://player.vimeo.com/video/586284805"
                       width="100%"
                       height="100%"
-                      frameborder="0"
-                      objectFit="cover"
+                      frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture"
-                      allowfullscreen
                     ></iframe>
                   </CardBody>
                 </Card>

@@ -15,21 +15,4 @@ export default function Footer() {
         </Box>
       </Flex>
   );
-}
-
-function FooterOld() {
-    return (
-        <Flex w="100vw" position="fixed" bottom={0} bg="black" color="white" alignItems="center">
-          <Flex w="20vw" textAlign="left" height={50} lineHeight="50px" ml={4} alignItems="center">
-            <Image src="/logo.png" alt="Logo" height="50%"/>
-          </Flex>
-          <Box w="80vw" h="50px" textAlign="right" lineHeight="50px" mr={4}>
-            {list.map((item) => (
-              <Link href={"/" + item} key={item} mx={4}>
-                {item}
-              </Link>
-            ))}
-          </Box>
-        </Flex>
-    );
-} 
+};

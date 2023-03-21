@@ -3,7 +3,7 @@ import { Link, Box, Flex, Heading, Text, Spacer } from '@chakra-ui/react';
 
 interface HeaderProps {
   logo: React.ReactNode;
-  navItems: NavItem[];
+  navItems: { href: string; label: string }[];
 }
 
 const Header: React.FC<HeaderProps> = ({ logo, navItems }) => {

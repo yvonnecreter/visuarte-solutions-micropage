@@ -36,9 +36,8 @@ const subtitles = [
 
 export default function VideoPlayer() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(6);
-
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
+  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   return (
     <Stack direction="row" zIndex={9998}>
@@ -55,9 +54,9 @@ export default function VideoPlayer() {
               src={videos[currentVideoIndex]}
               width="100%"
               height="100%"
-              frameborder="0"
+              frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
+              allowFullScreen={true}
             ></iframe>
           </CardBody>
         </Card>
