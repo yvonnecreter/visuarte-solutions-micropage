@@ -1,4 +1,25 @@
+## Setup Instrucions
+npm install
+npm install next
+npm run dev
+
+## Build
+npm run build / export
+npm start
+
+
+## Static Build
+https://github.com/vercel/next.js/issues/8158
+To automate the steps commented above:
+yarn add --dev replace-in-files-cli
+Then, add this two scripts in your package.json
+"build-static": "next build && next export && npm run build-static-repair-index",
+"build-static-repair-index": "replace-in-files --string \"/_next/static\" --replacement \"./_next/static\" out/index.html"
+Then just call
+npm run build-static
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 

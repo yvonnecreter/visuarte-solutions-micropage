@@ -25,6 +25,7 @@ import Form from "@/components/form";
 import Footer from "@/components/footer";
 import VideoPlayer from "@/components/videoplayercards";
 import CustomSpacerOne from "@/components/spacer";
+import data from "../components/data.json";
 
 export default function Home() {
   return (
@@ -34,18 +35,13 @@ export default function Home() {
         <title>visuarte Solutions</title>
         <meta name="description" content="visuarte Solutions Application" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
 
       {/*header*/}
       <Header
         logo={<Image src="logo.png" w="20" alt="visuarte" />}
-        navItems={[
-          { label: "Wie Wir Arbeiten", href: "#unserearbeit" },
-          { label: "Exponate", href: "#exponate" },
-          { label: "Kontakt", href: "#kontakt" },
-          { label: "Agentur", href: "#agentur" },
-        ]}
+        navItems= {data.navigation}
       />
 
       {/*bg*/}
@@ -85,7 +81,7 @@ export default function Home() {
               </CardHeader>
               <CardBody mb="25">
                 <Image
-                  src="/grafik-webseite.png"
+                  src="grafik-webseite.png"
                   margin="auto"
                   maxWidth="100%"
                   display="block"
@@ -111,7 +107,7 @@ export default function Home() {
                 <Card h="100%">
                   <CardBody>
                     <iframe
-                      src="https://player.vimeo.com/video/586284805"
+                      src={data.endcards.video}
                       width="100%"
                       height="100%"
                       frameBorder="0"
@@ -122,11 +118,11 @@ export default function Home() {
               </Box>
               <Spacer />
               <Box w="50vw">
-                <Link href="https://visuarte.com" isExternal>
+                <Link href={data.endcards.website} isExternal>
                   <Card h="100%">
                     <CardBody textAlign="center">
                       <iframe
-                        src="https://visuarte.com"
+                        src={data.endcards.website}
                         width="100%"
                         scrolling="no"
                         height="500vw"
@@ -142,8 +138,7 @@ export default function Home() {
                         />
                       </Center>
                       <Text fontSize="sm">
-                        20 Jahre Erfahrung - HIER bekommen Sie einen Einblick in
-                        unsere medialen Erlebniswelten
+                        {data.endcards.label}
                       </Text>
                     </CardBody>
                   </Card>

@@ -14,66 +14,74 @@ import {
   Spacer,
   Stack,
 } from "@chakra-ui/react";
-
-const videos = [
-  "https://player.vimeo.com/video/296462573",
-  "https://player.vimeo.com/video/787902161",
-  "https://player.vimeo.com/video/768721892",
-  "https://player.vimeo.com/video/987654321",
-  "https://player.vimeo.com/video/987654321",
-  "https://player.vimeo.com/video/165005613",
-  "https://player.vimeo.com/video/586284805",
-];
-
-const subtitles = [
-  "Projektbeschreibung 1",
-  "Projektbeschreibung 2",
-  "Projektbeschreibung 3",
-  "Projektbeschreibung 4",
-  "Projektbeschreibung 5",
-  "Projektbeschreibung 6",
-];
+import data from "../components/data.json";
 
 export default function VideoPlayer() {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(6);
-  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(99);
+  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(
+    null
+  );
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null
+  );
+  const [imageSelected, setImageSelected] = useState(false);
 
   return (
     <Stack direction="row" zIndex={9998}>
       <Box w="50vw">
         <Card h="100%" id="exponate">
           <CardHeader>
-            <Heading>{subtitles[currentVideoIndex]}</Heading>
-            <Heading size="l" color="grey">
-              {subtitles[currentVideoIndex]}
-            </Heading>
+            {/*if else condition, ? = then, ():() = if else, <> is jsx wrapping*/}
+            {currentVideoIndex == 99 ? (
+              <>
+                <Heading size="l">
+                  {data.videoplayer_placeholder.subtitle}
+                </Heading>
+                <Heading size="l" color="grey">
+                  {data.videoplayer_placeholder.infotext}
+                </Heading>
+              </>
+            ) : (
+              <>
+                <Heading size="l">
+                  {data.videoplayer_videos[currentVideoIndex].subtitle}
+                </Heading>
+                <Heading size="l" color="grey">
+                  {data.videoplayer_videos[currentVideoIndex].infotext}
+                </Heading>
+              </>
+            )}
           </CardHeader>
+
           <CardBody mt={-7}>
-            <iframe
-              src={videos[currentVideoIndex]}
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen={true}
-            ></iframe>
+            {currentVideoIndex == 99 ? (
+              <>
+                <iframe
+                  src={data.videoplayer_placeholder.video}
+                  width="100%"
+                  height="100%"
+                />
+              </>
+            ) : (
+              <>
+                <iframe
+                  src={data.videoplayer_videos[currentVideoIndex].video}
+                  width="100%"
+                  height="100%"
+                />
+              </>
+            )}
           </CardBody>
         </Card>
       </Box>
       <Spacer />
+
       <Box w="50vw">
         <Card h="100%">
           <CardBody>
+            {/*add images*/}
             <Grid templateColumns="repeat(3, 1fr)" gap={1} h="100%">
-              {[
-                "portfolio-image-1.jpg",
-                "portfolio-image-2.jpg",
-                "portfolio-image-3.jpg",
-                "portfolio-image-4.jpg",
-                "portfolio-image-5.jpg",
-                "portfolio-image-6.jpg",
-              ].map((imagePath, i) => (
+              {data.videoplayer_videos.map((item, i) => (
                 <GridItem key={i}>
                   <Box
                     transition="transform .3s"
@@ -98,7 +106,7 @@ export default function VideoPlayer() {
                     }
                   >
                     <Image
-                      src={imagePath}
+                      src={item.image}
                       alt={`Image ${i + 1}`}
                       boxSize="15vw"
                       objectFit="cover"

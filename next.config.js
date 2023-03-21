@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  output: 'export',
+  basePath: '/visu_solutions_beta'
+}

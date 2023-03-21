@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/Build/UnityGame.js", "public/Build/Build.loader.js", "public/Build/Build.framework.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/Build/UnityGame.js", "public/Build/Build.loader.js", "public/Build/Build.framework.js", "src/pages/_document.js", "src/components/structuredData.jsx"],
   "exclude": ["node_modules"]
 }
