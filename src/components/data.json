@@ -94,11 +94,58 @@
       "Wir brauchen auf der Messe mehr Fernwirkung",
       "Wir müssen Erklärungsbedürftiges einfach darstellen"
     ],
+    "maincard":{
+      "head1":"Was wir tun",
+      "head2":"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - und das mit System.",
+      "head3":["Ihr Ziel", "(Ihr) Markenerlebnis"],
+      "table":{
+        "element1":"lifecycle.svg",
+        "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
+        "element3":["Individuelle Kreativstrategie", "Inhalte, die bewegen", "Interaktive Anwendungen"],
+        "element4":["icon_kreativstrategie.svg", "icon_inhalte.svg", "icon_interaktiv.svg"],
+        "element5":"showroom.jpg"
+      },
+      "arrow":"arrow.svg",
+      "arrowsplit":"arrow_split.svg",
+      "arrowsplit2":"arrow_split2.svg",
+      "colors":["#b802a3","#8fd14f", "#31b5e8"]
+    },
     "endcards":{
       "video":"https://player.vimeo.com/video/586284805",
       "website": "https://visuarte.com",
       "label":"20 Jahre Erfahrung - HIER bekommen Sie einen Einblick in unsere medialen Erlebniswelten"
     },
     "footer":["Impressum", "Datenschutz"],
-    "footer_href":"https://visuarte.com/"
+    "footer_href":"https://visuarte.com/",
+    "diagram":{
+      "h1":"visuarte solutions",
+      "h2":"3 solution components",
+      "c1": [
+        "Konzept & Strategie",
+        "schnellere Anziehungskraft",
+        "weniger Platzkonzepte",
+        "Give-Away-Konzepte",
+        "Komplex-zu-Vereinfachung-Konzepte",
+        "Nachhaltige Werte- & Budgetkonzepte",
+        "Kundenaktivierungskonzepte",
+        "Eyecatcher-Konzepte",
+        "Produktnahe Konzepte"
+      ],
+      "c2": [
+        "Medienproduktion",
+        "Qualitätskompetenz zeigen",
+        "(30 Expertise) Mehr zeigen als man tatsächlich kann",
+        "(Wissensübertragungsexpertise) Schnelles Verständnis komplexer USP oder Prozesse",
+        "(Ambient Expertise) Schnelles Wohlfühlambiente",
+        "Mehr Anziehungskraft Call-to-Action",
+        "Starke & schnelle emotionale Eindrücke"
+      ],
+      "c3": [
+        "Digitale Lösungen",
+        "Direkte & schnelle Anwendungen",
+        "Schnelle Informationsanwendungen anbieten",
+        "Fokus- & Zusatzinformationstechniken",
+        "Erinnerungsmethoden & -werkzeuge"
+      ]
+    }
 }

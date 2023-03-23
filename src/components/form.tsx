@@ -18,9 +18,11 @@ import {
   Textarea,
   Spacer,
   Flex,
+  createIcon,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import data from "../components/data.json";
+import Diagram1 from "../components/diagram";
 
 type FormData = {
   textElements1: boolean[];
@@ -48,6 +50,7 @@ export default function Form() {
           </Heading>
         </CardHeader>
 
+        {/* headline */}
         <CardBody mb={5}>
           <Grid templateColumns="repeat(2, 1fr)" gap={6}>
             <GridItem>
@@ -85,18 +88,19 @@ export default function Form() {
                 </FormControl>
               </Box>
             </GridItem>
+
+            {/* column right side */}
             <GridItem>
               <Image
-                src="portfolio-image-5.jpg"
-                alt="placeholder"
-                width="100%"
-                h="100%"
-                objectFit="cover"
+                src="diagram.png"
+                alt="diagram"
+                w="100%"
               />
             </GridItem>
           </Grid>
         </CardBody>
       </Card>
+
       <Card
         transition="transform .5s"
         _hover={{
@@ -111,7 +115,7 @@ export default function Form() {
           <Grid templateColumns="repeat(2, 1fr)" gap={6} mt="5">
             <GridItem w="100%">
               <Flex flexDirection="column" h="100%">
-                <Text>{data.form_titles.sub3head3}</Text>
+                <Text mt="4vw">{data.form_titles.sub3head3}</Text>
                 <Spacer />
                 <Box width="70%" maxW="20vh">
                   <Image
@@ -136,22 +140,19 @@ export default function Form() {
               </Flex>
             </GridItem>
             <GridItem w="100%">
-              <Box>
-                <VStack align="left">
-                  <FormControl id="email">
-                    <FormLabel>Email:</FormLabel>
-                    <Input type="email" {...register("email")} />
-                  </FormControl>
+              <Flex direction="column" h="100%" align="left">
+                <FormControl id="email">
+                  <FormLabel>Email:</FormLabel>
+                  <Input type="email" {...register("email")} />
+                </FormControl>
 
-                  <FormControl id="message" my="5">
-                    <FormLabel>Nachricht:</FormLabel>
-                    <Textarea {...register("message")} />
-                  </FormControl>
-                  <Spacer />
-
-                  <Button type="submit">Senden</Button>
-                </VStack>
-              </Box>
+                <FormControl id="message" my="5">
+                  <FormLabel>Nachricht:</FormLabel>
+                  <Textarea {...register("message")} />
+                </FormControl>
+                <Spacer />
+                <Button type="submit">Senden</Button>
+              </Flex>
             </GridItem>
           </Grid>
         </CardBody>

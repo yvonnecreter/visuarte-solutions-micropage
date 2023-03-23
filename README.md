@@ -4,6 +4,8 @@ npm install next
 npm run dev
 
 ## Build
+[Paste into next.config.js, has to be deleted for run dev]
+  basePath: '/visu_solutions_beta'
 npm run build / export
 npm start
 

@@ -26,6 +26,8 @@ import Footer from "@/components/footer";
 import VideoPlayer from "@/components/videoplayercards";
 import CustomSpacerOne from "@/components/spacer";
 import data from "../components/data.json";
+import ColumnCard from "@/components/columncard";
+import Diagram1 from "@/components/diagram";
 
 export default function Home() {
   return (
@@ -41,7 +43,7 @@ export default function Home() {
       {/*header*/}
       <Header
         logo={<Image src="logo.png" w="20" alt="visuarte" />}
-        navItems= {data.navigation}
+        navItems={data.navigation}
       />
 
       {/*bg*/}
@@ -60,35 +62,11 @@ export default function Home() {
             my={19}
             zIndex={6}
             minWidth="50vh"
-            maxW="130vh"
+            maxW="120vh"
           >
             <CustomSpacerOne />
 
-            {/*maincard*/}
-            <Card
-              size="lg"
-              transition="transform .5s"
-              _hover={{
-                transform: "scale(1.01)",
-              }}
-            >
-              <CardHeader>
-                <Heading size="xl">Was wir tun</Heading>
-                <Heading size="l" color="grey">
-                  Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20
-                  Jahren mediale Erlebniswelten - und das mit System.
-                </Heading>
-              </CardHeader>
-              <CardBody mb="25">
-                <Image
-                  src="grafik-webseite.png"
-                  margin="auto"
-                  maxWidth="100%"
-                  display="block"
-                  alt="kernkompetenzen"
-                />
-              </CardBody>
-            </Card>
+            <ColumnCard />
 
             <CustomSpacerOne />
 
@@ -101,6 +79,7 @@ export default function Home() {
             <Form />
 
             <CustomSpacerOne />
+            
             {/*link*/}
             <Stack direction="row" id="agentur" zIndex={1}>
               <Box w="50vw">
@@ -137,9 +116,7 @@ export default function Home() {
                           borderRadius="md"
                         />
                       </Center>
-                      <Text fontSize="sm">
-                        {data.endcards.label}
-                      </Text>
+                      <Text fontSize="sm">{data.endcards.label}</Text>
                     </CardBody>
                   </Card>
                 </Link>
