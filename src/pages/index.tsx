@@ -32,7 +32,7 @@ import LinkCards from "@/components/linkcards";
 
 export default function Home() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme} >
       {/*info*/}
       <Head>
         <title>visuarte Solutions</title>
@@ -48,7 +48,7 @@ export default function Home() {
       />
 
       {/*bg*/}
-      <Box
+      <Box 
         bgGradient="linear(to-t, #151515, #484848)"
         id="unserearbeit"
         alignContent="center"

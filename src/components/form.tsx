@@ -65,12 +65,14 @@ export default function Form() {
                   </FormLabel>
                   <VStack align="left" ml="2">
                     {data.form_textElements1.map((textElement, index) => (
-                      <Checkbox
+                      <Checkbox variant="regular"
                         color="grey"
                         key={index}
                         {...register(`textElements1.${index}`)}
                       >
-                        <Text variant="regular">{textElement}</Text>
+                        <Text 
+                        pl="2"
+                         variant="regular">{textElement}</Text>
                       </Checkbox>
                     ))}
                   </VStack>
@@ -85,12 +87,12 @@ export default function Form() {
                   </FormLabel>
                   <VStack align="left" ml="2">
                     {data.form_textElements2.map((textElement, index) => (
-                      <Checkbox
+                      <Checkbox variant="regular"
                         key={index}
-                        variant="regular"
                         {...register(`textElements2.${index}`)}
                       >
-                        <Text variant="regular">{textElement}</Text>
+                        <Text variant="regular" 
+                        pl="2">{textElement}</Text>
                       </Checkbox>
                     ))}
                   </VStack>

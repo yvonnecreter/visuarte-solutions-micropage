@@ -39,19 +39,19 @@ export default function VideoPlayer() {
             {/*if else condition, ? = then, ():() = if else, <> is jsx wrapping*/}
             {currentVideoIndex == 99 ? (
               <>
-                <Heading variant="layer2">
+                <Heading variant="layer3">
                   {data.videoplayer_placeholder.subtitle}
                 </Heading>
-                <Text variant="regular" mt="2">
+                <Text variant="lessEmphasized" mt="2">
                   {data.videoplayer_placeholder.infotext}
                 </Text>
               </>
             ) : (
               <>
-                <Heading variant= "layer2">
+                <Heading variant= "layer3">
                   {data.videoplayer_videos[currentVideoIndex].subtitle}
                 </Heading>
-                <Text variant="regular"  mt="2">
+                <Text variant="lessEmphasized"  mt="2">
                   {data.videoplayer_videos[currentVideoIndex].infotext}
                 </Text>
               </>

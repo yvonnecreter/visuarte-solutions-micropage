@@ -1,6 +1,6 @@
 import { color, extendTheme } from "@chakra-ui/react";
 import { defineStyleConfig } from "@chakra-ui/react";
-import '@fontsource/open-sans'
+import "@fontsource/open-sans";
 
 /* <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>This is responsive text</Text> */
 
@@ -14,7 +14,7 @@ const Heading = defineStyleConfig({
       fontSize: "4xl",
       fontWeight: "black",
       color: "#5F5F5F",
-      mb: "2"
+      mb: "2",
     },
     layer2: {
       fontSize: "lg",
@@ -45,28 +45,42 @@ const Text = defineStyleConfig({
   },
   variants: {
     regular: {
-    fontSize: "sm",
-    fontWeight: "regular",
-    color: "#7A7A7A",
+      fontSize: "sm",
+      fontWeight: "regular",
+      color: "#7A7A7A",
     },
     light: {
       color: "#A3A3A3",
     },
     stronglyEmphasized: {
-      fontSize:"md",
+      fontSize: "md",
       color: "#6A6A6A",
       fontWeight: "bold",
     },
     emphasized: {
-      fontSize:"md",
+      fontSize: "md",
       color: "#A3A3A3",
       fontWeight: "bold",
+    },
+    lessEmphasized: {
+      fontSize: "sm",
+      fontWeight: "regular",
+      color: "#A3A3A3",
+      lineHeight: "1.2",
     },
     small: {
       fontSize: "xs",
       fontWeight: "regular",
       color: "#7A7A7A",
-      lineHeight: "1.2"
+      lineHeight: "1.2",
+    },
+    header: {
+      color: "white",
+      fontSize: {
+        base: "xs",
+        md: "sm",
+        lg: "sm",
+      },
     },
     responsive: {
       scaleOnHover: {
@@ -95,31 +109,77 @@ const Card = defineStyleConfig({
       borderRadius: "0",
     },
     videoplayer: {
-       padding: "2",
-    }
+      padding: "2",
+    },
   },
   defaultProps: {
-    variant: "regular"
-  }
+    variant: "regular",
+  },
 });
 
 const Checkbox = defineStyleConfig({
   baseStyle: {
-    borderWidth: "1"
+    control: {
+      borderColor: '#e8e8e8',
+      borderWidth: "2",
+      transition: 'background-color 0.1s ease-in-out',
+      _checked: {
+        bg: '#5f5f5f',
+        borderColor: '#5f5f5f',
+        color: 'white',
+      },
+      _hover: {
+        bg: '#646464',
+        borderColor: '#646464',
+        color: 'white',
+      },
+      active: {
+        bg: '#5f5f5f',
+        borderColor: '#5f5f5f',
+        color: 'white',
+      }
+    },
   },
-})
+  sizes: {
+  },
+  variants: {
+    regular: {
+
+    }
+  },
+  defaultProps: {
+    variant: "regular"
+  },
+});
 
 const Button = defineStyleConfig({
   baseStyle: {
     fontWeight: "normal",
     textTransform: "uppercase",
     letterSpacing: "widest",
-    borderRadius: "base",
+    borderRadius: "0",
     fontSize: "sm",
-    bg: "black",
-    variant: "outline",
-    background: "orange.500",
+    background: "#212121",
     color: "white",
+    transition: 'background-color 0.2s ease-in-out',
+    _hover: {
+      bg: "#595959",
+    },
+    _active: {
+      bg: "#3e3e3e"
+    },
+  },
+  sizes: {
+    // size-specific styles
+  },
+  variants: {
+    regular: {
+    }
+    // variant-specific styles
+  },
+  defaultProps: {
+    // default values for props
+    variant: "regular",
   },
 });
 
@@ -128,8 +188,9 @@ const theme = extendTheme({
     brand: {
       purple: "#390aad",
       green: "#a4e572",
-      blue: "#67dbff"
-    },},
+      blue: "#67dbff",
+    },
+  },
   fonts: {
     heading: "Open Sans",
     body: "Open Sans",

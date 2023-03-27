@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Link, Center } from "@chakra-ui/react";
 import data from "../components/data.json";
 
 
@@ -7,14 +7,14 @@ export default function Footer() {
   const list = data.footer;
 
   return (
-      <Flex w="100vw" bottom={0} color="white" alignItems="center">
-        <Box w="100%" h="50px" textAlign="center" lineHeight="50px">
+    <Center>
+      <Flex bottom={0} color="white" flexFlow="row" p="7">
+        {/*<Box w="100%" textAlign="center" lineHeight="50px"></Box>*/}
           {list.map((item) => (
             <Link href={data.footer_href + item} key={item} mx={4}>
-              {item}
+               <Text variant="header">{item}</Text>
             </Link>
           ))}
-        </Box>
-      </Flex>
+      </Flex></Center>
   );
 };
