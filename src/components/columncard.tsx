@@ -103,7 +103,7 @@ export default function ColumnCard() {
                 <Image
                   src={data.maincard.table.element1}
                   alt={data.maincard.table.element1}
-                  w="100%"
+                  w="80%"
                   transition="transform 2s"
                   _hover={{
                     animation: `${spin} 3s linear infinite`,
@@ -193,7 +193,8 @@ export default function ColumnCard() {
                   <Image
                     src={data.maincard.table.element4[i]}
                     alt=" "
-                    w="90%"
+                    w="75%"
+                    maxH={"5vh"}
                     transition="transform 1s"
                     _hover={{
                       filter: "brightness(1.1)",
