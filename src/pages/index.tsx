@@ -1,5 +1,6 @@
 import Head from "next/head";
 import theme from "@/styles/theme";
+import { useStyleConfig } from "@chakra-ui/react";
 import {
   ChakraProvider,
   Box,
@@ -27,7 +28,7 @@ import VideoPlayer from "@/components/videoplayercards";
 import CustomSpacerOne from "@/components/spacer";
 import data from "../components/data.json";
 import ColumnCard from "@/components/columncard";
-import Diagram1 from "@/components/diagram";
+import LinkCards from "@/components/linkcards";
 
 export default function Home() {
   return (
@@ -53,7 +54,6 @@ export default function Home() {
         alignContent="center"
       >
         <Spacer height={50} />
-        <UnityGame />
 
         <Center>
           <Stack
@@ -64,6 +64,8 @@ export default function Home() {
             minWidth="50vh"
             maxW="120vh"
           >
+            <UnityGame />
+
             <CustomSpacerOne />
 
             <ColumnCard />
@@ -79,54 +81,12 @@ export default function Home() {
             <Form />
 
             <CustomSpacerOne />
-            
-            {/*link*/}
-            <Stack direction="row" id="agentur" zIndex={1}>
-              <Box w="50vw">
-                <Card h="100%">
-                  <CardBody>
-                    <iframe
-                      src={data.endcards.video}
-                      width="100%"
-                      height="100%"
-                      frameBorder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                    ></iframe>
-                  </CardBody>
-                </Card>
-              </Box>
-              <Spacer />
-              <Box w="50vw">
-                <Link href={data.endcards.website} isExternal>
-                  <Card h="100%">
-                    <CardBody textAlign="center">
-                      <iframe
-                        src={data.endcards.website}
-                        width="100%"
-                        scrolling="no"
-                        height="500vw"
-                        style={{ pointerEvents: "none" }}
-                      />
-                      <Center>
-                        <Divider
-                          borderWidth={1.5}
-                          color="black"
-                          my={5}
-                          width="100%"
-                          borderRadius="md"
-                        />
-                      </Center>
-                      <Text fontSize="sm">{data.endcards.label}</Text>
-                    </CardBody>
-                  </Card>
-                </Link>
-              </Box>
-            </Stack>
+            <LinkCards />
           </Stack>
         </Center>
 
         {/*FOOTER*/}
-        <Spacer h={400} />
+        <Spacer h="20vh" />
         <Footer />
       </Box>
     </ChakraProvider>

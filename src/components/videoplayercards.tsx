@@ -13,8 +13,12 @@ import {
   Image,
   Spacer,
   Stack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import data from "../components/data.json";
+import theme from "@/styles/theme";
+import { useStyleConfig } from "@chakra-ui/react";
+
 
 export default function VideoPlayer() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(99);
@@ -27,33 +31,35 @@ export default function VideoPlayer() {
   const [imageSelected, setImageSelected] = useState(false);
 
   return (
-    <Stack direction="row" zIndex={9998}>
-      <Box w="50vw">
-        <Card h="100%" id="exponate">
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap="3">
+    {/*<Stack direction="row" zIndex={9998}>*/}
+      <GridItem>
+        <Card sx={useStyleConfig("Card")} variant= "videoplayer" h="100%" id="exponate">
           <CardHeader>
             {/*if else condition, ? = then, ():() = if else, <> is jsx wrapping*/}
             {currentVideoIndex == 99 ? (
               <>
-                <Heading size="l">
+                <Heading variant="layer2">
                   {data.videoplayer_placeholder.subtitle}
                 </Heading>
-                <Heading size="l" color="grey">
+                <Text variant="regular" mt="2">
                   {data.videoplayer_placeholder.infotext}
-                </Heading>
+                </Text>
               </>
             ) : (
               <>
-                <Heading size="l">
+                <Heading variant= "layer2">
                   {data.videoplayer_videos[currentVideoIndex].subtitle}
                 </Heading>
-                <Heading size="l" color="grey">
+                <Text variant="regular"  mt="2">
                   {data.videoplayer_videos[currentVideoIndex].infotext}
-                </Heading>
+                </Text>
               </>
             )}
           </CardHeader>
 
-          <CardBody mt={-7}>
+          {/** VIDEO LEFT */}
+          <CardBody w="100%">
             {currentVideoIndex == 99 ? (
               <>
                 <iframe
@@ -73,14 +79,17 @@ export default function VideoPlayer() {
             )}
           </CardBody>
         </Card>
-      </Box>
       <Spacer />
+      </GridItem>
 
-      <Box w="50vw">
-        <Card h="100%">
+        {/** THUMBNAILS ON THE RIGHT */}
+      <GridItem>
+      <Card sx={useStyleConfig("Card")} h="100%" variant= "videoplayer" >
           <CardBody>
+            
+
             {/*add images*/}
-            <Grid templateColumns="repeat(3, 1fr)" gap={1} h="100%">
+            <Grid templateColumns="repeat(3, 1fr)" gap={1}>
               {data.videoplayer_videos.map((item, i) => (
                 <GridItem key={i}>
                   <Box
@@ -108,7 +117,16 @@ export default function VideoPlayer() {
                     <Image
                       src={item.image}
                       alt={`Image ${i + 1}`}
-                      boxSize="15vw"
+                      boxSize={{
+                        base: "30vw",
+                        md: "15vw",
+                        lg: "15vw"
+                      }}
+                      maxH={{
+                        base: "30vw",
+                        md: "20vh",
+                        lg: "20vh"
+                      }}
                       objectFit="cover"
                       borderRadius="5"
                       onClick={() => {
@@ -120,9 +138,11 @@ export default function VideoPlayer() {
                 </GridItem>
               ))}
             </Grid>
+            
           </CardBody>
         </Card>
-      </Box>
-    </Stack>
+      </GridItem>
+
+    </SimpleGrid>
   );
 }

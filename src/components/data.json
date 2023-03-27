@@ -108,7 +108,7 @@
       "arrow":"arrow.svg",
       "arrowsplit":"arrow_split.svg",
       "arrowsplit2":"arrow_split2.svg",
-      "colors":["#b802a3","#8fd14f", "#31b5e8"]
+      "colors":["brand.purple","brand.green", "brand.blue"]
     },
     "endcards":{
       "video":"https://player.vimeo.com/video/586284805",

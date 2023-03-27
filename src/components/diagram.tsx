@@ -13,6 +13,10 @@ import {
 import react from "react";
 import data from "../components/data.json";
 
+import theme from "@/styles/theme";
+import { useStyleConfig } from "@chakra-ui/react";
+
+
 export default function Diagram1() {
   const bW = 1;
   const textPadding = 2;

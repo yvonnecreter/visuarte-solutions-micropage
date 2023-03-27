@@ -1,14 +1,19 @@
 ## Setup Instrucions
+[Remove basePath: '/visu_solutions_beta' from next.config.js,
+then delete .next node_modules and out folder,
+install-packages +  run.bat starts the following commands]
 npm install
 npm install next
 npm run dev
 
 ## Build
-[Paste into next.config.js, has to be deleted for run dev]
-  basePath: '/visu_solutions_beta'
-npm run build / export
+[Paste basePath: '/visu_solutions_beta' into next.config.js,
+then delete .next node_modules and out folder,
+install-packages + build.bat starts the following commands]
+npm install
+npm install next
+npm run build
 npm start
-
 
 ## Static Build
 https://github.com/vercel/next.js/issues/8158

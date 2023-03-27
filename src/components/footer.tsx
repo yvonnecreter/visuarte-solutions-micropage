@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 import data from "../components/data.json";
 
+
 export default function Footer() {
   const list = data.footer;
 
