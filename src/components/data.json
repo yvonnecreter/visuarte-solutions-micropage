@@ -1,26 +1,26 @@
 {
   "videoplayer_placeholder": {
     "video": "https://player.vimeo.com/video/586284805?h=4ebc2a1f17",
-    "subtitle": "Placeholder Beschreibung",
-    "infotext": "Placeholder Text"
+    "subtitle": "3 Kernkompetenzen",
+    "infotext": "für Erlebniswelten mit System"
   },
   "videoplayer_videos": [
     {
-      "video": "https://player.vimeo.com/video/296462573",
-      "subtitle": "Projektbeschreibung 1",
-      "infotext": "Infotext 1",
+      "video": "https://player.vimeo.com/video/675910139",
+      "subtitle": "Jungheinrich CeMAT 2018",
+      "infotext": "interaktive AR Anwendung",
       "image": "portfolio-image-1.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/787902161",
-      "subtitle": "Projektbeschreibung 2",
-      "infotext": "Infotext 2",
+      "subtitle": "visuarte ProScope QR",
+      "infotext": "interaktive Inhalte auf Knopfdruck",
       "image": "portfolio-image-2.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/768721892",
-      "subtitle": "Projektbeschreibung 3",
-      "infotext": "Infotext 3",
+      "subtitle": "Daimler bauma 2022",
+      "infotext": "immersive LED Flächeninstallation",
       "image": "portfolio-image-3.jpg"
     },
     {
@@ -37,8 +37,8 @@
     },
     {
       "video": "https://player.vimeo.com/video/165005613",
-      "subtitle": "Projektbeschreibung 6",
-      "infotext": "Infotext 6",
+      "subtitle": "Landtag NRW",
+      "infotext": "interaktives Besucherzentrum",
       "image": "portfolio-image-6.jpg"
     }
   ],
@@ -99,10 +99,10 @@
       "head2":"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - und das mit System.",
       "head3":["Ihr Ziel", "(Ihr) Markenerlebnis"],
       "table":{
-        "element1":"lifecycle.svg",
+        "element1":"ziel.png",
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
         "element3":["Individuelle Kreativstrategie", "Inhalte, die bewegen", "Interaktive Anwendungen"],
-        "element4":["icon_kreativstrategie.svg", "icon_inhalte.svg", "icon_interaktiv.svg"],
+        "element4":["konzept.svg", "inhalte.svg", "interaktiv.svg"],
         "element5":"showroom.jpg"
       },
       "arrow":"arrow.svg",

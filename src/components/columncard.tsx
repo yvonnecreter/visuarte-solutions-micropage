@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-  Card,
+  Card,keyframes ,
   CardBody,
   CardHeader,
   Heading,
@@ -22,6 +22,13 @@ import Icon_interaktivSVG from "../components/icon_interaktiv.svg";
 import CIcon from "@/components/cicon";
 import { ChakraProvider } from "@chakra-ui/react";
 import { transform } from "typescript";
+import { easeInOut } from "framer-motion";
+
+
+const spin = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
 
 export default function ColumnCard() {
   return (
@@ -97,6 +104,10 @@ export default function ColumnCard() {
                   src={data.maincard.table.element1}
                   alt={data.maincard.table.element1}
                   w="100%"
+                  transition="transform 2s"
+                  _hover={{
+                    animation: `${spin} 3s linear infinite`,
+                  }}
                 />
               </Flex>
             </GridItem>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317.83 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b802a3;
+      }
+
+      .cls-2 {
+        fill: #de02c4;
+      }
+    </style>
+  </defs>
+  <g id="Layer_3_copy" data-name="Layer 3 copy">
+    <rect class="cls-2" x="8.39" y="149.16" width="17.01" height="17.01" rx="8.5" ry="8.5"/>
+    <rect class="cls-2" y="92.27" width="22.55" height="22.55" rx="8.57" ry="8.57"/>
+    <rect class="cls-2" x="26.92" y="101.08" width="48.08" height="48.08" rx="14" ry="14"/>
+    <polygon class="cls-2" points="204.65 71 163.66 0 245.65 0 204.65 71"/>
+    <g>
+      <polygon class="cls-1" points="317.83 200 49.83 200 120.52 76 247.13 76 317.83 200"/>
+      <polygon class="cls-2" points="205.65 154 76.74 152.91 98.83 114 200.83 114 205.65 154"/>
+      <polygon class="cls-2" points="241.83 154 192.83 154 194.35 76 219.91 76 241.83 154"/>
+    </g>
+  </g>
+</svg>
