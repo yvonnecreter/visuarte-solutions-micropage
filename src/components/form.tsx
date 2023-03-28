@@ -138,17 +138,17 @@ export default function Form() {
                 </FormControl>
             </GridItem>
 
-            <GridItem rowSpan={2}>
-              <Box width="70%" maxW="20vh">
+            <GridItem rowSpan={2}> <Flex h="100%" alignItems="flex-end" justifyContent="flex-start">
+              <Box width="100%" maxW="25vh">
                 <Image
                   src="logo.png"
                   alt="visuarte"
                   style={{ filter: "invert(1)" }}
                   opacity="65%"
-                  width="70%"
+                  width="55%"
                   maxW="30vh"
                   mb="25"
-                /></Box>
+                />
                 <Text variant="small">
                   Hofmannstrasse 10 | 81379 München <br />
                   t + 49 89 45 24 46 <br />
@@ -157,7 +157,8 @@ export default function Form() {
                   <br /> e ilja@visuarte.com
                   <br /> w www.visuarte.com
                 </Text>
-              
+                </Box>
+                </Flex>
             </GridItem>
             <GridItem >
               <FormControl id="message">
