@@ -8,7 +8,7 @@ export default function CustomSpacerOne() {
         mt="2.5vw"
         mb="2.5vw"
         width="30%"
-        borderColor="white"
+        borderColor="transparent"
         borderWidth={1.2}
         borderRadius="md"
       />

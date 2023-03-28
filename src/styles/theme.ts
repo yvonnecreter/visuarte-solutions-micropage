@@ -1,6 +1,7 @@
 import { color, extendTheme } from "@chakra-ui/react";
 import { defineStyleConfig } from "@chakra-ui/react";
 import "@fontsource/open-sans";
+import "@fontsource/rubik";
 
 /* <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>This is responsive text</Text> */
 
@@ -101,6 +102,9 @@ const Card = defineStyleConfig({
     size: "lg",
     padding: "5",
     borderRadius: "0",
+    bg: "#f7f7f7",
+    px: "10vw",
+    py: "5vh"
   },
   variants: {
     regular: {
@@ -109,7 +113,8 @@ const Card = defineStyleConfig({
       borderRadius: "0",
     },
     videoplayer: {
-      padding: "2",
+    px: "2",
+    py: "2"
     },
   },
   defaultProps: {
@@ -192,7 +197,7 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "Open Sans",
+    heading: "Rubik",
     body: "Open Sans",
   },
   components: {

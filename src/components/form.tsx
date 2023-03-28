@@ -119,6 +119,7 @@ export default function Form() {
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
           <Heading variant="layer2">{data.form_titles.sub3head2}</Heading>
+              <Text variant="lessEmphasized" mt="50"> {data.form_titles.sub3head3}</Text>
         </CardHeader>
         
         <CardBody>
@@ -126,7 +127,6 @@ export default function Form() {
             gap={6} rowGap="8"
           >
             <GridItem w="100%">
-              <Text>{data.form_titles.sub3head3}</Text>
             </GridItem>
 
             <GridItem>
@@ -138,15 +138,17 @@ export default function Form() {
                 </FormControl>
             </GridItem>
 
-            <GridItem>
+            <GridItem rowSpan={2}>
               <Box width="70%" maxW="20vh">
                 <Image
                   src="logo.png"
                   alt="visuarte"
                   style={{ filter: "invert(1)" }}
                   opacity="65%"
-                  mb= "5"
-                />
+                  width="70%"
+                  maxW="30vh"
+                  mb="25"
+                /></Box>
                 <Text variant="small">
                   Hofmannstrasse 10 | 81379 München <br />
                   t + 49 89 45 24 46 <br />
@@ -155,9 +157,9 @@ export default function Form() {
                   <br /> e ilja@visuarte.com
                   <br /> w www.visuarte.com
                 </Text>
-              </Box>
+              
             </GridItem>
-            <GridItem>
+            <GridItem >
               <FormControl id="message">
                 <FormLabel>
                   <Heading variant="layer3">Nachricht:</Heading>
@@ -165,12 +167,15 @@ export default function Form() {
                 <Textarea {...register("message")} />
               </FormControl>
             </GridItem>
-          </SimpleGrid>
-        </CardBody>
-        <CardFooter>
+            <GridItem>
+              
           <Button type="submit" w="100%">
             Senden
           </Button>
+            </GridItem>
+          </SimpleGrid>
+        </CardBody>
+        <CardFooter>
         </CardFooter>
       </Card>
     </form>

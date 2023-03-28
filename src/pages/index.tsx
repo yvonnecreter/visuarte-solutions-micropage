@@ -47,24 +47,31 @@ export default function Home() {
         navItems={data.navigation}
       />
 
+      
       {/*bg*/}
       <Box 
-        bgGradient="linear(to-t, #151515, #484848)"
+      bg="#0e0e0e"
         id="unserearbeit"
         alignContent="center"
       >
-        <Spacer height={50} />
+      <Spacer 
+          height={{
+            base:"50",
+            md:"50",
+            lg: "55"}} />
+      <UnityGame/>
+        
 
         <Center>
           <Stack
-            spacing={4}
-            margin="5"
+            // spacing={4}
+            // margin="5"
             my={19}
             zIndex={6}
-            minWidth="50vh"
-            maxW="120vh"
+            // minWidth="50vh"
+            // maxW="120vh"
+            // mt="-1"
           >
-            <UnityGame />
 
             <CustomSpacerOne />
 
