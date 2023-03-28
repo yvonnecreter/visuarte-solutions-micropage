@@ -65,7 +65,7 @@ export default function VideoPlayer() {
           {/*<Stack direction="row" zIndex={9998}>*/}
           <GridItem>
 
-            <Card bg="transparent" h="100%" id="exponate" p="0"  m="-5">
+            <Card bg="transparent" h="100%" id="exponate" p="0">
               {/** VIDEO LEFT */}
               <CardBody>
                 {currentVideoIndex == 99 ? (

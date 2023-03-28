@@ -8,24 +8,24 @@ import "@fontsource/rubik";
 const Heading = defineStyleConfig({
   baseStyle: {
     fontWeight: "normal",
-    color: "#5F5F5F",
+    color: "#000000",
   },
   variants: {
     layer1: {
       fontSize: "4xl",
       fontWeight: "black",
-      color: "#5F5F5F",
+      color: "#000000",
       mb: "2",
     },
     layer2: {
       fontSize: "lg",
-      fontWeight: "light",
+      fontWeight: "reg",
       color: "#A3A3A3",
     },
     layer3: {
       fontSize: "md",
       fontWeight: "bold",
-      color: "#7A7A7A",
+      color: "#3f3f3f",
     },
     layer4: {
       fontSize: "lg",
