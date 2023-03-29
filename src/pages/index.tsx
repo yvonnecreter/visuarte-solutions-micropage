@@ -32,7 +32,7 @@ import LinkCards from "@/components/linkcards";
 
 export default function Home() {
   return (
-    <ChakraProvider theme={theme} >
+    <ChakraProvider theme={theme}>
       {/*info*/}
       <Head>
         <title>visuarte Solutions</title>
@@ -47,20 +47,16 @@ export default function Home() {
         navItems={data.navigation}
       />
 
-      
       {/*bg*/}
-      <Box 
-      bg="#0e0e0e"
-        id="unserearbeit"
-        alignContent="center"
-      >
-      <Spacer 
+      <Box bg="#0e0e0e" id="unserearbeit" alignContent="center">
+        <Spacer
           height={{
-            base:"50",
-            md:"50",
-            lg: "55"}} />
-      <UnityGame/>
-        
+            base: "50",
+            md: "50",
+            lg: "55",
+          }}
+        />
+        <UnityGame />
 
         <Center>
           <Stack
@@ -72,7 +68,6 @@ export default function Home() {
             // maxW="120vh"
             // mt="-1"
           >
-
             <CustomSpacerOne />
 
             <ColumnCard />
@@ -91,7 +86,15 @@ export default function Home() {
             <LinkCards />
           </Stack>
         </Center>
-
+        <script>
+  {`
+    document.addEventListener('wheel', onScroll, false);
+    document.addEventListener('mousemove', onMouse, false);
+    var content = document.getElementByID('webgl-content');
+    function onMouse() { content.style['pointer-events'] = 'auto'; }
+    function onScroll() { content.style['pointer-events'] = 'none'; }
+  `}
+</script>
         {/*FOOTER*/}
         <Spacer h="20vh" />
         <Footer />

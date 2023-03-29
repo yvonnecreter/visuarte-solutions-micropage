@@ -43,8 +43,8 @@ export default function LinkCards() {
               <CardBody textAlign="center">
                 <iframe
                   src={data.endcards.website}
-                  width="100%"
-                  scrolling="no"
+                  // width="100%"
+                  // scrolling="no"
                   height="500vw"
                   style={{ pointerEvents: "none" }}
                 />

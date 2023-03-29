@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Box, Center } from "@chakra-ui/react";
 
@@ -13,13 +13,28 @@ export default function UnityGame() {
     streamingAssetsUrl: "StreamingAssets",
   });
 
+  
+  const scrollon = "auto";
+
+  useEffect(() => {
+    const doSomething = () => {};
+
+    window.addEventListener("scroll", doSomething);
+    return () => {
+      window.removeEventListener("scroll", doSomething);
+    };
+  }, []);
+
+
   return (
     <Center>
-    <Box ref={boxRef} zIndex={0}  width="100%" maxW="165vh">
-      <Unity
-        unityProvider={unityProvider}
-        style={{ width: "100%", height: "100%" }}
-      />
-    </Box></Center>
+      <Box ref={boxRef} id="webgl-content" zIndex={0} width="100%" maxW="165vh" 
+      pointerEvents={scrollon}>
+        <Unity
+          unityProvider={unityProvider}
+          style={{ width: "100%", height: "100%" }}
+        />
+      </Box>
+    </Center>
   );
-};
+}

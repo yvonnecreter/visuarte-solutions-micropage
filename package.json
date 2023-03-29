@@ -16,6 +16,7 @@
     "@fontsource/raleway": "^4.5.12",
     "@fontsource/rubik": "^4.5.14",
     "@types/react-dom": "18.0.11",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.4.0",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
+    "@types/body-scroll-lock": "^3.1.0",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28"
   }

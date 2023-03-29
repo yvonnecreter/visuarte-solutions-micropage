@@ -13,6 +13,7 @@ import {
   Image,
   Spacer,
   Stack,
+  AspectRatio,
   SimpleGrid,
 } from "@chakra-ui/react";
 import data from "../components/data.json";
@@ -30,7 +31,7 @@ export default function VideoPlayer() {
   const [imageSelected, setImageSelected] = useState(false);
 
   return (
-    <Card sx={useStyleConfig("Card")} >
+    <Card sx={useStyleConfig("Card")}>
       {" "}
       <CardHeader>
         {/*if else condition, ? = then, ():() = if else, <> is jsx wrapping*/}
@@ -54,8 +55,6 @@ export default function VideoPlayer() {
           </>
         )}
       </CardHeader>
-
-
       <CardBody>
         <SimpleGrid
           columns={{ base: 1, md: 2, lg: 2 }}
@@ -64,31 +63,33 @@ export default function VideoPlayer() {
         >
           {/*<Stack direction="row" zIndex={9998}>*/}
           <GridItem>
-
             <Card bg="transparent" h="100%" id="exponate" p="0">
               {/** VIDEO LEFT */}
-              <CardBody>
+              <CardBody background={"black"}>
                 {currentVideoIndex == 99 ? (
-                  <iframe
-                    src={`${data.videoplayer_placeholder.video}?title=0&byline=0&portrait=0`}
-                    style={{ width: "100%", height: "100%" }}
-                  />
+                  <AspectRatio maxW="100%" ratio={16 / 9}>
+                    <iframe
+                      src={`${data.videoplayer_placeholder.video}?title=0&byline=0&portrait=0`}
+                      allowFullScreen
+                    />
+                  </AspectRatio>
                 ) : (
-                  <iframe
-                    src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
-                    style={{ width: "100%", height: "100%" }}
-                  />
+                  <AspectRatio maxW="100%" ratio={16 / 9}>
+                    <iframe
+                      src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
+                      allowFullScreen
+                    />
+                  </AspectRatio>
                 )}
               </CardBody>
             </Card>
             <Spacer />
           </GridItem>
 
-
           {/** THUMBNAILS ON THE RIGHT */}
           <GridItem>
-            <Card bg="transparent">
-              <CardBody>
+            <Card bg="transparent" h="100%">
+              <CardBody background={"black"}>
                 {/*add images*/}
                 <Grid templateColumns="repeat(3, 1fr)" gap={1}>
                   {data.videoplayer_videos.map((item, i) => (
@@ -115,21 +116,21 @@ export default function VideoPlayer() {
                             : ""
                         }
                       >
-
                         {/* Size of Images here */}
                         <Image
+                          fit="cover"
                           src={item.image}
                           alt={`Image ${i + 1}`}
-                          boxSize={{
-                            base: "30vw",
-                            md: "10vw",
-                            lg: "10vw",
-                          }}
-                          maxH={{
-                            base: "30vw",
-                            md: "20vh",
-                            lg: "20vh",
-                          }}
+                          // boxSize={{
+                          //   base: "30vw",
+                          //   md: "10vw",
+                          //   lg: "10vw",
+                          // }}
+                          // maxH={{
+                          //   base: "30vw",
+                          //   md: "20vh",
+                          //   lg: "20vh",
+                          // }}
                           objectFit="cover"
                           // borderRadius="5"
                           borderRadius="0"
