@@ -15,6 +15,7 @@ import {
   Stack,
   AspectRatio,
   SimpleGrid,
+  Flex,
 } from "@chakra-ui/react";
 import data from "../components/data.json";
 import theme from "@/styles/theme";
@@ -58,14 +59,12 @@ export default function VideoPlayer() {
       <CardBody>
         <SimpleGrid
           columns={{ base: 1, md: 2, lg: 2 }}
-          gap="1"
-          templateColumns="2fr 1fr"
+          gap="10"
+          templateColumns="1.5fr 1fr"
         >
           {/*<Stack direction="row" zIndex={9998}>*/}
           <GridItem>
-            <Card bg="transparent" h="100%" id="exponate" p="0">
               {/** VIDEO LEFT */}
-              <CardBody background={"black"}>
                 {currentVideoIndex == 99 ? (
                   <AspectRatio maxW="100%" ratio={16 / 9}>
                     <iframe
@@ -81,20 +80,17 @@ export default function VideoPlayer() {
                     />
                   </AspectRatio>
                 )}
-              </CardBody>
-            </Card>
             <Spacer />
           </GridItem>
 
           {/** THUMBNAILS ON THE RIGHT */}
-          <GridItem>
-            <Card bg="transparent" h="100%">
-              <CardBody background={"black"}>
+          <GridItem height="100%">
                 {/*add images*/}
-                <Grid templateColumns="repeat(3, 1fr)" gap={1}>
+                <Grid templateColumns="repeat(3, 1fr)" gap={1} height="100%">
                   {data.videoplayer_videos.map((item, i) => (
-                    <GridItem key={i}>
+                    <GridItem key={i} height="100%">
                       <Box
+                        height="100%"
                         transition="transform .3s"
                         transform={
                           hoveredImageIndex !== null && hoveredImageIndex !== i
@@ -121,6 +117,7 @@ export default function VideoPlayer() {
                           fit="cover"
                           src={item.image}
                           alt={`Image ${i + 1}`}
+                          height="100%"
                           // boxSize={{
                           //   base: "30vw",
                           //   md: "10vw",
@@ -143,8 +140,6 @@ export default function VideoPlayer() {
                     </GridItem>
                   ))}
                 </Grid>
-              </CardBody>
-            </Card>
           </GridItem>
         </SimpleGrid>
       </CardBody>

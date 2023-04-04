@@ -5,10 +5,11 @@ export default function CustomSpacerOne() {
   return (
     <Center>
       <Divider
-        mt="2.5vw"
-        mb="2.5vw"
+        // mt="2.5vw"
+        // mb="2.5vw"
+        my="1"
         width="30%"
-        borderColor="transparent"
+        borderColor="#262626"
         borderWidth={1.2}
         borderRadius="md"
       />

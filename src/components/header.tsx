@@ -10,11 +10,12 @@ const Header: React.FC<HeaderProps> = ({ logo, navItems }) => {
   return (
     <Flex bg="black" w="100%" zIndex={9999} left={0} 
     height={{
-      base:"50",
-      md:"50",
-      lg: "55"}} 
+      base:"5vh",
+      md:"5vh",
+      lg: "5vh"}} 
     position="fixed" p={4} color="white" alignItems="center" >
-      <Box>{logo}</Box> <Spacer />
+      <Box h="100%" >{logo}</Box>
+      <Spacer />
       {navItems.map((item) => (
         <Box key={item.href} ml={4}>
           <Link href={item.href}>

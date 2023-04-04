@@ -96,13 +96,14 @@
     ],
     "maincard":{
       "head1":"Was wir tun",
+      "head1_2": "In erster Linie Verantwortung übernehmen",
       "head2":"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - und das mit System.",
-      "head3":["Ihr Ziel", "(Ihr) Markenerlebnis"],
+      "head3":["Ihre Mission", "(Ihr) Markenerlebnis"],
       "table":{
         "element1":"ziel.png",
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
         "element3":["Individuelle Kreativstrategie", "Inhalte, die bewegen", "Interaktive Anwendungen"],
-        "element4":["konzept.svg", "inhalte.svg", "interaktiv.svg"],
+        "element4":["map-2.svg", "video-2.svg", "interactive-2.svg"],
         "element5":"showroom.jpg"
       },
       "arrow":"arrow.svg",

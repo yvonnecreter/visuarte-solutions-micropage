@@ -48,7 +48,7 @@ export default function Home() {
       />
 
       {/*bg*/}
-      <Box bg="#0e0e0e" id="unserearbeit" alignContent="center">
+      <Box bgGradient="linear(to-t, #484848, #38393d)" id="unserearbeit" alignContent="center">
         <Spacer
           height={{
             base: "50",
@@ -56,18 +56,18 @@ export default function Home() {
             lg: "55",
           }}
         />
-        <UnityGame />
 
         <Center>
           <Stack
-            // spacing={4}
-            // margin="5"
+            spacing={4}
+            margin="5"
             my={19}
             zIndex={6}
-            // minWidth="50vh"
-            // maxW="120vh"
-            // mt="-1"
+            minWidth="50vh"
+            maxW="120vh"
+            mt="-1"
           >
+          <UnityGame />
             <CustomSpacerOne />
 
             <ColumnCard />
@@ -86,15 +86,6 @@ export default function Home() {
             <LinkCards />
           </Stack>
         </Center>
-        <script>
-  {`
-    document.addEventListener('wheel', onScroll, false);
-    document.addEventListener('mousemove', onMouse, false);
-    var content = document.getElementByID('webgl-content');
-    function onMouse() { content.style['pointer-events'] = 'auto'; }
-    function onScroll() { content.style['pointer-events'] = 'none'; }
-  `}
-</script>
         {/*FOOTER*/}
         <Spacer h="20vh" />
         <Footer />

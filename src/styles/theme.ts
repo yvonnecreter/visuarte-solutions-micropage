@@ -14,7 +14,7 @@ const Heading = defineStyleConfig({
     layer1: {
       fontSize: "4xl",
       fontWeight: "black",
-      color: "#000000",
+      color: "#38393d",
       mb: "2",
     },
     layer2: {
@@ -25,7 +25,8 @@ const Heading = defineStyleConfig({
     layer3: {
       fontSize: "md",
       fontWeight: "bold",
-      color: "#3f3f3f",
+      color: "#5e5f60",
+      mb: "2"
     },
     layer4: {
       fontSize: "lg",
@@ -103,14 +104,11 @@ const Card = defineStyleConfig({
     padding: "5",
     borderRadius: "0",
     bg: "#f7f7f7",
-    px: "10vw",
-    py: "5vh"
+    px: "5vw",
+    py: "4vh"
   },
   variants: {
     regular: {
-      size: "lg",
-      padding: "5",
-      borderRadius: "0",
     },
     videoplayer: {
     px: "2",
@@ -197,7 +195,7 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "Rubik",
+    heading: "Open Sans",
     body: "Open Sans",
   },
   components: {
