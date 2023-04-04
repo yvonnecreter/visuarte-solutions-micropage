@@ -30,6 +30,8 @@ import data from "../components/data.json";
 import ColumnCard from "@/components/columncard";
 import LinkCards from "@/components/linkcards";
 
+import {MapIcon, VidIcon, TapIcon }  from "@/components/icons";
+
 export default function Home() {
   return (
     <ChakraProvider theme={theme}>
@@ -43,7 +45,7 @@ export default function Home() {
 
       {/*header*/}
       <Header
-        logo={<Image src="logo.png" w="20" alt="visuarte" />}
+        logo={<Image src="images/logo.png" h="100%" alt="visuarte" />}
         navItems={data.navigation}
       />
 
@@ -51,9 +53,9 @@ export default function Home() {
       <Box bgGradient="linear(to-t, #484848, #38393d)" id="unserearbeit" alignContent="center">
         <Spacer
           height={{
-            base: "50",
-            md: "50",
-            lg: "55",
+            base: "5vh",
+            md: "5vh",
+            lg: "5vh",
           }}
         />
 
@@ -68,6 +70,9 @@ export default function Home() {
             mt="-1"
           >
           <UnityGame />
+          
+<MapIcon boxSize={6} color='red.500'/>
+
             <CustomSpacerOne />
 
             <ColumnCard />

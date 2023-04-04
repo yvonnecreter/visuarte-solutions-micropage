@@ -189,9 +189,9 @@ const Button = defineStyleConfig({
 const theme = extendTheme({
   colors: {
     brand: {
-      purple: "#390aad",
-      green: "#a4e572",
-      blue: "#67dbff",
+      purple: "#921e5d",
+      green: "#30a2a3",
+      blue: "#313575",
     },
   },
   fonts: {

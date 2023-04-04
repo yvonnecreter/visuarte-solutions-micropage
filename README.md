@@ -1,32 +1,4 @@
-## Setup Instrucions
-[Remove basePath: '/visu_solutions_beta' from next.config.js,
-then delete .next node_modules and out folder,
-install-packages +  run.bat starts the following commands]
-npm install
-npm install next
-npm run dev
-
-## Build
-[Paste basePath: '/visu_solutions_beta' into next.config.js,
-then delete .next node_modules and out folder,
-install-packages + build.bat starts the following commands]
-npm install
-npm install next
-npm run build
-npm start
-
-## Static Build
-https://github.com/vercel/next.js/issues/8158
-To automate the steps commented above:
-yarn add --dev replace-in-files-cli
-Then, add this two scripts in your package.json
-"build-static": "next build && next export && npm run build-static-repair-index",
-"build-static-repair-index": "replace-in-files --string \"/_next/static\" --replacement \"./_next/static\" out/index.html"
-Then just call
-npm run build-static
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 
 ## Getting Started
 
@@ -64,3 +36,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## if your vsc marks certain areas red for no reason you have to install ts etc globally
+npm install next react react-dom
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+or
+npm install --global typescript
+npm install --global next react react-dom
+npm install @create-next-app
