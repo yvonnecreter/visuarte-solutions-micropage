@@ -42,7 +42,7 @@ export default function Home() {
         <title>visuarte Solutions</title>
         <meta name="description" content="visuarte Solutions Application" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="images/favicon.ico" />
       </Head>
 
       {/*header*/}
@@ -64,7 +64,6 @@ export default function Home() {
             lg: "5vh",
           }}
         />
-
         <Center>
           <Stack
             spacing={4}

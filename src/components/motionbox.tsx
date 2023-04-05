@@ -17,9 +17,7 @@ import * as React from "react";
 import { useEffect } from "react";
 import {
   motion,
-  useAnimation,
-  AnimateSharedLayout,
-  AnimatePresence,
+  useAnimation
 } from "framer-motion";
 import { Box, Image } from "@chakra-ui/react";
 

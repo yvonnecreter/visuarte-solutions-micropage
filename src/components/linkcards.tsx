@@ -9,7 +9,8 @@ import {
   CardBody,
   CardHeader,
   Grid,
-  GridItem, AspectRatio,
+  GridItem,
+  AspectRatio,
   Heading,
   Image,
   Spacer,
@@ -42,13 +43,19 @@ export default function LinkCards() {
           <Link href={data.endcards.website} isExternal>
             <Card sx={useStyleConfig("Card")} h="100%">
               <CardBody textAlign="center">
-                <AspectRatio ratio={16 / 9}>
-                  <iframe
-                    title="website"
-                    src="web_preview_without_url.mp4"
-                    allowFullScreen
-                  />
-                </AspectRatio>
+                {/* <AspectRatio ratio={16 / 9}>
+                    <iframe 
+                    src="images/web_preview_without_url.mp4"/>
+                </AspectRatio> */}
+
+                <video
+                  src="images/web_preview_without_url.mp4"
+                  style={{ objectFit: "contain", aspectRatio: "16/9" }}
+                  loop
+                  autoPlay
+                  muted
+                />
+
                 {/* <iframe
                   src={data.endcards.website}
                   // width="100%"
