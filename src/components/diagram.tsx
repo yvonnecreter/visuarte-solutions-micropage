@@ -17,6 +17,7 @@ import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
 
 
+
 export default function Diagram1() {
   const bW = 1;
   const textPadding = 2;
@@ -34,6 +35,7 @@ export default function Diagram1() {
     >
       <GridItem colSpan={3}>
         <Flex justifyContent="center" alignItems="center">
+
           <Box
             borderWidth={bW}
             borderColor="black"

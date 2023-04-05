@@ -98,7 +98,7 @@ export default function Form() {
 
             {/* column right side */}
             <GridItem>
-              <Image src="diagram.png" alt="diagram" w="100%" />
+              <Image src={data.diagramIMG} alt="diagram" w="100%" />
             </GridItem>
           </SimpleGrid>
         </CardBody>
@@ -138,7 +138,7 @@ export default function Form() {
             <GridItem rowSpan={2}> <Flex h="100%" alignItems="flex-end" justifyContent="flex-start">
               <Box width="100%" maxW="25vh">
                 <Image
-                  src="logo.png"
+                  src={data.logo}
                   alt="visuarte"
                   style={{ filter: "invert(1)" }}
                   opacity="65%"

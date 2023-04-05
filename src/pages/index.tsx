@@ -32,6 +32,8 @@ import LinkCards from "@/components/linkcards";
 import MotionBox from "@/components/motionbox";
 
 
+import {MapIcon, VidIcon, TapIcon }  from "@/components/icons";
+
 export default function Home() {
   return (
     <ChakraProvider theme={theme}>
@@ -45,7 +47,7 @@ export default function Home() {
 
       {/*header*/}
       <Header
-        logo={<Image src="logo.png" w="20" alt="visuarte" />}
+        logo={<Image src="images/logo.png" h="100%" alt="visuarte" />}
         navItems={data.navigation}
       />
 
@@ -57,9 +59,9 @@ export default function Home() {
       >
         <Spacer
           height={{
-            base: "50",
-            md: "50",
-            lg: "55",
+            base: "5vh",
+            md: "5vh",
+            lg: "5vh",
           }}
         />
 

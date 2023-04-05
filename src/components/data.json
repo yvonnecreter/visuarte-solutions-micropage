@@ -1,4 +1,6 @@
 {
+  "logo":"images/logo.png",
+  "diagramIMG":"images/diagram.png",
   "videoplayer_placeholder": {
     "video": "https://player.vimeo.com/video/586284805?h=4ebc2a1f17",
     "subtitle": "3 Kernkompetenzen",
@@ -9,42 +11,42 @@
       "video": "https://player.vimeo.com/video/675910139",
       "subtitle": "Jungheinrich CeMAT 2018",
       "infotext": "interaktive AR Anwendung",
-      "image": "portfolio-image-1.jpg"
+      "image": "images/portfolio-image-1.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/787902161",
       "subtitle": "visuarte ProScope QR",
       "infotext": "interaktive Inhalte auf Knopfdruck",
-      "image": "portfolio-image-2.jpg"
+      "image": "images/portfolio-image-2.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/768721892",
       "subtitle": "Daimler bauma 2022",
       "infotext": "immersive LED Flächeninstallation",
-      "image": "portfolio-image-3.jpg"
+      "image": "images/portfolio-image-3.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/987654321",
       "subtitle": "Projektbeschreibung 4",
       "infotext": "Infotext 4",
-      "image": "portfolio-image-1.jpg"
+      "image": "images/portfolio-image-1.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/987654321",
       "subtitle": "Projektbeschreibung 5",
       "infotext": "Infotext 5",
-      "image": "portfolio-image-1.jpg"
+      "image": "images/portfolio-image-1.jpg"
     },
     {
       "video": "https://player.vimeo.com/video/165005613",
       "subtitle": "Landtag NRW",
       "infotext": "interaktives Besucherzentrum",
-      "image": "portfolio-image-6.jpg"
+      "image": "images/portfolio-image-6.jpg"
     }
   ],
   "navigation": [
     {
-      "label": "Wie Wir Arbeiten",
+      "label": "Arbeitsweise",
       "href": "#unserearbeit"
     },
     {
@@ -100,7 +102,7 @@
       "head2":"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - und das mit System.",
       "head3":["Ihre Mission", "(Ihr) Markenerlebnis"],
       "table":{
-        "element1":"ziel.png",
+        "element1":"images/ziel.png",
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
         "element3":["Ihre Individuelle Kreativstrategie", "Ihre Inhalte, die bewegen", "Ihre Interaktive Anwendungen"],
         "element3subtext":["Text", "Text", "Text"],
