@@ -106,12 +106,12 @@
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
         "element3":["Ihre Individuelle Kreativstrategie", "Ihre Inhalte, die bewegen", "Ihre Interaktive Anwendungen"],
         "element3subtext":["Text", "Text", "Text"],
-        "element4":["mapicon.svg", "vidicon.svg", "tapicon.svg"],
-        "element5":"showroom.png"
+        "element4":["images/mapicon.svg", "images/vidicon.svg", "images/tapicon.svg"],
+        "element5":"images/showroom.png"
       },
-      "arrow":"arrow.svg",
-      "arrowsplit":"arrow_split.svg",
-      "arrowsplitright":"arrow_split_right.svg",
+      "arrow":"images/arrow.svg",
+      "arrowsplit":"images/arrow_split.svg",
+      "arrowsplitright":"images/arrow_split_right.svg",
       "colors":["brand.purple","brand.green", "brand.blue"]
     },
     "endcards":{

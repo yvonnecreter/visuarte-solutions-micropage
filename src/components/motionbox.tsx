@@ -72,7 +72,7 @@ export default function MotionBox() {
       /* animate={{opacity:1}} */
     >
       <Image
-        src={"showroom_mark.png"}
+        src={"images/showroom_mark.png"}
         alt={"showroom_mark"}
         w="100%"
         borderRadius={5}

@@ -129,7 +129,7 @@ export default function ColumnCard() {
           {Array.from({ length: 3 }, (v, i) => (
             <GridItem key={i}>
               <Flex alignItems="center" justifyContent="center" h="100%">
-                <Image src="arrow.svg" alt="->" w="100%" opacity="20%" />
+                <Image src="images/arrow.svg" alt="->" w="100%" opacity="20%" />
               </Flex>
             </GridItem>
           ))}
