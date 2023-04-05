@@ -44,11 +44,7 @@ export default function Form() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Card sx={useStyleConfig("Card")} zIndex={1} id="kontakt" mb={5}>
         <CardHeader>
-          <Heading variant="layer2" marginBottom={4}>
-            {data.form_titles.head1}
-          </Heading>
           <Heading>{data.form_titles.head2}</Heading>
-          <Heading variant="layer2">{data.form_titles.head3}</Heading>
         </CardHeader>
 
         {/* headline */}
@@ -106,6 +102,7 @@ export default function Form() {
             </GridItem>
           </SimpleGrid>
         </CardBody>
+        
       </Card>
 
       {/* SECOND CARD */}

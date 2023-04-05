@@ -64,10 +64,10 @@
     "head1":"Wir sind für Sie da",
     "head2":"Zu Ihrem Vorhaben",
     "head3":"Schreiben Sie hier doch gleich eine Mail an Herrn Ilja Knezovic",
-    "sub1head1":"... schon eine grobe Vorstellung?",
+    "sub1head1":"Schon eine grobe Vorstellung?",
     "sub1head2":"Sprechen Sie uns an auf...",
-    "sub2head1":"... oder kennen Sie bereits Ihre Anforderungen?",
-    "sub2head2":" Oft bei uns angefragt...",
+    "sub2head1":"Oder kennen Sie bereits Ihre Anforderungen?",
+    "sub2head2":"Oft bei uns angefragt...",
     "sub3head1":"Wir sind für Sie da",
     "sub3head2":"Schreiben Sie hier doch gleich eine Mail an Herrn Ilja Knezovic",
     "sub3head3":"Wir melden uns bei Ihnen und nehmen uns gerne die Zeit."
@@ -102,13 +102,14 @@
       "table":{
         "element1":"ziel.png",
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
-        "element3":["Individuelle Kreativstrategie", "Inhalte, die bewegen", "Interaktive Anwendungen"],
-        "element4":["map-2.svg", "video-2.svg", "interactive-2.svg"],
-        "element5":"showroom.jpg"
+        "element3":["Ihre Individuelle Kreativstrategie", "Ihre Inhalte, die bewegen", "Ihre Interaktive Anwendungen"],
+        "element3subtext":["Text", "Text", "Text"],
+        "element4":["mapicon.svg", "vidicon.svg", "tapicon.svg"],
+        "element5":"showroom.png"
       },
       "arrow":"arrow.svg",
       "arrowsplit":"arrow_split.svg",
-      "arrowsplit2":"arrow_split2.svg",
+      "arrowsplitright":"arrow_split_right.svg",
       "colors":["brand.purple","brand.green", "brand.blue"]
     },
     "endcards":{

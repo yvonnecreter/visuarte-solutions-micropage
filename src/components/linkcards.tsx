@@ -9,12 +9,12 @@ import {
   CardBody,
   CardHeader,
   Grid,
-  GridItem,
+  GridItem, AspectRatio,
   Heading,
   Image,
   Spacer,
   Stack,
-  SimpleGrid
+  SimpleGrid,
 } from "@chakra-ui/react";
 import data from "../components/data.json";
 import { useStyleConfig } from "@chakra-ui/react";
@@ -36,18 +36,26 @@ export default function LinkCards() {
                 allow="autoplay; fullscreen; picture-in-picture"
               ></iframe>
             </CardBody>
-          </Card></GridItem>
-          <GridItem>
+          </Card>
+        </GridItem>
+        <GridItem>
           <Link href={data.endcards.website} isExternal>
             <Card sx={useStyleConfig("Card")} h="100%">
               <CardBody textAlign="center">
-                <iframe
+                <AspectRatio ratio={16 / 9}>
+                  <iframe
+                    title="website"
+                    src="web_preview_without_url.mp4"
+                    allowFullScreen
+                  />
+                </AspectRatio>
+                {/* <iframe
                   src={data.endcards.website}
                   // width="100%"
                   // scrolling="no"
                   height="500vw"
                   style={{ pointerEvents: "none" }}
-                />
+                /> */}
                 <Center>
                   <Divider
                     borderWidth={1.5}
@@ -61,8 +69,8 @@ export default function LinkCards() {
               </CardBody>
             </Card>
           </Link>
-          </GridItem>
-    </SimpleGrid>
+        </GridItem>
+      </SimpleGrid>
     </>
   );
 }

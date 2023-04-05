@@ -29,6 +29,8 @@ import CustomSpacerOne from "@/components/spacer";
 import data from "../components/data.json";
 import ColumnCard from "@/components/columncard";
 import LinkCards from "@/components/linkcards";
+import MotionBox from "@/components/motionbox";
+
 
 export default function Home() {
   return (
@@ -48,7 +50,11 @@ export default function Home() {
       />
 
       {/*bg*/}
-      <Box bgGradient="linear(to-t, #484848, #38393d)" id="unserearbeit" alignContent="center">
+      <Box
+        bgGradient="linear(to-t, #484848, #38393d)"
+        id="unserearbeit"
+        alignContent="center"
+      >
         <Spacer
           height={{
             base: "50",
@@ -67,7 +73,7 @@ export default function Home() {
             maxW="120vh"
             mt="-1"
           >
-          <UnityGame />
+            <UnityGame />
             <CustomSpacerOne />
 
             <ColumnCard />

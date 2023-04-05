@@ -67,9 +67,8 @@ export default function Diagram1() {
         <Flex justifyContent="center">
           <Image
             w="10px"
-            src={data.maincard.arrowsplit}
+            src={data.maincard.arrowsplitright}
             alt=""
-            transform="rotate(90deg)"
           />
         </Flex>
       </GridItem>
