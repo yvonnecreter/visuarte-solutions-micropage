@@ -41,7 +41,8 @@ export default function MotionBox() {
     controls.start({ opacity: "1" });
   }, []);
 
-  const onMouseOut = (e) => {
+/*  OPTIONAL    
+ const onMouseOut = (e) => {
     controls.start(initialState).then(() => {
       controls.stop();
     });
@@ -49,7 +50,7 @@ export default function MotionBox() {
 
   const onMouseEnter = (e) => {
     controls.start(hoverAnimation);
-  };
+  }; */
 
   return (
     <MotionB

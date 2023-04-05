@@ -2,7 +2,7 @@
   "logo":"images/logo.png",
   "diagramIMG":"images/diagram.png",
   "videoplayer_placeholder": {
-    "video": "https://player.vimeo.com/video/586284805?h=4ebc2a1f17",
+    "video": "images/placeholder_video.mp4",
     "subtitle": "3 Kernkompetenzen",
     "infotext": "für Erlebniswelten mit System"
   },

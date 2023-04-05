@@ -64,82 +64,89 @@ export default function VideoPlayer() {
         >
           {/*<Stack direction="row" zIndex={9998}>*/}
           <GridItem>
-              {/** VIDEO LEFT */}
-                {currentVideoIndex == 99 ? (
-                  <AspectRatio maxW="100%" ratio={16 / 9}>
-                    <iframe
-                      src={`${data.videoplayer_placeholder.video}?title=0&byline=0&portrait=0`}
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                ) : (
-                  <AspectRatio maxW="100%" ratio={16 / 9}>
-                    <iframe
-                      src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
-                      allowFullScreen
-                    />
-                  </AspectRatio>
-                )}
+            {/** VIDEO LEFT */}
+            {currentVideoIndex == 99 ? (
+              <AspectRatio maxW="100%" ratio={16 / 9}>
+                <video
+                  src={data.videoplayer_placeholder.video}
+                  style={{ objectFit: "contain", aspectRatio: "16/9" }}
+                  loop
+                  autoPlay
+                  muted
+                />
+                {/* <iframe
+                  src={`${data.videoplayer_placeholder.video}?title=0&byline=0&portrait=0`}
+                  allowFullScreen
+                /> */}
+              </AspectRatio>
+            ) : (
+              <AspectRatio maxW="100%" ratio={16 / 9}>
+                <iframe
+                  src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
+                  allowFullScreen
+                />
+              </AspectRatio>
+            )}
             <Spacer />
           </GridItem>
 
           {/** THUMBNAILS ON THE RIGHT */}
           <GridItem height="100%">
-                {/*add images*/}
-                <Grid templateColumns="repeat(3, 1fr)" gap={1} height="100%">
-                  {data.videoplayer_videos.map((item, i) => (
-                    <GridItem key={i} height="100%">
-                      <Box
-                        height="100%"
-                        transition="transform .3s"
-                        transform={
-                          hoveredImageIndex !== null && hoveredImageIndex !== i
-                            ? "scale(0.95)"
-                            : ""
-                        }
-                        onMouseEnter={() => setHoveredImageIndex(i)}
-                        onMouseLeave={() => setHoveredImageIndex(null)}
-                        _hover={{
-                          filter: "brightness(1)",
-                          transform: "scale(1.05)",
-                        }}
-                        _active={{
-                          transform: "scale(0.95)",
-                        }}
-                        filter={
-                          selectedImageIndex !== null && selectedImageIndex == i
-                            ? "brightness(0.5)"
-                            : ""
-                        }
-                      >
-                        {/* Size of Images here */}
-                        <Image
-                          fit="cover"
-                          src={item.image}
-                          alt={`Image ${i + 1}`}
-                          height="100%"
-                          // boxSize={{
-                          //   base: "30vw",
-                          //   md: "10vw",
-                          //   lg: "10vw",
-                          // }}
-                          // maxH={{
-                          //   base: "30vw",
-                          //   md: "20vh",
-                          //   lg: "20vh",
-                          // }}
-                          objectFit="cover"
-                          // borderRadius="5"
-                          borderRadius="0"
-                          onClick={() => {
-                            setCurrentVideoIndex(i);
-                            setSelectedImageIndex(i);
-                          }}
-                        />
-                      </Box>
-                    </GridItem>
-                  ))}
-                </Grid>
+            {/*add images*/}
+            <Grid templateColumns="repeat(3, 1fr)" gap={1} height="100%">
+              {data.videoplayer_videos.map((item, i) => (
+                <GridItem key={i} height="100%">
+                  <Box
+                    height="100%"
+                    transition="transform .3s"
+                    transform={
+                      hoveredImageIndex !== null && hoveredImageIndex !== i
+                        ? "scale(0.95)"
+                        : ""
+                    }
+                    onMouseEnter={() => setHoveredImageIndex(i)}
+                    onMouseLeave={() => setHoveredImageIndex(null)}
+                    _hover={{
+                      filter: "brightness(1)",
+                      transform: "scale(1.05)",
+                    }}
+                    _active={{
+                      transform: "scale(0.95)",
+                    }}
+                    filter={
+                      selectedImageIndex !== null && selectedImageIndex == i
+                        ? "brightness(0.5)"
+                        : ""
+                    }
+                  >
+                    {/* Size of Images here */}
+                    <Image
+                      fit="cover"
+                      src={item.image}
+                      alt={`Image ${i + 1}`}
+                      height="100%"
+                      // boxSize={{
+                      //   base: "30vw",
+                      //   md: "10vw",
+                      //   lg: "10vw",
+                      // }}
+                      // maxH={{
+                      //   base: "30vw",
+                      //   md: "20vh",
+                      //   lg: "20vh",
+                      // }}
+                      objectFit="cover"
+                      // borderRadius="5"
+                      borderRadius="0"
+                      onClick={() => {
+                        setCurrentVideoIndex(i);
+                        setSelectedImageIndex(i);
+                      }}
+                    />
+                  </Box>
+                </GridItem>
+              ))}
+            </Grid>
           </GridItem>
         </SimpleGrid>
       </CardBody>
