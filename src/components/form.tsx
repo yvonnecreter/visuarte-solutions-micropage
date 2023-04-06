@@ -72,33 +72,31 @@ export default function Form() {
             <GridItem>
               <Box>
                 {/* FORM 1 */}
-                  <Heading variant="layer3">
-                    {data.form_titles.sub1head1}
-                  </Heading>
-                    <Text variant="regular">{data.form_titles.sub1head2}</Text>
-                  <VStack align="left" ml="2">
-                    {data.form_textElements1.map((textElement, index) => (
-                      
-                <FormControl id={"Grobe Vorstellung "+index}>
+                <Heading variant="layer3">{data.form_titles.sub1head1}</Heading>
+                <Text variant="regular" mb="5">{data.form_titles.sub1head2}</Text>
+                <VStack align="left" ml="2">
+                  {data.form_textElements1.map((textElement, index) => (
+                    <FormControl id={"Grobe Vorstellung " + index}>
                       <Checkbox
                         variant="regular"
-                        {...register("Grobe Vorstellung "+ index)}
+                        {...register("Grobe Vorstellung " + index)}
                         value={textElement}
                         key={index}
                       >
                         <Text pl="2" variant="regular">
                           {textElement}
                         </Text>
-                      </Checkbox></FormControl>
-                    ))}
-                  </VStack>
+                      </Checkbox>
+                    </FormControl>
+                  ))}
+                </VStack>
 
                 <Heading variant="layer3" mt="10">
                   {data.form_titles.sub2head1}
                 </Heading>
 
                 {/* FORM 2 */}
-                <Text variant="regular">{data.form_titles.sub2head2}</Text>
+                <Text variant="regular" mb="5">{data.form_titles.sub2head2}</Text>
 
                 <VStack align="left" ml="2">
                   {data.form_textElements2.map((textElement, index) => (
