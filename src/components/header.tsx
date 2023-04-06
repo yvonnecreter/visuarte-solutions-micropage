@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ logo, navItems }) => {
     position="fixed" p={4} 
     display="flex"
     flex-wrap="true"
-    color="white" alignItems="center" >
+    color="white" alignItems="center">
       <Box h="100%" minH="2vw">{logo}</Box>
       <Spacer />
       {navItems.map((item) => (

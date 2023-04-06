@@ -15,6 +15,7 @@ export default function Footer() {
                <Text variant="header">{item}</Text>
             </Link>
           ))}
-      </Flex></Center>
+      </Flex>
+      </Center>
   );
 };

@@ -190,8 +190,8 @@ const theme = extendTheme({
   colors: {
     brand: {
       purple: "#b500b3",
-      green: "#8ed150",
-      blue: "#30badf",
+      green: "#7ec53c",
+      blue: "#67dbff",
     },
   },
   fonts: {
