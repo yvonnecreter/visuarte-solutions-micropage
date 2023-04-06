@@ -72,7 +72,7 @@
     "sub2head2":"Oft bei uns angefragt...",
     "sub3head1":"Wir sind für Sie da",
     "sub3head2":"Schreiben Sie hier doch gleich eine Mail an Herrn Ilja Knezovic",
-    "sub3head3":"Wir melden uns bei Ihnen und nehmen uns gerne die Zeit."
+    "sub3head3":["Die oben gesetzten Haken werden per Mail an uns weitergeleitet.", "Wir melden uns bei Ihnen und nehmen uns gerne die Zeit."]
   },
   "form_textElements1":
     [

@@ -16,9 +16,8 @@ import {
   Heading,
   Input,
   Textarea,
-  Spacer, SimpleGrid,
+  SimpleGrid,
   Flex,
-  createIcon,
   CardFooter,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
@@ -27,21 +26,41 @@ import Diagram1 from "../components/diagram";
 import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
 
-type FormData = {
-  textElements1: boolean[];
-  textElements2: boolean[];
-  email: string;
-  message: string;
-};
+/* function onSubmit(values: any) {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      resolve();
+    }, 3000);
+  });
+} */
 
 export default function Form() {
-  const { register, handleSubmit } = useForm<FormData>();
-  const onSubmit = (data: FormData) => {
-    // handle form submission here
-  };
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
+  /*  function onSubmit(values: any) {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+        resolve();
+      }, 3000);
+    });
+  } */
+
+  /* function onSubmit(data: any) {
+    console.log(data);
+  } */
+
+  /* FORM FRONTEND*/
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      action="https://getform.io/f/fcbeadfd-c1e5-4c83-8e7b-5c0025f6dd36"
+      method="POST"
+    >
       <Card sx={useStyleConfig("Card")} zIndex={1} id="kontakt" mb={5}>
         <CardHeader>
           <Heading>{data.form_titles.head2}</Heading>
@@ -49,10 +68,11 @@ export default function Form() {
 
         {/* headline */}
         <CardBody mb={5}>
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6} >
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
             <GridItem>
               <Box>
-                <FormControl>
+                {/* FORM 1 */}
+                <FormControl id="GrobeVorstellung">
                   <Heading variant="layer3">
                     {data.form_titles.sub1head1}
                   </Heading>
@@ -61,14 +81,15 @@ export default function Form() {
                   </FormLabel>
                   <VStack align="left" ml="2">
                     {data.form_textElements1.map((textElement, index) => (
-                      <Checkbox variant="regular"
-                        color="grey"
+                      <Checkbox
+                        variant="regular"
+                        {...register("GrobeVorstellung")}
+                        value={textElement}
                         key={index}
-                        {...register(`textElements1.${index}`)}
                       >
-                        <Text 
-                        pl="2"
-                         variant="regular">{textElement}</Text>
+                        <Text pl="2" variant="regular">
+                          {textElement}
+                        </Text>
                       </Checkbox>
                     ))}
                   </VStack>
@@ -77,18 +98,23 @@ export default function Form() {
                 <Heading variant="layer3" mt="10">
                   {data.form_titles.sub2head1}
                 </Heading>
-                <FormControl>
+
+                {/* FORM 2 */}
+                <FormControl id="Anforderungen">
                   <FormLabel>
                     <Text variant="regular">{data.form_titles.sub2head2}</Text>
                   </FormLabel>
                   <VStack align="left" ml="2">
                     {data.form_textElements2.map((textElement, index) => (
-                      <Checkbox variant="regular"
+                      <Checkbox
+                        variant="regular"
                         key={index}
-                        {...register(`textElements2.${index}`)}
+                        {...register("Anforderungen")}
+                        value={textElement}
                       >
-                        <Text variant="regular" 
-                        pl="2">{textElement}</Text>
+                        <Text variant="regular" pl="2">
+                          {textElement}
+                        </Text>
                       </Checkbox>
                     ))}
                   </VStack>
@@ -102,10 +128,8 @@ export default function Form() {
             </GridItem>
           </SimpleGrid>
         </CardBody>
-        
       </Card>
 
-      {/* SECOND CARD */}
       <Card
         sx={useStyleConfig("Card")}
         transition="transform .5s"
@@ -116,65 +140,86 @@ export default function Form() {
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
           <Heading variant="layer2">{data.form_titles.sub3head2}</Heading>
-              <Text variant="lessEmphasized" mt="50"> {data.form_titles.sub3head3}</Text>
+
+          <Text variant="lessEmphasized" my="5">
+            {data.form_titles.sub3head3.map((item, i) => (
+              <>
+                {item} <br />
+              </>
+            ))}
+          </Text>
         </CardHeader>
-        
+
         <CardBody>
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }}
-            gap={6} rowGap="8"
-          >
-            <GridItem w="100%">
-            </GridItem>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6} rowGap="8">
+            <GridItem w="100%"></GridItem>
 
             <GridItem>
-                <FormControl id="email">
-                  <FormLabel>
-                    <Heading variant="layer3">Email:</Heading>
-                  </FormLabel>
-                  <Input type="email" {...register("email")} />
-                </FormControl>
+              {/* FORM 3 */}
+              <FormControl isRequired id="E-Mail">
+                <FormLabel
+                  fontSize="md"
+                  fontWeight="bold"
+                  color="#565656"
+                  mb="2"
+                >
+                  Email:
+                  {/* <Heading variant="layer3">Email:</Heading> */}
+                </FormLabel>
+                <Input {...register("E-Mail")} /* value="E-Mail" */ />
+              </FormControl>
             </GridItem>
 
-            <GridItem rowSpan={2}> <Flex h="100%" alignItems="flex-end" justifyContent="flex-start">
-              <Box width="100%" maxW="25vh">
-                <Image
-                  src={data.logo}
-                  alt="visuarte"
-                  style={{ filter: "invert(1)" }}
-                  opacity="65%"
-                  width="55%"
-                  maxW="30vh"
-                  mb="25"
-                />
-                <Text variant="small">
-                  Hofmannstrasse 10 | 81379 München <br />
-                  t + 49 89 45 24 46 <br />
-                  f + 49 89 45 24 46 - 12 <br />
-                  m + 49 172 14 72 64 4
-                  <br /> e ilja@visuarte.com
-                  <br /> w www.visuarte.com
-                </Text>
+            <GridItem rowSpan={2}>
+              {" "}
+              <Flex h="100%" alignItems="flex-end" justifyContent="flex-start">
+                <Box width="100%" maxW="25vh">
+                  <Image
+                    src={data.logo}
+                    alt="visuarte"
+                    style={{ filter: "invert(1)" }}
+                    opacity="65%"
+                    width="55%"
+                    maxW="30vh"
+                    mb="25"
+                  />
+                  <Text variant="small">
+                    Hofmannstrasse 10 | 81379 München <br />
+                    t + 49 89 45 24 46 <br />
+                    f + 49 89 45 24 46 - 12 <br />
+                    m + 49 172 14 72 64 4
+                    <br /> e ilja@visuarte.com
+                    <br /> w www.visuarte.com
+                  </Text>
                 </Box>
-                </Flex>
+              </Flex>
             </GridItem>
-            <GridItem >
-              <FormControl id="message">
-                <FormLabel>
-                  <Heading variant="layer3">Nachricht:</Heading>
+            <GridItem>
+              {/* FORM 4 */}
+              <FormControl id="Nachricht">
+                <FormLabel
+                  fontSize="md"
+                  fontWeight="bold"
+                  color="#565656"
+                  mb="2"
+                >
+                  Nachricht:
+                  {/* <Heading variant="layer3">Nachricht:</Heading> */}
                 </FormLabel>
-                <Textarea {...register("message")} />
+
+                <Textarea
+                  {...register("Nachricht")}
+                />
               </FormControl>
             </GridItem>
             <GridItem>
-              
-          <Button type="submit" w="100%">
-            Senden
-          </Button>
+              <Button type="submit" w="100%">
+                Senden
+              </Button>
             </GridItem>
           </SimpleGrid>
         </CardBody>
-        <CardFooter>
-        </CardFooter>
+        <CardFooter></CardFooter>
       </Card>
     </form>
   );

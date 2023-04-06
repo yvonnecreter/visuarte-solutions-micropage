@@ -53,10 +53,12 @@ export default function Home() {
 
       {/*bg*/}
       <Box
-        bgGradient="linear(to-t, #484848, #38393d)"
+        bgGradient="linear(to-t, #3d3d3d, #0d0d0d)"
         id="unserearbeit"
-        alignContent="center"
-      >
+        w={"100vw"}
+        h={"100vh"}
+        position={"fixed"}
+      />
         <Spacer
           height={{
             base: "5vh",
@@ -96,7 +98,6 @@ export default function Home() {
         {/*FOOTER*/}
         <Spacer h="20vh" />
         <Footer />
-      </Box>
     </ChakraProvider>
   );
 }

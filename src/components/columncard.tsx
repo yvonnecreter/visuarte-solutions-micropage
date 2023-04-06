@@ -72,6 +72,9 @@ export default function ColumnCard() {
                 opacity="20%"
                 w="80%"
                 transition="transform 2s"
+                _hover={{
+                  transform: "scale(1.1)",
+                }}
               />
             </Flex>
           </GridItem>
@@ -106,8 +109,7 @@ export default function ColumnCard() {
               <GridItem width="100%" textAlign="center">
                 <Flex alignItems="center" justifyContent="center" h="100%">
                   <Box
-                    py="2"
-                    px="3"
+                    p="3"
                     borderWidth={3}
                     borderRadius="12"
                     borderColor={data.maincard.colors[i]}
@@ -115,8 +117,16 @@ export default function ColumnCard() {
                     _hover={{
                       transform: "scale(1.1)",
                     }}
+                    
+                    boxShadow="2xl"
+                    background={data.maincard.colors[i]}
                   >
-                    <Text color={data.maincard.colors[i]} variant="regular">
+                    <Text
+                      variant="regular"
+                      textTransform={"uppercase"}
+                      color="white"
+                      letterSpacing={"wider"}
+                    >
                       {item}
                     </Text>
                   </Box>
@@ -139,7 +149,14 @@ export default function ColumnCard() {
             <>
               <GridItem width="100%" textAlign="center">
                 <Flex alignItems="center" justifyContent="center" h="100%">
-                  <Box>
+                  <Box
+                    p="3"
+                    borderRadius="12"
+                    transition="transform 1s"
+                    _hover={{
+                      transform: "scale(1.01)",
+                    }}
+                  >
                     <Text
                       variant="regular"
                       color={data.maincard.colors[i]}
@@ -149,8 +166,6 @@ export default function ColumnCard() {
                       }}
                     >
                       {item}
-                      <br />
-                      {data.maincard.table.element3subtext[i]}
                     </Text>
                   </Box>
                 </Flex>
@@ -169,8 +184,9 @@ export default function ColumnCard() {
                   maxH={"5vh"}
                   transition="transform 1s"
                   _hover={{
-                    transform: "scale(1.2)",
+                    transform: "scale(1.1)",
                   }}
+                  dropShadow="2xl"
                 />
               </Flex>
             </>
@@ -207,14 +223,21 @@ export default function ColumnCard() {
 
           <GridItem rowSpan={3} w="100%">
             <Flex alignItems="center" justifyContent="center" h="100%">
-              <Box position="relative">
+              <Box
+                position="relative"
+                transition="transform 1s"
+                _hover={{
+                  transform: "scale(1.1)",
+                }}
+              >
                 <Image
                   src={data.maincard.table.element5}
                   alt={data.maincard.table.element5}
                   w="100%"
                   borderRadius={5}
+                  dropShadow="2xl"
                 />
-                <MotionBox/>
+                <MotionBox />
                 {/* <MotionBox
                   position="absolute"
                   top={0}
@@ -239,7 +262,6 @@ export default function ColumnCard() {
           </GridItem>
         </Grid>
       </CardBody>
-
     </Card>
   );
 }
