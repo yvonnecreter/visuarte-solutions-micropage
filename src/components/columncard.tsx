@@ -124,8 +124,10 @@ export default function ColumnCard() {
                     <Text
                       variant="regular"
                       textTransform={"uppercase"}
-                      color="#e0e0e0"
                       letterSpacing={"wider"}
+                      /* color="#eeeeee" */
+                      
+                      color="#212121"
                     >
                       {item}
                     </Text>
@@ -139,7 +141,7 @@ export default function ColumnCard() {
           {Array.from({ length: 3 }, (v, i) => (
             <GridItem key={i}>
               <Flex alignItems="center" justifyContent="center" h="100%">
-                <Image src="images/arrow.svg" alt="->" w="100%" opacity="20%" />
+                <Image src="images/arrow.svg" alt="->" w="100%" opacity="20%"/>
               </Flex>
             </GridItem>
           ))}
