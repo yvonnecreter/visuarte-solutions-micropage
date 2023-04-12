@@ -53,10 +53,6 @@ export default function ColumnCard() {
             <Flex alignItems="center" justifyContent="center" h="100%">
               <Text
                 variant="stronglyEmphasized"
-                /*  transition="transform 1s"
-                _hover={{
-                  transform: "scale(1.2)",
-                }} */
               >
                 {data.maincard.head3[0]}
               </Text>
@@ -71,6 +67,7 @@ export default function ColumnCard() {
                 alt={data.maincard.table.element1}
                 opacity="20%"
                 w="80%"
+                filter="invert(1)"
                 transition="transform 2s"
                 _hover={{
                   transform: "scale(1.1)",
@@ -97,6 +94,7 @@ export default function ColumnCard() {
               <Image
                 src={data.maincard.arrowsplit}
                 alt={data.maincard.arrowsplit}
+                
                 height="73%"
                 opacity="20%"
               />

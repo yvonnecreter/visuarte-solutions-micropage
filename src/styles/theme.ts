@@ -26,12 +26,12 @@ const Heading = defineStyleConfig({
       fontSize: "md",
       fontWeight: "bold",
       color: "#757575",
-      mb: "2"
+      mb: "2",
     },
     layer4: {
       fontSize: "lg",
       fontWeight: "light",
-      color: "616161",
+      color: "#616161",
     },
   },
   defaultProps: {
@@ -103,18 +103,18 @@ const Card = defineStyleConfig({
     size: "lg",
     padding: "5",
     borderRadius: "5",
-    bg: "rgba(66,66,66,0.8)",
+    bg: "linear-gradient(to top right, rgba(66,66,66, 0.8), rgba(117, 117, 117, 0.5))",
+    filter: "blur-bg(50)",
     px: "5vw",
     py: "4vh",
-    borderWidth: "50",
-    borderColor: "#757575",
+    borderWidth: "2px",
+    borderColor: "rgba(117, 117, 117, 0.3)",
   },
   variants: {
-    regular: {
-    },
+    regular: {},
     videoplayer: {
-    px: "2",
-    py: "2"
+      px: "2",
+      py: "2",
     },
   },
   defaultProps: {
@@ -122,45 +122,81 @@ const Card = defineStyleConfig({
   },
 });
 
-
 /* Cheatsheet for Checkbox: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
 const Checkbox = defineStyleConfig({
   baseStyle: {
     control: {
-      borderColor: 'brand_4',
+      borderColor: "brand_4",
       borderWidth: "2",
-      transition: 'background-color 0.1s ease-in-out',
+      transition: "background-color 0.1s ease-in-out",
       _checked: {
-        bg: '#5f5f5f',
-        borderColor: '#5f5f5f',
-        color: 'white',
+        bg: "#5f5f5f",
+        borderColor: "#5f5f5f",
+        color: "white",
       },
       _hover: {
-        bg: '#646464',
-        borderColor: '#646464',
-        color: 'white',
+        bg: "#646464",
+        borderColor: "#646464",
+        color: "white",
       },
       _active: {
-        bg: '#5f5f5f',
-        borderColor: '#5f5f5f',
-        color: 'white',
+        bg: "#5f5f5f",
+        borderColor: "#5f5f5f",
+        color: "white",
       },
       _focus: {
-        bg: '#5f5f5f',
-        borderColor: '#5f5f5f',
-        color: 'white',
+        bg: "#5f5f5f",
+        borderColor: "#5f5f5f",
+        color: "white",
       },
     },
   },
-  sizes: {
-  },
+  sizes: {},
   variants: {
-    regular: {
-
-    }
+    regular: {},
   },
   defaultProps: {
-    variant: "regular"
+    variant: "regular",
+  },
+});
+
+const Input = defineStyleConfig({
+  baseStyle: {
+    _focus: {},
+    field: {
+      background: "transparent",
+      borderWidth: "1px",
+      borderColor: "#9e9e9e",
+        color: "#eeeeee",
+      _hover: {
+      },
+    },
+    sizes: {},
+    variants: {
+      regular: {},
+    },
+    defaultProps: {
+      variant: "regular",
+    },
+  },
+});
+
+    /*    border: '1px solid',
+    borderColor: 'gray.200', */
+    /* borderRadius: "full", */
+const Textarea = defineStyleConfig({
+  baseStyle: {
+    background: "transparent",
+    borderWidth: "1px ",
+    borderColor: "#9e9e9e",
+    color: "#e0e0e0",
+    _focus: {}
+  },
+  variants: {
+    regular: {},
+  },
+  defaultProps: {
+    variant: "regular",
   },
 });
 
@@ -169,24 +205,23 @@ const Button = defineStyleConfig({
     fontWeight: "normal",
     textTransform: "uppercase",
     letterSpacing: "widest",
-    borderRadius: "0",
+    borderRadius: "50px",
     fontSize: "sm",
     background: "#212121",
     color: "white",
-    transition: 'background-color 0.2s ease-in-out',
+    transition: "background-color 0.2s ease-in-out",
     _hover: {
-      bg: "#595959",
+      bg: "#000000",
     },
     _active: {
-      bg: "#3e3e3e"
+      bg: "#212121",
     },
   },
   sizes: {
     // size-specific styles
   },
   variants: {
-    regular: {
-    }
+    regular: {},
     // variant-specific styles
   },
   defaultProps: {
@@ -213,6 +248,8 @@ const theme = extendTheme({
     Text,
     Card,
     Checkbox,
+    Input,
+    Textarea,
   },
 });
 

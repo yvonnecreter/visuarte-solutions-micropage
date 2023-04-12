@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import * as React from "react";
 import {
   Box,
@@ -23,17 +24,10 @@ import {
 import { useForm } from "react-hook-form";
 import data from "../components/data.json";
 import Diagram1 from "../components/diagram";
-import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
 
-/* function onSubmit(values: any) {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      resolve();
-    }, 3000);
-  });
-} */
+import theme from "@/styles/theme";
+
 
 export default function Form() {
   const {
@@ -41,19 +35,6 @@ export default function Form() {
     register,
     formState: { errors },
   } = useForm();
-
-  /*  function onSubmit(values: any) {
-    return new Promise<void>((resolve) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        resolve();
-      }, 3000);
-    });
-  } */
-
-  /* function onSubmit(data: any) {
-    console.log(data);
-  } */
 
   /* FORM FRONTEND*/
   return (
@@ -73,7 +54,9 @@ export default function Form() {
               <Box>
                 {/* FORM 1 */}
                 <Heading variant="layer3">{data.form_titles.sub1head1}</Heading>
-                <Text variant="regular" mb="5">{data.form_titles.sub1head2}</Text>
+                <Text variant="regular" mb="5">
+                  {data.form_titles.sub1head2}
+                </Text>
                 <VStack align="left" ml="2">
                   {data.form_textElements1.map((textElement, index) => (
                     <FormControl id={"Grobe Vorstellung " + index}>
@@ -96,7 +79,9 @@ export default function Form() {
                 </Heading>
 
                 {/* FORM 2 */}
-                <Text variant="regular" mb="5">{data.form_titles.sub2head2}</Text>
+                <Text variant="regular" mb="5">
+                  {data.form_titles.sub2head2}
+                </Text>
 
                 <VStack align="left" ml="2">
                   {data.form_textElements2.map((textElement, index) => (
@@ -161,7 +146,7 @@ export default function Form() {
                   Email:
                   {/* <Heading variant="layer3">Email:</Heading> */}
                 </FormLabel>
-                <Input {...register("E-Mail")} /* value="E-Mail" */ />
+                <Input {...register("E-Mail")}/* value="E-Mail" */  variant="regular"/>
               </FormControl>
             </GridItem>
 
@@ -202,7 +187,7 @@ export default function Form() {
                   {/* <Heading variant="layer3">Nachricht:</Heading> */}
                 </FormLabel>
 
-                <Textarea {...register("Nachricht")} />
+                <Textarea {...register("Nachricht")}  variant="regular"/>
               </FormControl>
             </GridItem>
             <GridItem>
