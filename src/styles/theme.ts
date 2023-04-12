@@ -84,6 +84,14 @@ const Text = defineStyleConfig({
         lg: "sm",
       },
     },
+    footer: {
+      color: "#757575",
+      fontSize: {
+        base: "xs",
+        md: "sm",
+        lg: "sm",
+      },
+    },
     responsive: {
       scaleOnHover: {
         _hover: {

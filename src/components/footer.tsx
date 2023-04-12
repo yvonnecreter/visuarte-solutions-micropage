@@ -8,11 +8,11 @@ export default function Footer() {
 
   return (
     <Center>
-      <Flex bottom={0} color="white" flexFlow="row" p="7">
+      <Flex bottom={0} color="white" flexFlow="row" p="7" zIndex={"99"}>
         {/*<Box w="100%" textAlign="center" lineHeight="50px"></Box>*/}
           {list.map((item) => (
             <Link href={data.footer_href + item} key={item} mx={4}>
-               <Text variant="header">{item}</Text>
+               <Text variant="footer">{item}</Text>
             </Link>
           ))}
       </Flex>

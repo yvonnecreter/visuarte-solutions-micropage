@@ -96,7 +96,7 @@ export default function Home() {
           </Stack>
         </Center>
         {/*FOOTER*/}
-        <Spacer h="20vh" />
+        <Spacer h="14vh" />
         <Footer />
     </ChakraProvider>
   );
