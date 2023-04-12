@@ -73,7 +73,8 @@ export default function LinkCards() {
                     borderRadius="md"
                   />
                 </Center>
-                <Text fontSize="sm">{data.endcards.label}</Text>
+                <Text fontSize="sm" variant={"emphasized"} mb="2">{data.endcards.label}</Text>
+                <Text fontSize="sm" variant={"regular"}>{data.endcards.label2}</Text>
               </CardBody>
             </Card>
           </Link>

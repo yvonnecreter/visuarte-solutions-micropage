@@ -8,30 +8,30 @@ import "@fontsource/rubik";
 const Heading = defineStyleConfig({
   baseStyle: {
     fontWeight: "normal",
-    color: "brand_1",
+    color: "e0e0e0",
   },
   variants: {
     layer1: {
       fontSize: "4xl",
       fontWeight: "black",
-      color: "#bdbdbd",
+      color: "#e0e0e0",
       mb: "2",
     },
     layer2: {
       fontSize: "lg",
       fontWeight: "reg",
-      color: "#9e9e9e",
+      color: "#bdbdbd",
     },
     layer3: {
       fontSize: "md",
       fontWeight: "bold",
-      color: "#757575",
+      color: "#9e9e9e",
       mb: "2",
     },
     layer4: {
       fontSize: "lg",
       fontWeight: "light",
-      color: "#616161",
+      color: "#9e9e9e",
     },
   },
   defaultProps: {
@@ -43,7 +43,7 @@ const Text = defineStyleConfig({
   baseStyle: {
     fontSize: "md",
     fontWeight: "regular",
-    color: "#9e9e9e",
+    color: "#616161",
   },
   variants: {
     regular: {
@@ -61,7 +61,7 @@ const Text = defineStyleConfig({
     },
     emphasized: {
       fontSize: "md",
-      color: "#9e9e9e",
+      color: "#bdbdbd",
       fontWeight: "bold",
     },
     lessEmphasized: {
@@ -73,7 +73,8 @@ const Text = defineStyleConfig({
     small: {
       fontSize: "xs",
       fontWeight: "regular",
-      color: "#9e9e9e",
+      /* color: "#212121", */
+      color: "#757575",
       lineHeight: "1.2",
     },
     header: {
@@ -134,28 +135,26 @@ const Card = defineStyleConfig({
 const Checkbox = defineStyleConfig({
   baseStyle: {
     control: {
-      borderColor: "brand_4",
+      borderColor: "#757575",
+      bg: "transparent",
       borderWidth: "2",
       transition: "background-color 0.1s ease-in-out",
+
       _checked: {
-        bg: "#5f5f5f",
-        borderColor: "#5f5f5f",
-        color: "white",
+        bg: "#9e9e9e",
+        borderColor: "#9e9e9e",
       },
       _hover: {
-        bg: "#646464",
-        borderColor: "#646464",
-        color: "white",
+        bg: "#616161",
+        borderColor: "#757575",
       },
       _active: {
-        bg: "#5f5f5f",
-        borderColor: "#5f5f5f",
-        color: "white",
+        bg: "#757575",
+        borderColor: "#757575",
       },
       _focus: {
-        bg: "#5f5f5f",
-        borderColor: "#5f5f5f",
-        color: "white",
+        bg: "757575",
+        borderColor: "#757575",
       },
     },
   },
@@ -173,11 +172,10 @@ const Input = defineStyleConfig({
     _focus: {},
     field: {
       background: "transparent",
-      borderWidth: "1px",
-      borderColor: "#9e9e9e",
-        color: "#eeeeee",
-      _hover: {
-      },
+      borderWidth: "2px",
+      borderColor: "#616161",
+      color: "#e0e0e0",
+      _hover: {},
     },
     sizes: {},
     variants: {
@@ -189,16 +187,16 @@ const Input = defineStyleConfig({
   },
 });
 
-    /*    border: '1px solid',
+/*    border: '1px solid',
     borderColor: 'gray.200', */
-    /* borderRadius: "full", */
+/* borderRadius: "full", */
 const Textarea = defineStyleConfig({
   baseStyle: {
     background: "transparent",
-    borderWidth: "1px ",
-    borderColor: "#9e9e9e",
+    borderWidth: "2px ",
+    borderColor: "#616161",
     color: "#e0e0e0",
-    _focus: {}
+    _focus: {},
   },
   variants: {
     regular: {},
