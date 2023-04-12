@@ -67,6 +67,7 @@ export default function LinkCards() {
                   <Divider
                     borderWidth={1.5}
                     color="black"
+                    borderColor={"#616161"}
                     my={5}
                     width="100%"
                     borderRadius="md"

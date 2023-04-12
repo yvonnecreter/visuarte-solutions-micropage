@@ -157,11 +157,11 @@ export default function Form() {
                   <Image
                     src={data.logo}
                     alt="visuarte"
-                    style={{ filter: "invert(1)" }}
-                    opacity="65%"
+                    opacity="55%"
                     width="55%"
                     maxW="30vh"
                     mb="25"
+                    /* filter="invert(1)" */
                   />
                   <Text variant="small">
                     Hofmannstrasse 10 | 81379 München <br />

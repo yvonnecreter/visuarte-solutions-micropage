@@ -59,7 +59,7 @@ export default function ColumnCard() {
             </Flex>
           </GridItem>
 
-          {/*column 1: lifecylce*/}
+          {/*column 1: lifecycle*/}
           <GridItem rowSpan={3}>
             <Flex alignItems="center" h="100%">
               <Image
