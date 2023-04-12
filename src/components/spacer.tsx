@@ -10,7 +10,8 @@ export default function CustomSpacerOne() {
         my="1"
         width="30%"
         borderColor="#262626"
-        borderWidth={1.2}
+        /* borderWidth={1.2} */
+        borderWidth="0"
         borderRadius="md"
       />
     </Center>

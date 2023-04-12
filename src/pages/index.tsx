@@ -53,7 +53,7 @@ export default function Home() {
 
       {/*bg*/}
       <Box
-        bgGradient="linear(to-t, #3d3d3d, #0d0d0d)"
+        bgGradient="linear(to-t, #212121, #424242)"
         id="unserearbeit"
         w={"100vw"}
         h={"100vh"}

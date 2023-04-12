@@ -8,30 +8,30 @@ import "@fontsource/rubik";
 const Heading = defineStyleConfig({
   baseStyle: {
     fontWeight: "normal",
-    color: "#000000",
+    color: "brand_1",
   },
   variants: {
     layer1: {
       fontSize: "4xl",
       fontWeight: "black",
-      color: "#38393d",
+      color: "#bdbdbd",
       mb: "2",
     },
     layer2: {
       fontSize: "lg",
       fontWeight: "reg",
-      color: "#A3A3A3",
+      color: "#9e9e9e",
     },
     layer3: {
       fontSize: "md",
       fontWeight: "bold",
-      color: "#5e5f60",
+      color: "#757575",
       mb: "2"
     },
     layer4: {
       fontSize: "lg",
       fontWeight: "light",
-      color: "#A3A3A3",
+      color: "616161",
     },
   },
   defaultProps: {
@@ -43,37 +43,37 @@ const Text = defineStyleConfig({
   baseStyle: {
     fontSize: "md",
     fontWeight: "regular",
-    color: "#7A7A7A",
+    color: "#9e9e9e",
   },
   variants: {
     regular: {
       fontSize: "sm",
       fontWeight: "regular",
-      color: "#7A7A7A",
+      color: "#9e9e9e",
     },
     light: {
-      color: "#A3A3A3",
+      color: "#9e9e9e",
     },
     stronglyEmphasized: {
       fontSize: "md",
-      color: "#6A6A6A",
+      color: "#bdbdbd",
       fontWeight: "bold",
     },
     emphasized: {
       fontSize: "md",
-      color: "#A3A3A3",
+      color: "#9e9e9e",
       fontWeight: "bold",
     },
     lessEmphasized: {
       fontSize: "sm",
       fontWeight: "regular",
-      color: "#A3A3A3",
+      color: "#9e9e9e",
       lineHeight: "1.2",
     },
     small: {
       fontSize: "xs",
       fontWeight: "regular",
-      color: "#7A7A7A",
+      color: "#9e9e9e",
       lineHeight: "1.2",
     },
     header: {
@@ -102,10 +102,12 @@ const Card = defineStyleConfig({
   baseStyle: {
     size: "lg",
     padding: "5",
-    borderRadius: "0",
-    bg: "#f7f7f7",
+    borderRadius: "5",
+    bg: "rgba(66,66,66,0.8)",
     px: "5vw",
-    py: "4vh"
+    py: "4vh",
+    borderWidth: "50",
+    borderColor: "#757575",
   },
   variants: {
     regular: {
@@ -120,10 +122,12 @@ const Card = defineStyleConfig({
   },
 });
 
+
+/* Cheatsheet for Checkbox: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
 const Checkbox = defineStyleConfig({
   baseStyle: {
     control: {
-      borderColor: '#e8e8e8',
+      borderColor: 'brand_4',
       borderWidth: "2",
       transition: 'background-color 0.1s ease-in-out',
       _checked: {
@@ -136,11 +140,16 @@ const Checkbox = defineStyleConfig({
         borderColor: '#646464',
         color: 'white',
       },
-      active: {
+      _active: {
         bg: '#5f5f5f',
         borderColor: '#5f5f5f',
         color: 'white',
-      }
+      },
+      _focus: {
+        bg: '#5f5f5f',
+        borderColor: '#5f5f5f',
+        color: 'white',
+      },
     },
   },
   sizes: {
@@ -189,9 +198,9 @@ const Button = defineStyleConfig({
 const theme = extendTheme({
   colors: {
     brand: {
-      purple: "#b500b3",
-      green: "#7ec53c",
-      blue: "#67dbff",
+      purple: "#ce93d8",
+      green: "#a5d6a7",
+      blue: "#81d4fa",
     },
   },
   fonts: {

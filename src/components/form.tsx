@@ -155,7 +155,7 @@ export default function Form() {
                 <FormLabel
                   fontSize="md"
                   fontWeight="bold"
-                  color="#565656"
+                  color="#9e9e9e"
                   mb="2"
                 >
                   Email:
@@ -195,7 +195,7 @@ export default function Form() {
                 <FormLabel
                   fontSize="md"
                   fontWeight="bold"
-                  color="#565656"
+                  color="#9e9e9e"
                   mb="2"
                 >
                   Nachricht:
