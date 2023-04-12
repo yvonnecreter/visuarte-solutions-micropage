@@ -102,11 +102,11 @@
       "head2":"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - und das mit System.",
       "head3":["Ihre Mission", "(Ihr) Markenerlebnis"],
       "table":{
-        "element1":"images/ziel.png",
+        "element1":"images/map_c.svg",
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
         "element3":["Ihre Individuelle Kreativstrategie", "Ihre Inhalte, die bewegen", "Ihre Interaktive Anwendungen"],
         "element3subtext":["Text", "Text", "Text"],
-        "element4":["images/mapicon.svg", "images/vidicon.svg", "images/tapicon.svg"],
+        "element4":["images/lamp_c.svg", "images/img_c.svg", "images/hand_c.svg"],
         "element5":"images/showroom.png"
       },
       "arrow":"images/arrow.svg",

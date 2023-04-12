@@ -65,9 +65,10 @@ export default function ColumnCard() {
               <Image
                 src={data.maincard.table.element1}
                 alt={data.maincard.table.element1}
-                opacity="20%"
+                /* opacity="20%" */
+                opacity="55%"
                 w="80%"
-                filter="invert(1)"
+                /* filter="invert(1)" */
                 transition="transform 2s"
                 _hover={{
                   transform: "scale(1.1)",
@@ -118,11 +119,12 @@ export default function ColumnCard() {
                     
                     boxShadow="2xl"
                     background={data.maincard.colors[i]}
+                    opacity="90%"
                   >
                     <Text
                       variant="regular"
                       textTransform={"uppercase"}
-                      color="white"
+                      color="#e0e0e0"
                       letterSpacing={"wider"}
                     >
                       {item}
@@ -180,6 +182,7 @@ export default function ColumnCard() {
                   alt=" "
                   w="75%"
                   maxH={"5vh"}
+                  opacity={"90%"}
                   transition="transform 1s"
                   _hover={{
                     transform: "scale(1.1)",
