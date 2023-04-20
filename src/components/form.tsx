@@ -170,7 +170,7 @@ export default function Form() {
               <Flex h="100%" alignItems="flex-end" justifyContent="flex-start">
                 <Box width="100%" maxW="25vh">
                   <Image
-                    src={data.logo}
+                    src={data.logo_g}
                     alt="visuarte"
                     opacity="100%"
                     width="55%"
@@ -203,7 +203,7 @@ export default function Form() {
                   {/* <Heading variant="layer3">Nachricht:</Heading> */}
                 </FormLabel>
 
-                <Textarea {...register("Nachricht")} variant="regular" />
+                <Textarea {...register("Nachricht")} variant="regular" value="Hallo Ilja, " />
               </FormControl>
             </GridItem>
             <GridItem>
