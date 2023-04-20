@@ -27,7 +27,7 @@ import Diagram1 from "../components/diagram";
 import { useStyleConfig } from "@chakra-ui/react";
 
 import theme from "@/styles/theme";
-
+import Link from "next/link";
 
 export default function Form() {
   const {
@@ -35,6 +35,8 @@ export default function Form() {
     register,
     formState: { errors },
   } = useForm();
+
+  const col = ["purple", "green", "blue"];
 
   /* FORM FRONTEND*/
   return (
@@ -61,12 +63,14 @@ export default function Form() {
                   {data.form_textElements1.map((textElement, index) => (
                     <FormControl id={"Grobe Vorstellung " + index}>
                       <Checkbox
-                        variant="regular"
+                        variant={col[index]}
                         {...register("Grobe Vorstellung " + index)}
-                        value={textElement}
-                        key={index}
                       >
-                        <Text pl="2" variant="regular">
+                        <Text
+                          pl="2"
+                          variant="regular"
+                          color={data.maincard.colors[index]}
+                        >
                           {textElement}
                         </Text>
                       </Checkbox>
@@ -100,6 +104,13 @@ export default function Form() {
                   ))}
                 </VStack>
               </Box>
+
+              <Link href="#skipcheckboxes" passHref>
+                <Button as="a" w="100%" mt="30">
+                  {" "}
+                  Na dann los!{" "}
+                </Button>
+              </Link>
             </GridItem>
 
             {/* column right side */}
@@ -116,6 +127,7 @@ export default function Form() {
         _hover={{
           transform: "scale(1.01)",
         }}
+        id="skipcheckboxes"
       >
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
@@ -146,7 +158,10 @@ export default function Form() {
                   Email:
                   {/* <Heading variant="layer3">Email:</Heading> */}
                 </FormLabel>
-                <Input {...register("E-Mail")}/* value="E-Mail" */  variant="regular"/>
+                <Input
+                  {...register("E-Mail")}
+                  /* value="E-Mail" */ variant="regular"
+                />
               </FormControl>
             </GridItem>
 
@@ -161,14 +176,14 @@ export default function Form() {
                     width="55%"
                     maxW="30vh"
                     mb="25"
-                    filter="invert(0.50)"
+                    /* filter="invert(0.50)" */
                     /* filter="invert(0.87)" */
                   />
                   <Text variant="small">
                     Hofmannstrasse 10 | 81379 München <br />
-                    t + 49 89 45 24 46 <br />
-                    f + 49 89 45 24 46 - 12 <br />
-                    m + 49 172 14 72 64 4
+                    t + 49 89 45 24 46 -18 <br />
+                    f + 49 89 45 24 46 -12 <br />
+                    m + 49 177 33 22 352
                     <br /> e ilja@visuarte.com
                     <br /> w www.visuarte.com
                   </Text>
@@ -188,7 +203,7 @@ export default function Form() {
                   {/* <Heading variant="layer3">Nachricht:</Heading> */}
                 </FormLabel>
 
-                <Textarea {...register("Nachricht")}  variant="regular"/>
+                <Textarea {...register("Nachricht")} variant="regular" />
               </FormControl>
             </GridItem>
             <GridItem>

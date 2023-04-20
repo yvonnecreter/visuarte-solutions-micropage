@@ -66,7 +66,7 @@ export default function ColumnCard() {
                 src={data.maincard.table.element1}
                 alt={data.maincard.table.element1}
                 /* opacity="20%" */
-                opacity="55%"
+                opacity="100%"
                 w="80%"
                 /* filter="invert(1)" */
                 transition="transform 2s"
@@ -86,6 +86,7 @@ export default function ColumnCard() {
                 opacity="20%"
                 width="50%"
                 maxW="7vH"
+                filter={"invert(1)"}
               />
             </Flex>
           </GridItem>
@@ -95,7 +96,7 @@ export default function ColumnCard() {
               <Image
                 src={data.maincard.arrowsplit}
                 alt={data.maincard.arrowsplit}
-                
+                filter={"invert(1)"}
                 height="73%"
                 opacity="20%"
               />
@@ -108,6 +109,8 @@ export default function ColumnCard() {
               <GridItem width="100%" textAlign="center">
                 <Flex alignItems="center" justifyContent="center" h="100%">
                   <Box
+                    as="a"
+                    href="#videoplayercards"
                     p="3"
                     borderWidth={3}
                     borderRadius="12"
@@ -116,7 +119,6 @@ export default function ColumnCard() {
                     _hover={{
                       transform: "scale(1.1)",
                     }}
-                    
                     boxShadow="2xl"
                     background={data.maincard.colors[i]}
                     opacity="90%"
@@ -141,7 +143,7 @@ export default function ColumnCard() {
           {Array.from({ length: 3 }, (v, i) => (
             <GridItem key={i}>
               <Flex alignItems="center" justifyContent="center" h="100%">
-                <Image src="images/arrow.svg" alt="->" w="100%" opacity="20%"/>
+                <Image src="images/arrow.svg" alt="->" w="100%" opacity="20%" filter={"invert(1)"}/>
               </Flex>
             </GridItem>
           ))}
@@ -152,6 +154,8 @@ export default function ColumnCard() {
               <GridItem width="100%" textAlign="center">
                 <Flex alignItems="center" justifyContent="center" h="100%">
                   <Box
+                    as="a"
+                    href="#videoplayercards"
                     p="3"
                     borderRadius="12"
                     transition="transform 1s"
@@ -178,7 +182,9 @@ export default function ColumnCard() {
           {/*column 6: 3 icons*/}
           {data.maincard.table.element4.map((item, i) => (
             <>
-              <Flex alignItems="center" justifyContent="center" h="100%">
+              <Flex alignItems="center" justifyContent="center" h="100%" 
+                    as="a"
+                    href="#videoplayercards">
                 <Image
                   src={data.maincard.table.element4[i]}
                   alt=" "
@@ -218,6 +224,7 @@ export default function ColumnCard() {
                 alt={data.maincard.arrowsplitright}
                 height="73%"
                 opacity="20%"
+                filter={"invert(1)"}
               />
             </Flex>
           </GridItem>
@@ -239,28 +246,10 @@ export default function ColumnCard() {
                   w="100%"
                   borderRadius={5}
                   dropShadow="2xl"
+                  filter="brightness(1.6)"
                 />
                 <MotionBox />
-                {/* <MotionBox
-                  position="absolute"
-                  top={0}
-                  left={0}
-                  right={0}
-                  bottom={0}
-                  initial={{ opacity: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  onMouseEnter={onMouseEnter}
-                  onMouseOut={onMouseOut}
-                > */}
-                {/*   */}
               </Box>
-              {/* <Image
-                src={data.maincard.table.element5}
-                alt={data.maincard.table.element5}
-                w="100%"
-                borderRadius={5}
-              /> */}
             </Flex>
           </GridItem>
         </Grid>

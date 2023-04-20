@@ -27,15 +27,28 @@ export default function LinkCards() {
       {/*<Stack direction="row" id="agentur" zIndex={1}>*/}
       <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap="3">
         <GridItem>
-          <Card sx={useStyleConfig("Card")} variant="videoplayer" h="100%">
+          <Card sx={useStyleConfig("Card")} variant="videoplayer" h="100%" textAlign="center">
             <CardBody>
               <iframe
                 src={data.endcards.video}
                 width="100%"
-                height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
+                style={{ objectFit: "contain", aspectRatio: "16/9" }}
               ></iframe>
+              
+              <Center>
+                  <Divider
+                    borderWidth={1.5}
+                    color="black"
+                    borderColor={"#616161"}
+                    my={5}
+                    width="100%"
+                    borderRadius="md"
+                  />
+                </Center>
+                <Text fontSize="sm" variant={"emphasized"} mb="2">{data.endcards.label}</Text>
+                <Text fontSize="sm" variant={"regular"}>{data.endcards.label2}</Text>
             </CardBody>
           </Card>
         </GridItem>
@@ -43,11 +56,6 @@ export default function LinkCards() {
           <Link href={data.endcards.website} isExternal>
             <Card sx={useStyleConfig("Card")} h="100%">
               <CardBody textAlign="center">
-                {/* <AspectRatio ratio={16 / 9}>
-                    <iframe 
-                    src="images/web_preview_without_url.mp4"/>
-                </AspectRatio> */}
-
                 <video
                   src="images/web_preview_without_url.mp4"
                   style={{ objectFit: "contain", aspectRatio: "16/9" }}
@@ -55,14 +63,6 @@ export default function LinkCards() {
                   autoPlay
                   muted
                 />
-
-                {/* <iframe
-                  src={data.endcards.website}
-                  // width="100%"
-                  // scrolling="no"
-                  height="500vw"
-                  style={{ pointerEvents: "none" }}
-                /> */}
                 <Center>
                   <Divider
                     borderWidth={1.5}

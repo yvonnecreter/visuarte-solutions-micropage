@@ -12,13 +12,9 @@ BEFORE MAKING CHANGES DUE TO "BUGS" CHECK FIRST IF THATS NOT THE CAUSE OF NOT HA
 THANKS
  */
 
-
 import * as React from "react";
 import { useEffect } from "react";
-import {
-  motion,
-  useAnimation
-} from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Box, Image } from "@chakra-ui/react";
 
 const MotionB = motion(Box);
@@ -39,10 +35,10 @@ export default function MotionBox() {
 
   useEffect(() => {
     controls.start({ opacity: "1" });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-/*  OPTIONAL    
+  /*  OPTIONAL    
  const onMouseOut = (e) => {
     controls.start(initialState).then(() => {
       controls.stop();
@@ -65,18 +61,22 @@ export default function MotionBox() {
       transition={transition}
       /* onMouseEnter={onMouseEnter} */
       whileHover={{
-        opacity: [0, 1, 0],
-        transition: { duration: 1, repeat: Infinity },
+        opacity: [0.3, 0.6, 0.3],
+        /* transition: { duration: 1, repeat: Infinity }, */
+        transition: { duration: 1.8, repeat: Infinity },
       }}
       /* onMouseOut={onMouseOut} */
       /* animate={{opacity:1}} */
     >
+      <Box 
+    as="a"
+    href="#webgl-content">
       <Image
-        src={"images/showroom_mark.png"}
+        src={"images/showroom_overlay.png"}
         alt={"showroom_mark"}
         w="100%"
         borderRadius={5}
-      />
+      /></Box>
     </MotionB>
   );
 }

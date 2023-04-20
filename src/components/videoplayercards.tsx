@@ -32,7 +32,7 @@ export default function VideoPlayer() {
   const [imageSelected, setImageSelected] = useState(false);
 
   return (
-    <Card sx={useStyleConfig("Card")}>
+    <Card sx={useStyleConfig("Card")} id="videoplayercards">
       {" "}
       <CardHeader>
         {/*if else condition, ? = then, ():() = if else, <> is jsx wrapping*/}
@@ -92,8 +92,16 @@ export default function VideoPlayer() {
 
           {/** THUMBNAILS ON THE RIGHT */}
           <GridItem height="100%">
+
+            
+          <Grid templateColumns="repeat(3, 1fr)" h="2%" gap="1">
+            <GridItem bg={data.maincard.colors[0]} h="50%" /* borderRadius={"full"} *//>
+            <GridItem bg={data.maincard.colors[1]} h="50%" /* borderRadius={"full"} *//>
+            <GridItem bg={data.maincard.colors[2]} h="50%" /* borderRadius={"full"} *//>
+          </Grid>
+
             {/*add images*/}
-            <Grid templateColumns="repeat(3, 1fr)" gap={1} height="100%">
+            <Grid templateColumns="repeat(3, 1fr)" gap={1} height="98%">
               {data.videoplayer_videos.map((item, i) => (
                 <GridItem key={i} height="100%">
                   <Box

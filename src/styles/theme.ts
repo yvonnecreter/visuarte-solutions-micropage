@@ -8,30 +8,30 @@ import "@fontsource/rubik";
 const Heading = defineStyleConfig({
   baseStyle: {
     fontWeight: "normal",
-    color: "e0e0e0",
+    color: "brand.white",
   },
   variants: {
     layer1: {
       fontSize: "4xl",
       fontWeight: "black",
-      color: "#e0e0e0",
+      color: "brand.white",
       mb: "2",
     },
     layer2: {
       fontSize: "lg",
       fontWeight: "reg",
-      color: "#bdbdbd",
+      color: "brand.lightgrey",
     },
     layer3: {
       fontSize: "md",
       fontWeight: "bold",
-      color: "#9e9e9e",
+      color: "brand.grey",
       mb: "2",
     },
     layer4: {
       fontSize: "lg",
       fontWeight: "light",
-      color: "#9e9e9e",
+      color: "brand.grey",
     },
   },
   defaultProps: {
@@ -43,38 +43,38 @@ const Text = defineStyleConfig({
   baseStyle: {
     fontSize: "md",
     fontWeight: "regular",
-    color: "#616161",
+    color: "brand.darkgrey",
   },
   variants: {
     regular: {
       fontSize: "sm",
       fontWeight: "regular",
-      color: "#9e9e9e",
+      color: "brand.grey",
     },
     light: {
-      color: "#9e9e9e",
+      color: "brand.grey",
     },
     stronglyEmphasized: {
       fontSize: "md",
-      color: "#bdbdbd",
+      color: "brand.lightgrey",
       fontWeight: "bold",
     },
     emphasized: {
       fontSize: "md",
-      color: "#bdbdbd",
+      color: "brand.lightgrey",
       fontWeight: "bold",
     },
     lessEmphasized: {
       fontSize: "sm",
       fontWeight: "regular",
-      color: "#9e9e9e",
+      color: "brand.lightgrey",
       lineHeight: "1.2",
     },
     small: {
       fontSize: "xs",
       fontWeight: "regular",
       /* color: "#212121", */
-      color: "#757575",
+      color: "brand.slightgrey",
       lineHeight: "1.2",
     },
     header: {
@@ -86,7 +86,7 @@ const Text = defineStyleConfig({
       },
     },
     footer: {
-      color: "#757575",
+      color: "brand.slightgrey",
       fontSize: {
         base: "xs",
         md: "sm",
@@ -135,32 +135,106 @@ const Card = defineStyleConfig({
 const Checkbox = defineStyleConfig({
   baseStyle: {
     control: {
-      borderColor: "#757575",
+      borderColor: "brand.slightgrey",
       bg: "transparent",
       borderWidth: "2",
       transition: "background-color 0.1s ease-in-out",
 
       _checked: {
-        bg: "#9e9e9e",
-        borderColor: "#9e9e9e",
+        bg: "brand.grey",
+        borderColor: "brand.grey",
       },
       _hover: {
-        bg: "#616161",
-        borderColor: "#757575",
+        bg: "brand.darkgrey",
+        borderColor: "#brand.slightgrey",
       },
       _active: {
-        bg: "#757575",
-        borderColor: "#757575",
+        bg: "brand.slightgrey",
+        borderColor: "brand.slightgrey",
       },
       _focus: {
-        bg: "757575",
-        borderColor: "#757575",
+        bg: "brand.slightgrey",
+        borderColor: "brand.slightgrey",
       },
     },
   },
   sizes: {},
   variants: {
     regular: {},
+    purple: {
+      control: {
+        borderColor: "brand.purple", //main color
+        bg: "transparent",
+        borderWidth: "2",
+        transition: "background-color 0.1s ease-in-out",
+        _checked: {
+          bg: "brand.purple",
+          borderColor: "brand.purple",
+        },
+        _hover: {
+          bg: "#616161",
+          borderColor: "brand.purple",
+        },
+        _active: {
+          bg: "brand.purple",
+          borderColor: "brand.purple",
+        },
+        _focus: {
+          bg: "brand.purple",
+          borderColor: "brand.purple",
+        },
+      },
+    },
+    blue: {
+      control: {
+        borderColor: "brand.blue",
+        bg: "transparent",
+        borderWidth: "2",
+        transition: "background-color 0.1s ease-in-out",
+
+        _checked: {
+          bg: "brand.blue",
+          borderColor: "brand.blue",
+        },
+        _hover: {
+          bg: "brand.darkgrey",
+          borderColor: "brand.blue",
+        },
+        _active: {
+          bg: "brand.blue",
+          borderColor: "brand.blue",
+        },
+        _focus: {
+          bg: "brand.blue",
+          borderColor: "brand.blue",
+        },
+      },
+    },
+    green: {
+      control: {
+        borderColor: "brand.green",
+        bg: "transparent",
+        borderWidth: "2",
+        transition: "background-color 0.1s ease-in-out",
+
+        _checked: {
+          bg: "brand.green",
+          borderColor: "brand.green",
+        },
+        _hover: {
+          bg: "brand.darkgrey",
+          borderColor: "brand.green",
+        },
+        _active: {
+          bg: "brand.green",
+          borderColor: "brand.green",
+        },
+        _focus: {
+          bg: "brand.green",
+          borderColor: "brand.green",
+        },
+      },
+    },
   },
   defaultProps: {
     variant: "regular",
@@ -173,8 +247,8 @@ const Input = defineStyleConfig({
     field: {
       background: "transparent",
       borderWidth: "2px",
-      borderColor: "#616161",
-      color: "#e0e0e0",
+      borderColor: "brand.darkgrey",
+      color: "brand.white",
       _hover: {},
     },
     sizes: {},
@@ -194,8 +268,8 @@ const Textarea = defineStyleConfig({
   baseStyle: {
     background: "transparent",
     borderWidth: "2px ",
-    borderColor: "#616161",
-    color: "#e0e0e0",
+    borderColor: "brand.darkgrey",
+    color: "brand.white",
     _focus: {},
   },
   variants: {
@@ -213,14 +287,14 @@ const Button = defineStyleConfig({
     letterSpacing: "widest",
     borderRadius: "50px",
     fontSize: "sm",
-    background: "#212121",
+    background: "brand.lightblack",
     color: "white",
     transition: "background-color 0.2s ease-in-out",
     _hover: {
-      bg: "#000000",
+      bg: "brand.black",
     },
     _active: {
-      bg: "#212121",
+      bg: "brand.lightblack",
     },
   },
   sizes: {
@@ -242,6 +316,21 @@ const theme = extendTheme({
       purple: "#ce93d8",
       green: "#a5d6a7",
       blue: "#81d4fa",
+      /* OLD COLOR PALETTE
+      white: "#e0e0e0",
+      lightgrey: "#bdbdbd",
+      grey: "#9e9e9e",
+      darkgrey: "#616161",
+      slightgrey: "#757575",
+      black: "#000000",
+      lightblack: "#212121" */
+      white: "#e0e0e0",
+      lightgrey: "#e0e0e0",
+      grey: "#bdbdbd",
+      darkgrey: "#9e9e9e",
+      slightgrey: "#9e9e9e",
+      black: "#000000",
+      lightblack: "#212121",
     },
   },
   fonts: {
