@@ -61,7 +61,7 @@ export default function MotionBox() {
       transition={transition}
       /* onMouseEnter={onMouseEnter} */
       whileHover={{
-        opacity: [0.3, 0.6, 0.3],
+        opacity: [0.2, 0.7, 0.2],
         /* transition: { duration: 1, repeat: Infinity }, */
         transition: { duration: 1.8, repeat: Infinity },
       }}
