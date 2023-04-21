@@ -32,10 +32,9 @@ export default function LinkCards() {
               <iframe
                 src={data.endcards.video}
                 width="100%"
-                frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 style={{ objectFit: "contain", aspectRatio: "16/9" }}
-              ></iframe>
+              />
               
               <Center>
                   <Divider

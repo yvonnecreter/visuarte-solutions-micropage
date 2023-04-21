@@ -47,6 +47,8 @@ export default function Form() {
       action="https://getform.io/f/6219fac4-4909-412f-8374-57fc5195395a"
       method="POST"
     >
+
+      {/* PART 1 */}
       <Card sx={useStyleConfig("Card")} zIndex={1} id="kontakt" mb={5}>
         <CardHeader>
           <Heading>{data.form_titles.head2}</Heading>
@@ -119,6 +121,9 @@ export default function Form() {
               
             </GridItem>
 
+
+
+      {/* PART 2 */}
             {/* column right side */}
             <GridItem>
               <Image src={data.diagramIMG} alt="diagram" w="100%" />

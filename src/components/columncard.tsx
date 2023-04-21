@@ -105,7 +105,7 @@ export default function ColumnCard() {
 
           {/*column 3: categories*/}
           {data.maincard.table.element2.map((item, i) => (
-            <>
+            <React.Fragment key={i}>
               <GridItem width="100%" textAlign="center">
                 <Flex alignItems="center" justifyContent="center" h="100%">
                   <Box
@@ -127,8 +127,6 @@ export default function ColumnCard() {
                       variant="regular"
                       textTransform={"uppercase"}
                       letterSpacing={"wider"}
-                      /* color="#eeeeee" */
-                      
                       color="#212121"
                     >
                       {item}
@@ -136,7 +134,7 @@ export default function ColumnCard() {
                   </Box>
                 </Flex>
               </GridItem>
-            </>
+            </React.Fragment>
           ))}
 
           {/*column 4: arrows*/}
@@ -150,7 +148,7 @@ export default function ColumnCard() {
 
           {/*column 5: 3 text*/}
           {data.maincard.table.element3.map((item, i) => (
-            <>
+            <React.Fragment key={i}>
               <GridItem width="100%" textAlign="center">
                 <Flex alignItems="center" justifyContent="center" h="100%">
                   <Box
@@ -176,12 +174,12 @@ export default function ColumnCard() {
                   </Box>
                 </Flex>
               </GridItem>
-            </>
+            </React.Fragment>
           ))}
 
           {/*column 6: 3 icons*/}
           {data.maincard.table.element4.map((item, i) => (
-            <>
+            <React.Fragment key={i}>
               <Flex alignItems="center" justifyContent="center" h="100%" 
                     as="a"
                     href="#videoplayercards">
@@ -198,7 +196,7 @@ export default function ColumnCard() {
                   dropShadow="2xl"
                 />
               </Flex>
-            </>
+            </React.Fragment>
           ))}
 
           {/*column 7: arrow*/}
