@@ -26,7 +26,7 @@ import {
 import { useForm } from "react-hook-form";
 import data from "../components/data.json";
 import Diagram1 from "../components/diagram";
-import { useStyleConfig, CheckboxGroup  } from "@chakra-ui/react";
+import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
 
 import theme from "@/styles/theme";
 import Link from "next/link";
@@ -47,7 +47,6 @@ export default function Form() {
       action="https://getform.io/f/6219fac4-4909-412f-8374-57fc5195395a"
       method="POST"
     >
-
       {/* PART 1 */}
       <Card sx={useStyleConfig("Card")} zIndex={1} id="kontakt" mb={5}>
         <CardHeader>
@@ -68,10 +67,11 @@ export default function Form() {
                   {data.form_textElements1.map((textElement, index) => (
                     <FormControl id={"Grobe Vorstellung " + index}>
                       <Checkbox
-                        colorScheme= {hexcol[index]}
                         variant={col[index]}
+                        key={"f1" + index}
                         {...register("Grobe Vorstellung " + index)}
                         value={textElement}
+                        colorScheme={hexcol[index]}
                       >
                         <Text
                           pl="2"
@@ -99,10 +99,10 @@ export default function Form() {
                     <FormControl id={"Anforderung " + index}>
                       <Checkbox
                         variant="regular"
-                        key={index}
+                        key={"f2" + index}
                         {...register("Anforderung " + index)}
                         value={textElement}
-                        colorScheme= "brand.slightgrey"
+                        colorScheme="brand.slightgrey"
                       >
                         <Text variant="regular" pl="2">
                           {textElement}
@@ -118,12 +118,9 @@ export default function Form() {
                   Na dann los!{" "}
                 </Button>
               </Link>
-              
             </GridItem>
 
-
-
-      {/* PART 2 */}
+            {/* PART 2 */}
             {/* column right side */}
             <GridItem>
               <Image src={data.diagramIMG} alt="diagram" w="100%" />
@@ -214,7 +211,11 @@ export default function Form() {
                   {/* <Heading variant="layer3">Nachricht:</Heading> */}
                 </FormLabel>
 
-                <Textarea {...register("Nachricht")} variant="regular" value="Hallo Ilja, " />
+                <Textarea
+                  {...register("Nachricht")}
+                  variant="regular"
+                  value="Hallo Ilja, "
+                />
               </FormControl>
             </GridItem>
             <GridItem>
