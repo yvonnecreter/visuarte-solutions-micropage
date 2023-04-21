@@ -48,11 +48,11 @@ export default function Form_Debug() {
 
   /* FILL W PLACEHOLDER AND CHECKBOX TEXT */
   let [value, setValue] = React.useState('Hallo Ilja, \n \n')
-  let handleInputChange = (e) => {
+  let handleInputChange = (e: { target: { value: any; }; }) => {
     let inputValue = e.target.value
     setValue(inputValue)
   }
-  let handleCheckboxChange = (e) => {
+  let handleCheckboxChange = (e: { target: { value: any; checked: any; }; }) => {
     let checkboxValue = e.target.value
     if (e.target.checked) {
       setValue((prevValue) => prevValue + '' + checkboxValue+". \n")
