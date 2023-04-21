@@ -1,5 +1,4 @@
-import { color, extendTheme } from "@chakra-ui/react";
-import { defineStyleConfig } from "@chakra-ui/react";
+import { color, extendTheme, defineStyleConfig } from "@chakra-ui/react";
 import "@fontsource/open-sans";
 import "@fontsource/rubik";
 
@@ -139,29 +138,18 @@ const Checkbox = defineStyleConfig({
       bg: "transparent",
       borderWidth: "2",
       transition: "background-color 0.1s ease-in-out",
-
-      _checked: {
-        bg: "brand.grey",
-        borderColor: "brand.grey",
-      },
-      _hover: {
-        bg: "brand.darkgrey",
-        borderColor: "#brand.slightgrey",
-      },
       _active: {
         bg: "brand.slightgrey",
-        borderColor: "brand.slightgrey",
-      },
-      _focus: {
-        bg: "brand.slightgrey",
-        borderColor: "brand.slightgrey",
       },
     },
+    icon: {
+      color: "brand.slightgrey",
+    }
   },
   sizes: {},
   variants: {
     regular: {},
-    purple: {
+    /* purple: {
       control: {
         borderColor: "brand.purple", //main color
         bg: "transparent",
@@ -172,7 +160,7 @@ const Checkbox = defineStyleConfig({
           borderColor: "brand.purple",
         },
         _hover: {
-          bg: "#616161",
+          bg:"transparent",
           borderColor: "brand.purple",
         },
         _active: {
@@ -180,60 +168,47 @@ const Checkbox = defineStyleConfig({
           borderColor: "brand.purple",
         },
         _focus: {
+          bg:"transparent",
+          borderColor: "brand.purple",
+        },
+        _after: {
           bg: "brand.purple",
           borderColor: "brand.purple",
         },
       },
+    }, */
+    purple: {
+      control: {
+        borderColor: "brand.purple",
+        _active: {
+          bg: "brand.purple",
+        },
+      },
+      icon: {
+        color: "brand.purple",
+      }
     },
     blue: {
       control: {
         borderColor: "brand.blue",
-        bg: "transparent",
-        borderWidth: "2",
-        transition: "background-color 0.1s ease-in-out",
-
-        _checked: {
-          bg: "brand.blue",
-          borderColor: "brand.blue",
-        },
-        _hover: {
-          bg: "brand.darkgrey",
-          borderColor: "brand.blue",
-        },
         _active: {
           bg: "brand.blue",
-          borderColor: "brand.blue",
-        },
-        _focus: {
-          bg: "brand.blue",
-          borderColor: "brand.blue",
         },
       },
+      icon: {
+        color: "brand.blue",
+      }
     },
     green: {
       control: {
         borderColor: "brand.green",
-        bg: "transparent",
-        borderWidth: "2",
-        transition: "background-color 0.1s ease-in-out",
-
-        _checked: {
-          bg: "brand.green",
-          borderColor: "brand.green",
-        },
-        _hover: {
-          bg: "brand.darkgrey",
-          borderColor: "brand.green",
-        },
         _active: {
           bg: "brand.green",
-          borderColor: "brand.green",
-        },
-        _focus: {
-          bg: "brand.green",
-          borderColor: "brand.green",
         },
       },
+      icon: {
+        color: "brand.green",
+      }
     },
   },
   defaultProps: {

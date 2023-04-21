@@ -47,8 +47,8 @@ export default function LinkCards() {
                     borderRadius="md"
                   />
                 </Center>
-                <Text fontSize="sm" variant={"emphasized"} mb="2">{data.endcards.label}</Text>
-                <Text fontSize="sm" variant={"regular"}>{data.endcards.label2}</Text>
+                <Text fontSize="sm" variant={"emphasized"} mb="2">{data.endcards.labels1[0]}</Text>
+                <Text fontSize="sm" variant={"regular"}>{data.endcards.labels1[1]}</Text>
             </CardBody>
           </Card>
         </GridItem>
@@ -73,8 +73,8 @@ export default function LinkCards() {
                     borderRadius="md"
                   />
                 </Center>
-                <Text fontSize="sm" variant={"emphasized"} mb="2">{data.endcards.label}</Text>
-                <Text fontSize="sm" variant={"regular"}>{data.endcards.label2}</Text>
+                <Text fontSize="sm" variant={"emphasized"} mb="2">{data.endcards.labels2[0]}</Text>
+                <Text fontSize="sm" variant={"regular"}>{data.endcards.labels2[1]}</Text>
               </CardBody>
             </Card>
           </Link>

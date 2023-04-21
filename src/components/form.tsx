@@ -20,11 +20,13 @@ import {
   SimpleGrid,
   Flex,
   CardFooter,
+  background,
+  Spacer,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import data from "../components/data.json";
 import Diagram1 from "../components/diagram";
-import { useStyleConfig } from "@chakra-ui/react";
+import { useStyleConfig, CheckboxGroup  } from "@chakra-ui/react";
 
 import theme from "@/styles/theme";
 import Link from "next/link";
@@ -37,6 +39,7 @@ export default function Form() {
   } = useForm();
 
   const col = ["purple", "green", "blue"];
+  const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
 
   /* FORM FRONTEND*/
   return (
@@ -63,8 +66,10 @@ export default function Form() {
                   {data.form_textElements1.map((textElement, index) => (
                     <FormControl id={"Grobe Vorstellung " + index}>
                       <Checkbox
+                        colorScheme= {hexcol[index]}
                         variant={col[index]}
                         {...register("Grobe Vorstellung " + index)}
+                        
                       >
                         <Text
                           pl="2"
@@ -95,6 +100,7 @@ export default function Form() {
                         key={index}
                         {...register("Anforderung " + index)}
                         value={textElement}
+                        colorScheme= "brand.slightgrey"
                       >
                         <Text variant="regular" pl="2">
                           {textElement}
@@ -104,13 +110,13 @@ export default function Form() {
                   ))}
                 </VStack>
               </Box>
-
               <Link href="#skipcheckboxes" passHref>
-                <Button as="a" w="100%" mt="30">
+                <Button as="a" w="100%" mt="5%">
                   {" "}
                   Na dann los!{" "}
                 </Button>
               </Link>
+              
             </GridItem>
 
             {/* column right side */}

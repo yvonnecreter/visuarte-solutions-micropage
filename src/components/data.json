@@ -117,7 +117,9 @@
     },
     "endcards":{
       "video":"https://player.vimeo.com/video/586284805",
+      "labels1":[" ", " "],
       "website": "https://visuarte.com",
+      "labels2":["20 Jahre Erfahrung", "HIER bekommen Sie einen Einblick in unsere medialen Erlebniswelten"],
       "label":"20 Jahre Erfahrung",
       "label2":"HIER bekommen Sie einen Einblick in unsere medialen Erlebniswelten"
     },

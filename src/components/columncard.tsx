@@ -246,7 +246,8 @@ export default function ColumnCard() {
                   w="100%"
                   borderRadius={5}
                   dropShadow="2xl"
-                  filter="brightness(1.6)"
+                  /* filter="brightness(1.6)" */
+                  filter="brightness(1.835)"
                 />
                 <MotionBox />
               </Box>
