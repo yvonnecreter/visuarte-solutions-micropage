@@ -39,6 +39,27 @@ export default function Form_Debug() {
   const col = ["purple", "green", "blue"];
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
 
+  /* FILL ONLY WITH PLACEHOLDER */
+/*   let [value, setValue] = React.useState('Here is a sample placeholder')
+  let handleInputChange = (e) => {
+    let inputValue = e.target.value
+    setValue(inputValue)
+  } */
+
+  /* FILL W PLACEHOLDER AND CHECKBOX TEXT */
+  let [value, setValue] = React.useState('Hallo Ilja, \n \n')
+  let handleInputChange = (e) => {
+    let inputValue = e.target.value
+    setValue(inputValue)
+  }
+  let handleCheckboxChange = (e) => {
+    let checkboxValue = e.target.value
+    if (e.target.checked) {
+      setValue((prevValue) => prevValue + '' + checkboxValue+". \n")
+    } else {
+      setValue((prevValue) => prevValue.replace(checkboxValue+". \n", ''))
+    }
+  }
   /* FORM FRONTEND*/
   return (
     <form
@@ -71,7 +92,9 @@ export default function Form_Debug() {
                         colorScheme={hexcol[index]}
                         variant={col[index]}
                         key={"form1" + index}
-                        {...register("Grobe Vorstellung " + index)}
+                        /* {...register("Grobe Vorstellung " + index)} */
+                        value={textElement}
+                        onChange={handleCheckboxChange}
                       >
                         <Text
                           pl="2"
@@ -100,10 +123,11 @@ export default function Form_Debug() {
                     <FormControl id={"Anforderung " + index} key={"f2" + index}>
                       <Checkbox
                         variant="regular"
-                        key={"form2" + index}
-                        {...register("Anforderung " + index)}
+                        key={"f2" + index}
+                        /* {...register("Anforderung " + index)} */
                         value={textElement}
                         colorScheme="brand.slightgrey"
+                        onChange={handleCheckboxChange}
                       >
                         <Text variant="regular" pl="2" key={"t2"+index}>
                           {textElement}
@@ -214,10 +238,11 @@ export default function Form_Debug() {
                 </FormLabel>
 
                 <Textarea
-                  {...register("Nachricht")}
+                  {...register("Nachricht")} 
+                  value={value} onChange={handleInputChange}
                   key="textarea"
                   variant="regular"
-                  value="Hallo Ilja, "
+                  h="300px"
                 />
               </FormControl>
             </GridItem>
