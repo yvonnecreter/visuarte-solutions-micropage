@@ -6,10 +6,10 @@ export default function UnityGame() {
   const boxRef = React.useRef<HTMLDivElement>(null);
 
   const { unityProvider } = useUnityContext({
-    loaderUrl: "Build/Build.loader.js",
-    dataUrl: "Build/Build.data",
-    frameworkUrl: "Build/Build.framework.js",
-    codeUrl: "Build/Build.wasm",
+    loaderUrl: "Build/build-darkmode.loader.js",
+    dataUrl: "Build/build-darkmode.data",
+    frameworkUrl: "Build/build-darkmode.framework.js",
+    codeUrl: "Build/build-darkmode.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
 
