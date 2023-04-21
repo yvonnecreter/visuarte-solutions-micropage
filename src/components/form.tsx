@@ -71,7 +71,7 @@ export default function Form() {
                         colorScheme= {hexcol[index]}
                         variant={col[index]}
                         {...register("Grobe Vorstellung " + index)}
-                        
+                        value={textElement}
                       >
                         <Text
                           pl="2"
