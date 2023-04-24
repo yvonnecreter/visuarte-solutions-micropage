@@ -18,6 +18,7 @@ import {
   CardHeader,
   CardFooter,
   Heading,
+  Flex,
   Center,
 } from "@chakra-ui/react";
 import Header from "@/components/header";
@@ -30,9 +31,9 @@ import data from "../components/data.json";
 import ColumnCard from "@/components/columncard";
 import LinkCards from "@/components/linkcards";
 import MotionBox from "@/components/motionbox";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 
-
-import {MapIcon, VidIcon, TapIcon }  from "@/components/icons";
+import { MapIcon, VidIcon, TapIcon } from "@/components/icons";
 
 export default function Home() {
   return (
@@ -51,53 +52,107 @@ export default function Home() {
         navItems={data.navigation}
       />
 
+      {/* INFO 
+    
+    const breakpoints = {
+      sm: '30em', // 480px
+      md: '48em', // 768px
+      lg: '62em', // 992px
+      xl: '80em', // 1280px
+      '2xl': '96em', // 1536px*/}
+
+
+{/* <ArrowDownIcon
+              w={8}
+              h={8}
+              color="black"
+              as="a"
+              href="#waswirtun"
+              zIndex="5"
+            /> */}
+
       {/*bg*/}
       <Box
         bgGradient="linear(to-t, #212121, #424242)"
-        id="unserearbeit"
+        id="werte"
         w={"100vw"}
         h={"100vh"}
         position={"fixed"}
       />
-        <Spacer
-          height={{
-            base: "5vh",
-            md: "5vh",
-            lg: "5vh",
+      <Spacer
+        height={{
+          base: "6vh",
+          md: "6vh",
+          lg: "6vh",
+        }}
+      />
+      <Center>
+        <Stack
+          spacing={4}
+          margin="5"
+          my={19}
+          zIndex={6}
+          minWidth={{
+            sm: "95%",
+            md: "95%",
+            lg: "95%",
+            xl: "85%",
+            "2xl": "70%",
           }}
-        />
-        <Center>
-          <Stack
-            spacing={4}
-            margin="5"
-            my={19}
-            zIndex={6}
-            minWidth="50vh"
-            maxW="120vh"
-            mt="-1"
-          >
-            <UnityGame />
-            <CustomSpacerOne />
+          maxWidth={{
+            sm: "95%",
+            md: "95%", 
+            lg: "95%",
+            xl: "95%",
+            "2xl": "80%",
+          }}
+          /* minWidth="50vh"
+            maxWidth={[
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "1920px",
+            ]} */
+          /* maxWidth={[
+              "120vh",
+            ]} */
+          /* w={[
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "120vh",
+            ]} */
+          /* base:"100vw",
+              md:"100vw",
+              lg: "80vw" */
+          /* lg: "120vh" */
 
-            <ColumnCard />
+          mt="-1"
+        >
+          <UnityGame />
+          <CustomSpacerOne />
 
-            <CustomSpacerOne />
+          <ColumnCard />
 
-            {/*projectsamples*/}
-            <VideoPlayer />
+          <CustomSpacerOne />
 
-            <CustomSpacerOne />
-            {/*contact*/}
+          {/*projectsamples*/}
+          <VideoPlayer />
 
-            <Form_Debug />
+          <CustomSpacerOne />
+          {/*contact*/}
 
-            <CustomSpacerOne />
-            <LinkCards />
-          </Stack>
-        </Center>
-        {/*FOOTER*/}
-        <Spacer h="14vh" />
-        <Footer />
+          <Form_Debug />
+
+          <CustomSpacerOne />
+          <LinkCards />
+        </Stack>
+      </Center>
+      {/*FOOTER*/}
+      <Spacer h="14vh" />
+      <Footer />
     </ChakraProvider>
   );
 }

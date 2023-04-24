@@ -1,55 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-import { Box, Center, Button, Flex, Spacer } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Button,
+  Flex,
+  Spacer,
+  AspectRatio,
+  Text,
+} from "@chakra-ui/react";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 
 export default function UnityGame() {
-  const boxRef = React.useRef<HTMLDivElement>(null);
+  /* const boxRef = React.useRef<HTMLDivElement>(null); */
 
-  /*   const { unityProvider } = useUnityContext({
-    loaderUrl: "Build/Build.loader.js",
-    dataUrl: "Build/Build.data",
-    frameworkUrl: "Build/Build.framework.js",
-    codeUrl: "Build/Build.wasm",
-    streamingAssetsUrl: "StreamingAssets",
-  }); */
-  /*   
-
-  const scrollon = "auto";
-
-  useEffect(() => {
-    const doSomething = () => {};
-
-    window.addEventListener("scroll", doSomething);
-    return () => {
-      window.removeEventListener("scroll", doSomething);
-    };
-  }, []); */
-
-  const { unityProvider } = useUnityContext({
+  const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "Build/build-darkmode.loader.js",
     dataUrl: "Build/build-darkmode.data",
     frameworkUrl: "Build/build-darkmode.framework.js",
     codeUrl: "Build/build-darkmode.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
+  const loadingPercentage = Math.round(loadingProgression * 100);
 
   return (
-    <Center flexDirection={"column"}>
-      <Box
-        ref={boxRef}
-        id="webgl-content"
-        zIndex={0}
-        width="100%"
-        maxW="165vh"
-        /* pointerEvents={scrollon} */
-      >
+    <AspectRatio ratio={16 / 9} w="100%" bg="#828080">
+      <div className="container">
+        {isLoaded === false && (
+          <div
+            className="loading-overlay"
+            style ={{width:"100%",
+            height:"100%"}}
+          >
+            <Text zIndex="5" color="black" m={5}>
+              Loading... ({loadingPercentage}%)
+            </Text>
+          </div>
+        )}
         <Unity
+          className="unity"
           unityProvider={unityProvider}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%" }}
         />
-        {/*       </Box>
-      <Box w="100%" flexFlow={"row"}> <Button mt="5" onClick={""}> Dark Mode</Button>  */}
-      </Box>
-    </Center>
+      </div>
+    </AspectRatio>
   );
 }

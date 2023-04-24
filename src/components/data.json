@@ -47,20 +47,20 @@
   ],
   "navigation": [
     {
-      "label": "Arbeitsweise",
-      "href": "#unserearbeit"
+      "label": "Unsere Werte",
+      "href": "#werte"
     },
     {
-      "label": "Exponate",
-      "href": "#exponate"
+      "label": "Impressionen",
+      "href": "#impressionen"
     },
     {
-      "label": "Kontakt",
-      "href": "#kontakt"
+      "label": "Ihr Projekt",
+      "href": "#ihrprojekt"
     },
     {
-      "label": "Agentur",
-      "href": "#agentur"
+      "label": "Let's Talk",
+      "href": "#letstalk"
     }
   ],
   "form_titles": {

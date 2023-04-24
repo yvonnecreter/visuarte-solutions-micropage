@@ -39,13 +39,6 @@ export default function Form_Debug() {
   const col = ["purple", "green", "blue"];
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
 
-  /* FILL ONLY WITH PLACEHOLDER */
-/*   let [value, setValue] = React.useState('Here is a sample placeholder')
-  let handleInputChange = (e) => {
-    let inputValue = e.target.value
-    setValue(inputValue)
-  } */
-
   /* FILL W PLACEHOLDER AND CHECKBOX TEXT */
   let [value, setValue] = React.useState('Hallo Ilja, \n \n')
   let handleInputChange = (e: { target: { value: any; }; }) => {
@@ -67,7 +60,7 @@ export default function Form_Debug() {
       method="POST"
     >
       {/* PART 1 */}
-      <Card sx={useStyleConfig("Card")} zIndex={1} id="kontakt" mb={5}>
+      <Card sx={useStyleConfig("Card")} zIndex={1} id="ihrprojekt" mb={5}>
         <CardHeader>
           <Heading>{data.form_titles.head2}</Heading>
         </CardHeader>
@@ -99,7 +92,7 @@ export default function Form_Debug() {
                         <Text
                           pl="2"
                           variant="regular"
-                          color={data.maincard.colors[index]}
+                          /* color={data.maincard.colors[index]} */
                           key={"t"+index}
                         >
                           {textElement}
@@ -137,7 +130,7 @@ export default function Form_Debug() {
                   ))}
                 </VStack>
               </Box>
-              <Link href="#skipcheckboxes" passHref>
+              <Link href="#letstalk" passHref>
                 <Button /* as="a" */ w="100%" mt="5%" key="b">
                   {" "}
                   Na dann los!{" "}
@@ -160,7 +153,7 @@ export default function Form_Debug() {
         _hover={{
           transform: "scale(1.01)",
         }}
-        id="skipcheckboxes"
+        id="letstalk"
       >
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
@@ -207,8 +200,10 @@ export default function Form_Debug() {
                     src={data.logo_g}
                     alt="visuarte"
                     opacity="100%"
-                    width="55%"
-                    maxW="30vh"
+                    /* width={{ xl: "80%" , "2xl": "55%"}} */
+                    /* maxW={{ "2xl": "30vh"}} */
+                    minW = {{xl: "50px", "2xl": "50px"}}
+                    maxW = {{xl: "200px", "2xl": "250px"}}
                     mb="25"
                     /* filter="invert(0.50)" */
                     /* filter="invert(0.87)" */
