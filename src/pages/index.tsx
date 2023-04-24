@@ -47,10 +47,7 @@ export default function Home() {
       </Head>
 
       {/*header*/}
-      <Header
-        logo={<Image src="images/logo.png" h="100%" alt="visuarte" />}
-        navItems={data.navigation}
-      />
+      <Header navItems={data.navigation}/>
 
       {/* INFO 
     
@@ -62,7 +59,7 @@ export default function Home() {
       '2xl': '96em', // 1536px*/}
 
 
-{/* <ArrowDownIcon
+    {/* <ArrowDownIcon
               w={8}
               h={8}
               color="black"
@@ -74,10 +71,10 @@ export default function Home() {
       {/*bg*/}
       <Box
         bgGradient="linear(to-t, #212121, #424242)"
-        id="werte"
         w={"100vw"}
         h={"100vh"}
         position={"fixed"}
+        scrollBehavior={"smooth"}
       />
       <Spacer
         height={{

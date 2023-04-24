@@ -24,7 +24,6 @@ export default function LinkCards() {
   return (
     <>
       {/*link*/}
-      {/*<Stack direction="row" id="agentur" zIndex={1}>*/}
       <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap="3">
         <GridItem>
           <Card sx={useStyleConfig("Card")} variant="videoplayer" h="100%" textAlign="center">

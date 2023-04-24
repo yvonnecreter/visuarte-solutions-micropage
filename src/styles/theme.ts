@@ -72,7 +72,6 @@ const Text = defineStyleConfig({
     small: {
       fontSize: "xs",
       fontWeight: "regular",
-      /* color: "#212121", */
       color: "brand.slightgrey",
       lineHeight: "1.2",
     },
@@ -80,8 +79,8 @@ const Text = defineStyleConfig({
       color: "white",
       fontSize: {
         base: "xs",
-        md: "sm",
-        lg: "sm",
+        md: "md",
+        "2xl": "xl",
       },
     },
     footer: {

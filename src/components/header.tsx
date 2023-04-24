@@ -4,17 +4,17 @@ import {
   Box,
   Flex,
   Heading,
+  Image,
   Text,
   Spacer,
   Divider,
 } from "@chakra-ui/react";
 
 interface HeaderProps {
-  logo: React.ReactNode;
   navItems: { href: string; label: string }[];
 }
 
-const Header: React.FC<HeaderProps> = ({ logo, navItems }) => {
+const Header: React.FC<HeaderProps> = ({ navItems }) => {
   return (
     <Flex
       bg="black"
@@ -27,25 +27,23 @@ const Header: React.FC<HeaderProps> = ({ logo, navItems }) => {
         lg: "6vh",
       }}
       position="fixed"
-      p={4}
+      p={{"xl":"10px","2xl":"4"}}
       display="flex"
       flex-wrap="true"
       color="white"
       alignItems="center"
     >
-      <Divider w={{xl: 0, "2xl":4}} opacity={0} />
-      <Box h="100%" height="3vw" maxH="45px">
-        {logo}
-      </Box>
+        <Image src="images/logo.png" ml={{base:"3", md:"4", "2xl":"1%"}} h="100%" alt="visuarte" 
+        maxH={{base:"25px", md:"40px", "2xl": "80%"}}/>
       <Spacer />
       {navItems.map((item) => (
-        <Box key={item.href} ml={4}>
-          <Link href={item.href}>
+        <Box key={item.href} ml={4} maxW={{base: "12%"}}>
+          <Link href={item.href} scrollBehavior={"smooth"}>
             <Text variant="header">{item.label}</Text>
           </Link>
         </Box>
       ))}
-      <Divider w={{xl: 0, "2xl":4}} opacity={0} />
+      <Divider w={{base:"3", md:"4", "2xl":"1%"}} opacity={0} />
     </Flex>
   );
 };

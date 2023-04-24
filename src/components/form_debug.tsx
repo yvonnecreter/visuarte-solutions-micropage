@@ -40,19 +40,19 @@ export default function Form_Debug() {
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
 
   /* FILL W PLACEHOLDER AND CHECKBOX TEXT */
-  let [value, setValue] = React.useState('Hallo Ilja, \n \n')
-  let handleInputChange = (e: { target: { value: any; }; }) => {
-    let inputValue = e.target.value
-    setValue(inputValue)
-  }
-  let handleCheckboxChange = (e: { target: { value: any; checked: any; }; }) => {
-    let checkboxValue = e.target.value
+  let [value, setValue] = React.useState("Hallo Ilja, \n \n");
+  let handleInputChange = (e: { target: { value: any } }) => {
+    let inputValue = e.target.value;
+    setValue(inputValue);
+  };
+  let handleCheckboxChange = (e: { target: { value: any; checked: any } }) => {
+    let checkboxValue = e.target.value;
     if (e.target.checked) {
-      setValue((prevValue) => prevValue + '' + checkboxValue+". \n")
+      setValue((prevValue) => prevValue + "" + checkboxValue + ". \n");
     } else {
-      setValue((prevValue) => prevValue.replace(checkboxValue+". \n", ''))
+      setValue((prevValue) => prevValue.replace(checkboxValue + ". \n", ""));
     }
-  }
+  };
   /* FORM FRONTEND*/
   return (
     <form
@@ -60,7 +60,13 @@ export default function Form_Debug() {
       method="POST"
     >
       {/* PART 1 */}
-      <Card sx={useStyleConfig("Card")} zIndex={1} id="ihrprojekt" mb={5}>
+      <Card
+        sx={useStyleConfig("Card")}
+        zIndex={1}
+        id="ihrprojekt"
+        mb={5}
+        scrollMarginTop={"5vh"}
+      >
         <CardHeader>
           <Heading>{data.form_titles.head2}</Heading>
         </CardHeader>
@@ -93,7 +99,7 @@ export default function Form_Debug() {
                           pl="2"
                           variant="regular"
                           /* color={data.maincard.colors[index]} */
-                          key={"t"+index}
+                          key={"t" + index}
                         >
                           {textElement}
                         </Text>
@@ -122,7 +128,7 @@ export default function Form_Debug() {
                         colorScheme="brand.slightgrey"
                         onChange={handleCheckboxChange}
                       >
-                        <Text variant="regular" pl="2" key={"t2"+index}>
+                        <Text variant="regular" pl="2" key={"t2" + index}>
                           {textElement}
                         </Text>
                       </Checkbox>
@@ -154,6 +160,7 @@ export default function Form_Debug() {
           transform: "scale(1.01)",
         }}
         id="letstalk"
+        scrollMarginTop={"5vh"}
       >
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
@@ -202,8 +209,8 @@ export default function Form_Debug() {
                     opacity="100%"
                     /* width={{ xl: "80%" , "2xl": "55%"}} */
                     /* maxW={{ "2xl": "30vh"}} */
-                    minW = {{xl: "50px", "2xl": "50px"}}
-                    maxW = {{xl: "200px", "2xl": "250px"}}
+                    minW={{ xl: "50px", "2xl": "50px" }}
+                    maxW={{ xl: "200px", "2xl": "250px" }}
                     mb="25"
                     /* filter="invert(0.50)" */
                     /* filter="invert(0.87)" */
@@ -233,8 +240,9 @@ export default function Form_Debug() {
                 </FormLabel>
 
                 <Textarea
-                  {...register("Nachricht")} 
-                  value={value} onChange={handleInputChange}
+                  {...register("Nachricht")}
+                  value={value}
+                  onChange={handleInputChange}
                   key="textarea"
                   variant="regular"
                   h="300px"

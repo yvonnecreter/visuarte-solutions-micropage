@@ -38,7 +38,7 @@ export default function ColumnCard() {
   const desktop = useBreakpointValue({ base: false, md: true });
 
   return (
-    <Card sx={useStyleConfig("Card")} id="waswirtun">
+    <Card sx={useStyleConfig("Card")} id="waswirtun" scrollMarginTop={"5vh"}>
       <CardHeader>
         <Heading variant="layer1">{data.maincard.head1}</Heading>
         <Heading variant="layer2">{data.maincard.head1_2}</Heading>
