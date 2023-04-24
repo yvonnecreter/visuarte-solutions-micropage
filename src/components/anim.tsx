@@ -58,7 +58,7 @@ export default function Anim() {
       />
       <Heading
        ref={textHeadingRef}
-               position="fixed"
+       position="fixed"
         top="20vh"
         right={50}
         width="40vw"
