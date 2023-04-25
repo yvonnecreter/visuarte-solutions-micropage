@@ -277,18 +277,19 @@ export default function ColumnCard() {
 
           /* MOBILE */
           <Center flexDirection="column">
-            <Text variant="stronglyEmphasized">{data.maincard.head3[0]}</Text>
+            <Center justifyContent="center" align-content="center">
+            <Text variant="stronglyEmphasized" w="70%">{data.maincard.head3[0]}</Text>
             <Divider opacity="0" h="20px" />
             <Image
               src={data.maincard.table.element1}
               alt={data.maincard.table.element1}
               opacity="100%"
-              w="50%"
+              w="30%"
               transition="transform 2s"
               _hover={{
                 transform: "scale(1.1)",
               }}
-            />
+            /></Center>
             <Divider opacity="0" h="20px" />
 
             {data.maincard.table.element4.map((item, i) => (
@@ -371,6 +372,7 @@ export default function ColumnCard() {
             ))}
             </Grid>
             <Divider opacity="0" h="20px" />
+            <Center justifyContent="center" align-content="center">
             <Text variant="stronglyEmphasized">{data.maincard.head3[1]}</Text>
             <Flex alignItems="center" justifyContent="center" w="50%">
               <Box
@@ -393,7 +395,7 @@ export default function ColumnCard() {
                 />
                 <MotionBox />
               </Box>
-            </Flex>
+            </Flex></Center>
           </Center>
         )}
       </CardBody>
