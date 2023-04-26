@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from 'react';
 import {
   Box,
   Text,
@@ -19,6 +19,7 @@ import {
   SimpleGrid,
   Flex,
   CardFooter,
+  AspectRatio,
 } from "@chakra-ui/react";
 
 import { useForm } from "react-hook-form";
@@ -38,6 +39,9 @@ export default function Form_Debug() {
 
   const col = ["purple", "green", "blue"];
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
+  const BooleanArray = () => {
+    const [boolArray, setBoolArray] = useState([false, false, false]);
+  };
 
   /* FILL W PLACEHOLDER AND CHECKBOX TEXT */
   let [value, setValue] = React.useState("Hallo Ilja, \n \n");
@@ -53,6 +57,7 @@ export default function Form_Debug() {
       setValue((prevValue) => prevValue.replace(checkboxValue + ". \n", ""));
     }
   };
+
   /* FORM FRONTEND*/
   return (
     <form
@@ -74,6 +79,53 @@ export default function Form_Debug() {
         {/* HEADLINE */}
         <CardBody mb={5}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
+            <GridItem>
+              {data.form_textElements1.map((textElement, index) => (
+                <Box
+                  mt={2 + Math.random() * 750}
+                  ml={5 + Math.random() * 210}
+                  key={"img" + index}
+                  position={"absolute"}
+                >
+                  {/* POLAROIDSTACK */}
+                  <Image
+                    src={"images/placeholder.png"}
+                    alt="placeholder"
+                    h="220px"
+                    w="200px"
+                    padding="10px"
+                    bg="brand.white"
+                    pb="50px"
+                    style={{
+                      transform: `rotate(${Math.random() * 40 - 40}deg)`,
+                    }}
+                  />
+                </Box>
+              ))}
+              {data.form_textElements2.map((textElement, index) => (
+                <Box
+                  mt={2 + Math.random() * 750}
+                  ml={5 + Math.random() * 210}
+                  key={"img" + index}
+                  position={"absolute"}
+                >
+                  {/* POLAROIDSTACK */}
+                  <Image
+                    src={"images/placeholder.png"}
+                    alt="placeholder"
+                    h="220px"
+                    w="200px"
+                    padding="10px"
+                    bg="brand.white"
+                    pb="50px"
+                    style={{
+                      transform: `rotate(${Math.random() * 40 - 40}deg)`,
+                    }}
+                  />
+                </Box>
+              ))}
+            </GridItem>
+
             <GridItem>
               <Box>
                 {/* FORM 1 */}
@@ -146,9 +198,9 @@ export default function Form_Debug() {
 
             {/* PART 2 */}
             {/* column right side */}
-            <GridItem>
+            {/* <GridItem>
               <Image src={data.diagramIMG} alt="diagram" w="100%" />
-            </GridItem>
+            </GridItem> */}
           </SimpleGrid>
         </CardBody>
       </Card>
@@ -210,7 +262,7 @@ export default function Form_Debug() {
                     /* width={{ xl: "80%" , "2xl": "55%"}} */
                     /* maxW={{ "2xl": "30vh"}} */
                     minW={{ xl: "50px", "2xl": "50px" }}
-                    maxW={{ xl: "200px", "2xl": "250px" }}
+                    maxW={{ base: "260px", xl: "200px", "2xl": "250px" }}
                     mb="25"
                     /* filter="invert(0.50)" */
                     /* filter="invert(0.87)" */

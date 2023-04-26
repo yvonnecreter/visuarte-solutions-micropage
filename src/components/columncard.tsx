@@ -204,8 +204,6 @@ export default function ColumnCard() {
                   <Image
                     src={data.maincard.table.element4[i]}
                     alt=" "
-                    /* w="75%" */
-                    /* maxH={"5vh"} */
                     h="55%"
                     opacity={"90%"}
                     transition="transform 1s"
