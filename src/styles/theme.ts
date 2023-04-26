@@ -114,7 +114,7 @@ const Card = defineStyleConfig({
     filter: "blur-bg(50)",
     px: "5vw",
     py: "4vh",
-    borderWidth: "2px",
+    borderWidth: "0px",
     borderColor: "rgba(117, 117, 117, 0.3)",
   },
   variants: {
