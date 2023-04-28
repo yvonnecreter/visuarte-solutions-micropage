@@ -2,6 +2,7 @@
   "logo":"images/logo.png",
   "logo_g":"images/logo_g.png",
   "diagramIMG":"images/diagram.png",
+  "box":"images/box.svg",
   "videoplayer_placeholder": {
     "video": "images/placeholder_video.mp4",
     "subtitle": "3 Kernkompetenzen",

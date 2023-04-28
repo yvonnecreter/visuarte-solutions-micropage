@@ -29,6 +29,7 @@ import VideoPlayer from "@/components/videoplayercards";
 import CustomSpacerOne from "@/components/spacer";
 import data from "../components/data.json";
 import ColumnCard from "@/components/columncard";
+import ColumnCard2 from "@/components/columncard2";
 import LinkCards from "@/components/linkcards";
 import MotionBox from "@/components/motionbox";
 import { ArrowDownIcon } from "@chakra-ui/icons";
@@ -131,6 +132,7 @@ export default function Home() {
           <UnityGame />
           <CustomSpacerOne />
 
+          <ColumnCard2 />
           <ColumnCard />
 
           <CustomSpacerOne />
