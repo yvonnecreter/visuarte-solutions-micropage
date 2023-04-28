@@ -145,7 +145,7 @@ export default function Form() {
         const div = document.createElement("div");
         div.style.background = "white";
         div.style.height = "100%";
-        div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
+        div.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
         const image = document.createElement("img");
         image.src = "images/placeholder.png";
         image.alt = "placeholder";
