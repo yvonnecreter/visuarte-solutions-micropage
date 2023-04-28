@@ -28,11 +28,7 @@ import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
 import theme from "@/styles/theme";
 import Link from "next/link";
 
-
-
-
 export default function Form() {
-
   /* FORM FUNCTIONS */
   const {
     handleSubmit,
@@ -71,50 +67,55 @@ export default function Form() {
     }
   };
 
-  
-  const [polaroidMap, setPolaroidMap] = useState<{ [key: string]: HTMLDivElement }>({});
-  const [activePolaroidMap, setActivePolaroidMap] = useState<{ [key: string]: HTMLDivElement }>({});
+  const [polaroidMap, setPolaroidMap] = useState<{
+    [key: string]: HTMLDivElement;
+  }>({});
+  const [activePolaroidMap, setActivePolaroidMap] = useState<{
+    [key: string]: HTMLDivElement;
+  }>({});
   const handlePolaroidChecked = (checkboxId: string) => {
-      const box = document.createElement("div");
-      box.style.marginTop = `${2 + Math.random() * gridItemDimensions.height * 0.8}px`;
-      box.style.marginLeft = `${2 + Math.random() * gridItemDimensions.width * 0.1}px`;
-      box.style.position = "absolute";
-      box.setAttribute("id", "box: "+checkboxId);
-      const div = document.createElement("div");
-      div.style.background="white";
-      div.style.height ="100%"
-      div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
-      const image = document.createElement("img");
-      image.src = "images/placeholder.png";
-      image.alt = "placeholder";
-      image.height = 220;
-      image.width = 200;
-      image.style.padding = "10px";
-      image.style.backgroundColor = "brand.white";
-      image.style.paddingBottom = "50px";
-      div.appendChild(image);
-      box.appendChild(div);
-      setActivePolaroidMap(prevState => ({
-        ...prevState,
-        [checkboxId]: box 
-      }));
-      console.log(activePolaroidMap);
-  }
+    const box = document.createElement("div");
+    box.style.marginTop = `${
+      Math.random() * (gridItemDimensions.height - 200.5)
+    }px`;
+    box.style.marginLeft = `${
+      Math.random() * (gridItemDimensions.width - 202)
+    }px`;
+    box.style.position = "absolute";
+    box.setAttribute("id", "box: " + checkboxId);
+    const div = document.createElement("div");
+    div.style.background = "white";
+    div.style.height = "100%";
+    div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
+    const image = document.createElement("img");
+    image.src = "images/placeholder.png";
+    image.alt = "placeholder";
+    image.height = 220;
+    image.width = 200;
+    image.style.padding = "10px";
+    image.style.backgroundColor = "brand.white";
+    image.style.paddingBottom = "50px";
+    div.appendChild(image);
+    box.appendChild(div);
+    setActivePolaroidMap((prevState) => ({
+      ...prevState,
+      [checkboxId]: box,
+    }));
+    console.log(activePolaroidMap);
+  };
   const handlePolaroidUnchecked = (checkboxId: string) => {
-    setActivePolaroidMap(prevState => {
+    setActivePolaroidMap((prevState) => {
       const newState = { ...prevState };
       delete newState[checkboxId];
       return newState;
     });
     console.log(activePolaroidMap);
-  }
+  };
   const gridItemRef = useRef<HTMLDivElement>(null);
 
   /* STYLING */
   const col = ["purple", "green", "blue"];
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
-
-
 
   /* POLAROID */
 
@@ -129,14 +130,35 @@ export default function Form() {
       while (gridItemRef.current.firstChild) {
         gridItemRef.current.removeChild(gridItemRef.current.firstChild);
       }
-      Object.values(activePolaroidMap).forEach((divElement) => {
-        gridItemRef.current.appendChild(divElement);
-      });
+
+      if (Object.keys(activePolaroidMap).length === 0) {
+        const box = document.createElement("div");
+        box.style.marginTop = `${50}px`;
+        box.style.marginLeft = `${50}px`;
+        box.style.position = "absolute";
+        const div = document.createElement("div");
+        div.style.background = "white";
+        div.style.height = "100%";
+        div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
+        const image = document.createElement("img");
+        image.src = "images/placeholder.png";
+        image.alt = "placeholder";
+        image.height = 220;
+        image.width = 200;
+        image.style.padding = "10px";
+        image.style.backgroundColor = "brand.white";
+        image.style.paddingBottom = "50px";
+        div.appendChild(image);
+        box.appendChild(div);
+        gridItemRef.current.appendChild(box);
+      } else {
+        Object.values(activePolaroidMap).forEach((divElement) => {
+          gridItemRef.current.appendChild(divElement);
+        });
+      }
     }
   }, [activePolaroidMap]);
   const [polaroidValue, setPolaroidValue] = useState("");
-
-
 
   /*FRONTEND*/
   return (
@@ -159,8 +181,7 @@ export default function Form() {
         {/* HEADLINE */}
         <CardBody mb={5}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
-            <GridItem h="100%" w="100%" ref={gridItemRef}>
-            </GridItem>
+            <GridItem h="100%" w="100%" ref={gridItemRef}></GridItem>
 
             <GridItem>
               <Box>
