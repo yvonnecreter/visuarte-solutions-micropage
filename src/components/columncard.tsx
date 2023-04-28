@@ -68,11 +68,11 @@ export default function ColumnCard() {
             <GridItem rowSpan={3}>
               <Flex alignItems="center" h="100%">
                 <Image
-                  src={data.maincard.table.element1}
-                  alt={data.maincard.table.element1}
+                  src={data.maincard.table.element5}
+                  alt={data.maincard.table.element5}
                   /* opacity="20%" */
                   opacity="100%"
-                  w="80%"
+                  w="100%"
                   /* filter="invert(1)" */
                   transition="transform 2s"
                   _hover={{
