@@ -67,6 +67,12 @@ export default function Form() {
     }
   };
 
+  const maxDivsPerRow = 6;
+  let currentRow = 0;
+  let currentCol = 0;
+  let numDivsInCurrentRow = 0;
+  let shiftRight = false;
+
   const [polaroidMap, setPolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
@@ -75,8 +81,12 @@ export default function Form() {
   }>({});
   const handlePolaroidChecked = (checkboxId: string) => {
     const box = document.createElement("div");
-    box.style.marginTop = `${0+ Math.random() * (gridItemDimensions.height - 200.5)}px`;
-    box.style.marginLeft = `${5+ Math.random() * (gridItemDimensions.width - 202)}px`;
+    box.style.marginTop = `${
+      0 + Math.random() * (gridItemDimensions.height - 200.5)
+    }px`;
+    box.style.marginLeft = `${
+      5 + Math.random() * (gridItemDimensions.width - 202)
+    }px`;
     box.style.position = "absolute";
     box.setAttribute("id", "box: " + checkboxId);
     const div = document.createElement("div");
@@ -149,7 +159,9 @@ export default function Form() {
         gridItemRef.current.appendChild(box);
       } else {
         Object.values(activePolaroidMap).forEach((divElement) => {
-          gridItemRef.current.appendChild(divElement);
+          if (gridItemRef.current) {
+            gridItemRef.current.appendChild(divElement);
+          }
         });
       }
     }
@@ -177,7 +189,10 @@ export default function Form() {
         {/* HEADLINE */}
         <CardBody mb={5}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
-            <GridItem h="100%" w="100%" ref={gridItemRef}></GridItem>
+            <GridItem h="100%" w="100%" ref={gridItemRef}>
+              {/* <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} gap={6} ref={gridItemRef}>
+              </SimpleGrid> */}
+            </GridItem>
 
             <GridItem>
               <Box>
@@ -242,12 +257,6 @@ export default function Form() {
                 </Button>
               </Link>
             </GridItem>
-
-            {/* PART 2 */}
-            {/* column right side */}
-            {/* <GridItem>
-              <Image src={data.diagramIMG} alt="diagram" w="100%" />
-            </GridItem> */}
           </SimpleGrid>
         </CardBody>
       </Card>
