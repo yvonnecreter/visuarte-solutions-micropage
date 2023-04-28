@@ -75,12 +75,8 @@ export default function Form() {
   }>({});
   const handlePolaroidChecked = (checkboxId: string) => {
     const box = document.createElement("div");
-    box.style.marginTop = `${
-      Math.random() * (gridItemDimensions.height - 200.5)
-    }px`;
-    box.style.marginLeft = `${
-      Math.random() * (gridItemDimensions.width - 202)
-    }px`;
+    box.style.marginTop = `${0+ Math.random() * (gridItemDimensions.height - 200.5)}px`;
+    box.style.marginLeft = `${5+ Math.random() * (gridItemDimensions.width - 202)}px`;
     box.style.position = "absolute";
     box.setAttribute("id", "box: " + checkboxId);
     const div = document.createElement("div");
