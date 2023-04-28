@@ -23,7 +23,7 @@ import {
 } from "@chakra-ui/react";
 import Header from "@/components/header";
 import UnityGame from "@/components/unitygame";
-import Form_Debug from "@/components/form_debug";
+import Form from "@/components/form";
 import Footer from "@/components/footer";
 import VideoPlayer from "@/components/videoplayercards";
 import CustomSpacerOne from "@/components/spacer";
@@ -141,7 +141,7 @@ export default function Home() {
           <CustomSpacerOne />
           {/*contact*/}
 
-          <Form_Debug />
+          <Form />
 
           <CustomSpacerOne />
           <LinkCards />

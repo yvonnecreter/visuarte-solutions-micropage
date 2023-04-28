@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import {
   Box,
   Text,
@@ -21,44 +21,124 @@ import {
   CardFooter,
   AspectRatio,
 } from "@chakra-ui/react";
-
 import { useForm } from "react-hook-form";
 import data from "./data.json";
 import Diagram1 from "./diagram";
 import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
-
 import theme from "@/styles/theme";
 import Link from "next/link";
 
-export default function Form_Debug() {
+
+
+
+export default function Form() {
+
+  /* FORM FUNCTIONS */
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
-
-  const col = ["purple", "green", "blue"];
-  const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
-  const BooleanArray = () => {
-    const [boolArray, setBoolArray] = useState([false, false, false]);
-  };
-
-  /* FILL W PLACEHOLDER AND CHECKBOX TEXT */
+  const [formTextElements, setFormTextElements] = useState(
+    data.form_textElements1
+  );
   let [value, setValue] = React.useState("Hallo Ilja, \n \n");
   let handleInputChange = (e: { target: { value: any } }) => {
     let inputValue = e.target.value;
     setValue(inputValue);
   };
-  let handleCheckboxChange = (e: { target: { value: any; checked: any } }) => {
+
+  let handleCheckboxChange = (e: {
+    target: { id: any; value: any; checked: any };
+  }) => {
     let checkboxValue = e.target.value;
+    let checkboxId = e.target.id;
+
     if (e.target.checked) {
       setValue((prevValue) => prevValue + "" + checkboxValue + ". \n");
+      handlePolaroidChecked(checkboxId);
+      setFormTextElements((prevFormTextElements) => [
+        ...prevFormTextElements,
+        checkboxValue,
+      ]);
+      /* console.log("id: "+checkboxId); */
     } else {
+      handlePolaroidUnchecked(checkboxId);
       setValue((prevValue) => prevValue.replace(checkboxValue + ". \n", ""));
+      setFormTextElements((prevFormTextElements) =>
+        prevFormTextElements.filter((item) => item !== checkboxValue)
+      );
     }
   };
 
-  /* FORM FRONTEND*/
+  
+  const [polaroidMap, setPolaroidMap] = useState<{ [key: string]: HTMLDivElement }>({});
+  const [activePolaroidMap, setActivePolaroidMap] = useState<{ [key: string]: HTMLDivElement }>({});
+  const handlePolaroidChecked = (checkboxId: string) => {
+      const box = document.createElement("div");
+      box.style.marginTop = `${2 + Math.random() * gridItemDimensions.height * 0.8}px`;
+      box.style.marginLeft = `${2 + Math.random() * gridItemDimensions.width * 0.1}px`;
+      box.style.position = "absolute";
+      box.setAttribute("id", "box: "+checkboxId);
+      const div = document.createElement("div");
+      div.style.background="white";
+      div.style.height ="100%"
+      div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
+      const image = document.createElement("img");
+      image.src = "images/placeholder.png";
+      image.alt = "placeholder";
+      image.height = 220;
+      image.width = 200;
+      image.style.padding = "10px";
+      image.style.backgroundColor = "brand.white";
+      image.style.paddingBottom = "50px";
+      div.appendChild(image);
+      box.appendChild(div);
+      setActivePolaroidMap(prevState => ({
+        ...prevState,
+        [checkboxId]: box 
+      }));
+      console.log(activePolaroidMap);
+  }
+  const handlePolaroidUnchecked = (checkboxId: string) => {
+    setActivePolaroidMap(prevState => {
+      const newState = { ...prevState };
+      delete newState[checkboxId];
+      return newState;
+    });
+    console.log(activePolaroidMap);
+  }
+  const gridItemRef = useRef<HTMLDivElement>(null);
+
+  /* STYLING */
+  const col = ["purple", "green", "blue"];
+  const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
+
+
+
+  /* POLAROID */
+
+  const [gridItemDimensions, setGridItemDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    if (gridItemRef.current) {
+      const { offsetWidth, offsetHeight } = gridItemRef.current;
+      setGridItemDimensions({ width: offsetWidth, height: offsetHeight });
+      while (gridItemRef.current.firstChild) {
+        gridItemRef.current.removeChild(gridItemRef.current.firstChild);
+      }
+      Object.values(activePolaroidMap).forEach((divElement) => {
+        gridItemRef.current.appendChild(divElement);
+      });
+    }
+  }, [activePolaroidMap]);
+  const [polaroidValue, setPolaroidValue] = useState("");
+
+
+
+  /*FRONTEND*/
   return (
     <form
       action="https://getform.io/f/6219fac4-4909-412f-8374-57fc5195395a"
@@ -79,51 +159,7 @@ export default function Form_Debug() {
         {/* HEADLINE */}
         <CardBody mb={5}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
-            <GridItem>
-              {data.form_textElements1.map((textElement, index) => (
-                <Box
-                  mt={2 + Math.random() * 750}
-                  ml={5 + Math.random() * 210}
-                  key={"img" + index}
-                  position={"absolute"}
-                >
-                  {/* POLAROIDSTACK */}
-                  <Image
-                    src={"images/placeholder.png"}
-                    alt="placeholder"
-                    h="220px"
-                    w="200px"
-                    padding="10px"
-                    bg="brand.white"
-                    pb="50px"
-                    style={{
-                      transform: `rotate(${Math.random() * 40 - 40}deg)`,
-                    }}
-                  />
-                </Box>
-              ))}
-              {data.form_textElements2.map((textElement, index) => (
-                <Box
-                  mt={2 + Math.random() * 750}
-                  ml={5 + Math.random() * 210}
-                  key={"img" + index}
-                  position={"absolute"}
-                >
-                  {/* POLAROIDSTACK */}
-                  <Image
-                    src={"images/placeholder.png"}
-                    alt="placeholder"
-                    h="220px"
-                    w="200px"
-                    padding="10px"
-                    bg="brand.white"
-                    pb="50px"
-                    style={{
-                      transform: `rotate(${Math.random() * 40 - 40}deg)`,
-                    }}
-                  />
-                </Box>
-              ))}
+            <GridItem h="100%" w="100%" ref={gridItemRef}>
             </GridItem>
 
             <GridItem>
@@ -143,16 +179,10 @@ export default function Form_Debug() {
                         colorScheme={hexcol[index]}
                         variant={col[index]}
                         key={"form1" + index}
-                        /* {...register("Grobe Vorstellung " + index)} */
                         value={textElement}
                         onChange={handleCheckboxChange}
                       >
-                        <Text
-                          pl="2"
-                          variant="regular"
-                          /* color={data.maincard.colors[index]} */
-                          key={"t" + index}
-                        >
+                        <Text pl="2" variant="regular" key={"t" + index}>
                           {textElement}
                         </Text>
                       </Checkbox>
