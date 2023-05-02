@@ -38,7 +38,8 @@ export default function ColumnCard() {
   const desktop = useBreakpointValue({ base: false, md: true });
 
   return (
-    <Card sx={useStyleConfig("Card")} id="waswirtun" scrollMarginTop={"5vh"}>
+    <Card sx={useStyleConfig("Card")} id="waswirtun" scrollMarginTop={"5vh"} zIndex="1"
+    backdropFilter={"auto"} backdropBlur={"0px"}>
       <CardHeader>
         <Heading variant="layer1">{data.maincard.head1}</Heading>
         <Heading variant="layer2">{data.maincard.head1_2}</Heading>
@@ -264,6 +265,7 @@ export default function ColumnCard() {
                 w="145%"
                 filter={"blur(50px)"}
                 opacity="60%"
+                zIndex="0"
                 style={{
                   backgroundImage: `url("images/blur.svg")`,
                   backgroundSize: "100% auto",

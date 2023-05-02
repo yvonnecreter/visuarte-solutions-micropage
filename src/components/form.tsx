@@ -32,8 +32,8 @@ import Link from "next/link";
 let amount = 0;
 
 export default function Form() {
-  /* FORM FUNCTIONS */
-  const {
+   /* FORM FUNCTIONS */
+   const {
     handleSubmit,
     register,
     formState: { errors },
@@ -56,16 +56,13 @@ export default function Form() {
     if (e.target.checked) {
       setValue((prevValue) => prevValue + "" + checkboxValue + ". \n");
       handlePolaroidChecked(checkboxId);
-      amount++;
       setFormTextElements((prevFormTextElements) => [
         ...prevFormTextElements,
         checkboxValue,
       ]);
-
       /* console.log("id: "+checkboxId); */
     } else {
       handlePolaroidUnchecked(checkboxId);
-      amount--;
       setValue((prevValue) => prevValue.replace(checkboxValue + ". \n", ""));
       setFormTextElements((prevFormTextElements) =>
         prevFormTextElements.filter((item) => item !== checkboxValue)
@@ -73,25 +70,34 @@ export default function Form() {
     }
   };
 
+  const maxDivsPerRow = 6;
+  let currentRow = 0;
+  let currentCol = 0;
+  let numDivsInCurrentRow = 0;
+  let shiftRight = false;
+
+  const [polaroidMap, setPolaroidMap] = useState<{
+    [key: string]: HTMLDivElement;
+  }>({});
   const [activePolaroidMap, setActivePolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
   const handlePolaroidChecked = (checkboxId: string) => {
     const box = document.createElement("div");
     box.style.marginTop = `${
-      50 + (Math.floor(amount / 4) % 4) * (gridItemDimensions.height / 6)
+      0 + Math.random() * (gridItemDimensions.height - 200.5)
     }px`;
     box.style.marginLeft = `${
-      20 + (amount % 4) * (gridItemDimensions.width / 6)
+      5 + Math.random() * (gridItemDimensions.width - 202)
     }px`;
     box.style.position = "absolute";
     box.setAttribute("id", "box: " + checkboxId);
     const div = document.createElement("div");
     div.style.background = "white";
     div.style.height = "100%";
-    div.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+    div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
     const image = document.createElement("img");
-    image.src = "images/placeholder_flat.svg";
+    image.src = "images/placeholder.png";
     image.alt = "placeholder";
     image.height = 220;
     image.width = 200;
@@ -116,8 +122,6 @@ export default function Form() {
   };
   const gridItemRef = useRef<HTMLDivElement>(null);
 
-  /* LAYOUTING */
-
   /* STYLING */
   const col = ["purple", "green", "blue"];
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
@@ -138,14 +142,14 @@ export default function Form() {
       if (Object.keys(activePolaroidMap).length === 0) {
         const box = document.createElement("div");
         box.style.marginTop = `${50}px`;
-        box.style.marginLeft = `${20}px`;
+        box.style.marginLeft = `${50}px`;
         box.style.position = "absolute";
         const div = document.createElement("div");
         div.style.background = "white";
         div.style.height = "100%";
         div.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
         const image = document.createElement("img");
-        image.src = "images/placeholder_question.svg";
+        image.src = "images/placeholder.png";
         image.alt = "placeholder";
         image.height = 220;
         image.width = 200;
@@ -164,8 +168,9 @@ export default function Form() {
       }
     }
   }, [activePolaroidMap]);
+  const [polaroidValue, setPolaroidValue] = useState("");
 
-  /*FRONTEND*/
+  
   return (
     <form
       action="https://getform.io/f/6219fac4-4909-412f-8374-57fc5195395a"
