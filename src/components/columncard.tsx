@@ -70,10 +70,9 @@ export default function ColumnCard() {
                 <Image
                   src={data.maincard.table.element5}
                   alt={data.maincard.table.element5}
-                  /* opacity="20%" */
+                  filter={"blur(2px)"}
                   opacity="100%"
                   w="100%"
-                  /* filter="invert(1)" */
                   transition="transform 2s"
                   _hover={{
                     transform: "scale(1.1)",
@@ -84,7 +83,7 @@ export default function ColumnCard() {
 
             {/*column 2: arrow*/}
             <GridItem colSpan={5}>
-              <Flex justifyContent={"center"} h="100%">
+              {/* <Flex justifyContent={"center"} h="100%">
                 <Image
                   src={data.maincard.arrow}
                   alt={data.maincard.arrow}
@@ -93,7 +92,7 @@ export default function ColumnCard() {
                   maxW="7vH"
                   filter={"invert(1)"}
                 />
-              </Flex>
+              </Flex> */}
             </GridItem>
 
             <GridItem rowSpan={3} width="100%">
@@ -113,13 +112,26 @@ export default function ColumnCard() {
               <React.Fragment key={i}>
                 <GridItem width="100%" textAlign="center">
                   <Flex alignItems="center" justifyContent="center" h="100%">
+                    <Box
+                      borderRadius={"full"}
+                      background={data.maincard.colors[i]}
+                      h="15px"
+                      w="15px"
+                      mr="20px"
+                      _hover={{
+                        transform: "scale(1.1)",
+                      }}
+                      as="a"
+                      transition="transform 1s"
+                      href="#impressionen"
+                    />
                     <Flex
                       alignItems="center"
                       justifyContent="center"
                       as="a"
-                      href="#videoplayercards"
+                      href="#impressionen"
                       px="5"
-                      borderWidth={3}
+                      /* borderWidth={3} */ borderWidth={2}
                       borderRadius="12"
                       borderColor={data.maincard.colors[i]}
                       transition="transform 1s"
@@ -128,14 +140,16 @@ export default function ColumnCard() {
                       }}
                       h="50%"
                       boxShadow="2xl"
-                      background={data.maincard.colors[i]}
+                      /* background={data.maincard.colors[i]} */
                       opacity="90%"
                     >
                       <Text
                         variant="regular"
                         textTransform={"uppercase"}
                         letterSpacing={"wider"}
-                        color="#212121"
+                        /* color="#212121" */
+                        color={data.maincard.colors[i]}
+                        fontWeight={"bold"}
                       >
                         {item}
                       </Text>
@@ -167,7 +181,7 @@ export default function ColumnCard() {
                   <Flex alignItems="center" justifyContent="center" h="100%">
                     <Box
                       as="a"
-                      href="#videoplayercards"
+                      href="#impressionen"
                       p="3"
                       borderRadius="12"
                       transition="transform 1s"
@@ -199,7 +213,7 @@ export default function ColumnCard() {
                   justifyContent="center"
                   h="100%"
                   as="a"
-                  href="#videoplayercards"
+                  href="#impressionen"
                 >
                   <Image
                     src={data.maincard.table.element4[i]}
@@ -218,7 +232,7 @@ export default function ColumnCard() {
 
             {/*column 7: arrow*/}
 
-            <GridItem colSpan={2}>
+            <GridItem colSpan={2} >
               <Flex
                 alignItems="center"
                 justifyContent="center"
@@ -248,7 +262,19 @@ export default function ColumnCard() {
 
             {/*column 8: image*/}
 
-            <GridItem rowSpan={3} w="100%">
+            <GridItem rowSpan={3} w="100%" style={{ position: "relative"}}>
+              <Box
+                overflow={"visible"}
+                h="180%"
+                w="180%"
+                filter={"blur(50px)"}
+                style={{
+                  backgroundImage: `url("images/blur.svg")`,
+                  backgroundSize: "100% auto",
+                  backgroundRepeat: "no-repeat",
+                  position: "absolute", top: "25%", right: "-25%"
+                }}
+              />
               <Flex alignItems="center" justifyContent="center" h="100%">
                 <Box
                   position="relative"
@@ -272,22 +298,24 @@ export default function ColumnCard() {
             </GridItem>
           </Grid>
         ) : (
-
           /* MOBILE */
           <Center flexDirection="column">
             <Center justifyContent="center" align-content="center">
-            <Text variant="stronglyEmphasized" w="70%">{data.maincard.head3[0]}</Text>
-            <Divider opacity="0" h="20px" />
-            <Image
-              src={data.maincard.table.element1}
-              alt={data.maincard.table.element1}
-              opacity="100%"
-              w="30%"
-              transition="transform 2s"
-              _hover={{
-                transform: "scale(1.1)",
-              }}
-            /></Center>
+              <Text variant="stronglyEmphasized" w="70%">
+                {data.maincard.head3[0]}
+              </Text>
+              <Divider opacity="0" h="20px" />
+              <Image
+                src={data.maincard.table.element1}
+                alt={data.maincard.table.element1}
+                opacity="100%"
+                w="30%"
+                transition="transform 2s"
+                _hover={{
+                  transform: "scale(1.1)",
+                }}
+              />
+            </Center>
             <Divider opacity="0" h="20px" />
 
             {data.maincard.table.element4.map((item, i) => (
@@ -297,7 +325,7 @@ export default function ColumnCard() {
                   justifyContent="center"
                   h="100%"
                   as="a"
-                  href="#videoplayercards"
+                  href="#impressionen"
                 >
                   <Image
                     src={data.maincard.table.element4[i]}
@@ -316,45 +344,47 @@ export default function ColumnCard() {
               </React.Fragment>
             ))}
 
-            <Grid templateColumns="7fr 1fr"
-            templateRows="1fr 1fr 1fr"
-            gap={1}
-            autoFlow="row">
-            {data.maincard.table.element2.map((item, i) => (
-              <React.Fragment key={i}>
-                <GridItem width="100%" textAlign="center" my="1">
-                  <Flex alignItems="center" justifyContent="center" h="100%">
-                    <Flex
-                      alignItems="center"
-                      justifyContent="center"
-                      as="a"
-                      href="#videoplayercards"
-                      m="2"
-                      h="100%"
-                      w="100%"
-                      borderRadius="3"
-                      borderColor={data.maincard.colors[i]}
-                      transition="transform 1s"
-                      _hover={{
-                        transform: "scale(1.1)",
-                      }}
-                      boxShadow="2xl"
-                      background={data.maincard.colors[i]}
-                      opacity="90%"
-                    >
-                      <Text
-                        variant="regular"
-                        textTransform={"uppercase"}
-                        letterSpacing={"wider"}
-                        color="#212121"
+            <Grid
+              templateColumns="7fr 1fr"
+              templateRows="1fr 1fr 1fr"
+              gap={1}
+              autoFlow="row"
+            >
+              {data.maincard.table.element2.map((item, i) => (
+                <React.Fragment key={i}>
+                  <GridItem width="100%" textAlign="center" my="1">
+                    <Flex alignItems="center" justifyContent="center" h="100%">
+                      <Flex
+                        alignItems="center"
+                        justifyContent="center"
+                        as="a"
+                        href="#impressionen"
+                        m="2"
+                        h="100%"
+                        w="100%"
+                        borderRadius="3"
+                        borderColor={data.maincard.colors[i]}
+                        transition="transform 1s"
+                        _hover={{
+                          transform: "scale(1.1)",
+                        }}
+                        boxShadow="2xl"
+                        background={data.maincard.colors[i]}
+                        opacity="90%"
                       >
-                        {item}
-                      </Text>
+                        <Text
+                          variant="regular"
+                          textTransform={"uppercase"}
+                          letterSpacing={"wider"}
+                          color="#212121"
+                        >
+                          {item}
+                        </Text>
+                      </Flex>
                     </Flex>
-                  </Flex>
-                </GridItem>
-                <GridItem>
-                <Image
+                  </GridItem>
+                  <GridItem>
+                    <Image
                       src={data.maincard.table.element4[i]}
                       alt=" "
                       opacity="90%"
@@ -365,35 +395,36 @@ export default function ColumnCard() {
                       }}
                       dropShadow="2xl"
                     />
-                </GridItem>
-              </React.Fragment>
-            ))}
+                  </GridItem>
+                </React.Fragment>
+              ))}
             </Grid>
             <Divider opacity="0" h="20px" />
             <Center justifyContent="center" align-content="center">
-            <Text variant="stronglyEmphasized">{data.maincard.head3[1]}</Text>
-            <Flex alignItems="center" justifyContent="center" w="50%">
-              <Box
-                position="relative"
-                transition="transform 1s"
-                w="100%"
-                _hover={{
-                  transform: "scale(1.1)",
-                }}
-              >
-                <Divider opacity="0" h="20px" />
-                <Image
-                  src={data.maincard.table.element5}
-                  alt={data.maincard.table.element5}
+              <Text variant="stronglyEmphasized">{data.maincard.head3[1]}</Text>
+              <Flex alignItems="center" justifyContent="center" w="50%">
+                <Box
+                  position="relative"
+                  transition="transform 1s"
                   w="100%"
-                  borderRadius={5}
-                  dropShadow="2xl"
-                  /* filter="brightness(1.6)" */
-                  filter="brightness(1.835)"
-                />
-                <MotionBox />
-              </Box>
-            </Flex></Center>
+                  _hover={{
+                    transform: "scale(1.1)",
+                  }}
+                >
+                  <Divider opacity="0" h="20px" />
+                  <Image
+                    src={data.maincard.table.element5}
+                    alt={data.maincard.table.element5}
+                    w="100%"
+                    borderRadius={5}
+                    dropShadow="2xl"
+                    /* filter="brightness(1.6)" */
+                    filter="brightness(1.835)"
+                  />
+                  <MotionBox />
+                </Box>
+              </Flex>
+            </Center>
           </Center>
         )}
       </CardBody>

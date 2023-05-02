@@ -132,7 +132,7 @@ export default function Home() {
           <UnityGame />
           <CustomSpacerOne />
 
-          <ColumnCard2 />
+          {/* <ColumnCard2 /> */}
           <ColumnCard />
 
           <CustomSpacerOne />

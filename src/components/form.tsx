@@ -20,6 +20,7 @@ import {
   Flex,
   CardFooter,
   AspectRatio,
+  background,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import data from "./data.json";
@@ -124,7 +125,6 @@ export default function Form() {
   const hexcol = ["#ce93d8", "#a5d6a7", "#81d4fa"];
 
   /* POLAROID */
-
   const [gridItemDimensions, setGridItemDimensions] = useState({
     width: 0,
     height: 0,
@@ -261,6 +261,11 @@ export default function Form() {
         </CardBody>
       </Card>
 
+      <Box style={{position: "relative"}} w="100%" h="0">
+        <Box style={{position: "absolute", top:"70px", left: "-20%"}} w="140%" h="19px" backgroundColor={"brand.purple"} overflow={"visible"}/>
+        <Box style={{position: "absolute", top:"95px", left: "-20%"}} w="140%" h="19px" backgroundColor={"brand.green"} overflow={"visible"}/>
+        <Box style={{position: "absolute", top:"120px", left: "-20%"}} w="140%" h="19px" backgroundColor={"brand.blue"} overflow={"visible"}/>
+      </Box>
       <Card
         sx={useStyleConfig("Card")}
         transition="transform .5s"
@@ -269,7 +274,8 @@ export default function Form() {
         }}
         id="letstalk"
         scrollMarginTop={"5vh"}
-      >
+        backdropFilter="auto"
+        backdropBlur={"14px"}>
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
           <Heading variant="layer2">{data.form_titles.sub3head2}</Heading>
