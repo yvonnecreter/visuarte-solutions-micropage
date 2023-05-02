@@ -27,14 +27,16 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         lg: "6vh",
       }}
       position="fixed"
-      p={{"xl":"10px","2xl":"4"}}
+      py={{"base":"0px","md":"12px","xl":"10px","2xl":"12px"}}
+      px={{"base":"0px","md":"0px","xl":"10px","2xl":"12px"}}
       display="flex"
       flex-wrap="true"
       color="white"
       alignItems="center"
     >
-        <Image src="images/logo.png" ml={{base:"3", md:"4", "2xl":"1%"}} h="100%" alt="visuarte" 
-        maxH={{base:"25px", md:"40px", "2xl": "80%"}}/>
+        <Image src="images/logo.png" ml={{base:"3", md:"4", "2xl":"1%"}} 
+        h="100%" alt="visuarte" 
+        maxH={{base:"25px", md:"40px", "2xl": "100%"}}/>
       <Spacer />
       {navItems.map((item) => (
         <Box key={item.href} ml={4} maxW={{base: "12%"}}>

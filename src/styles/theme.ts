@@ -80,7 +80,7 @@ const Text = defineStyleConfig({
       fontSize: {
         base: "xs",
         md: "md",
-        "2xl": "xl",
+        "2xl": "md",
       },
     },
     footer: {
