@@ -220,7 +220,7 @@ const Input = defineStyleConfig({
     _focus: {},
     field: {
       background: "transparent",
-      borderWidth: "2px",
+      borderWidth: "1px",
       borderColor: "brand.darkgrey",
       color: "brand.white",
       _hover: {},
@@ -241,7 +241,7 @@ const Input = defineStyleConfig({
 const Textarea = defineStyleConfig({
   baseStyle: {
     background: "transparent",
-    borderWidth: "2px ",
+    borderWidth: "1px ",
     borderColor: "brand.darkgrey",
     color: "brand.white",
     _focus: {},

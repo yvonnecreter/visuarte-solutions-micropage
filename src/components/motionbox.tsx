@@ -60,13 +60,12 @@ export default function MotionBox() {
       cursor={hoverAnimation.cursor}
       transition={transition}
       /* onMouseEnter={onMouseEnter} */
-      whileHover={{
-        opacity: [0.2, 0.7, 0.2],
-        /* transition: { duration: 1, repeat: Infinity }, */
-        transition: { duration: 1.8, repeat: Infinity },
-      }}
+
       /* onMouseOut={onMouseOut} */
       /* animate={{opacity:1}} */
+      animate={{ opacity: [0.2, 0.7, 0.2],
+        /* transition: { duration: 1, repeat: Infinity }, */
+        transition: { duration: 1.8, repeat: Infinity }, }}
     >
       <Box 
     as="a"

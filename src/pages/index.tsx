@@ -22,7 +22,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import Header from "@/components/header";
-import UnityGame from "@/components/unitygame";
+import UnityGame2 from "@/components/unitygame2";
 import Form from "@/components/form";
 import Footer from "@/components/footer";
 import VideoPlayer from "@/components/videoplayercards";
@@ -129,7 +129,7 @@ export default function Home() {
 
           mt="-1"
         >
-          <UnityGame />
+          <UnityGame2 />
           <CustomSpacerOne />
 
           {/* <ColumnCard2 /> */}

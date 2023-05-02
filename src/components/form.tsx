@@ -61,7 +61,7 @@ export default function Form() {
         ...prevFormTextElements,
         checkboxValue,
       ]);
-      
+
       /* console.log("id: "+checkboxId); */
     } else {
       handlePolaroidUnchecked(checkboxId);
@@ -70,10 +70,8 @@ export default function Form() {
       setFormTextElements((prevFormTextElements) =>
         prevFormTextElements.filter((item) => item !== checkboxValue)
       );
-      
     }
   };
-
 
   const [activePolaroidMap, setActivePolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
@@ -81,17 +79,17 @@ export default function Form() {
   const handlePolaroidChecked = (checkboxId: string) => {
     const box = document.createElement("div");
     box.style.marginTop = `${
-      50 + Math.floor(amount/4)%4 * (gridItemDimensions.height / 6)
+      50 + (Math.floor(amount / 4) % 4) * (gridItemDimensions.height / 6)
     }px`;
     box.style.marginLeft = `${
-      20 + amount%4 * ((gridItemDimensions.width) / 6)
+      20 + (amount % 4) * (gridItemDimensions.width / 6)
     }px`;
     box.style.position = "absolute";
     box.setAttribute("id", "box: " + checkboxId);
     const div = document.createElement("div");
     div.style.background = "white";
     div.style.height = "100%";
-    div.style.transform = `rotate(${Math.random()*20-10}deg)`;
+    div.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
     const image = document.createElement("img");
     image.src = "images/placeholder_flat.svg";
     image.alt = "placeholder";
@@ -119,7 +117,6 @@ export default function Form() {
   const gridItemRef = useRef<HTMLDivElement>(null);
 
   /* LAYOUTING */
-  
 
   /* STYLING */
   const col = ["purple", "green", "blue"];
@@ -261,10 +258,28 @@ export default function Form() {
         </CardBody>
       </Card>
 
-      <Box style={{position: "relative"}} w="100%" h="0">
-        <Box style={{position: "absolute", top:"70px", left: "-20%"}} w="140%" h="19px" backgroundColor={"brand.purple"} overflow={"visible"}/>
-        <Box style={{position: "absolute", top:"95px", left: "-20%"}} w="140%" h="19px" backgroundColor={"brand.green"} overflow={"visible"}/>
-        <Box style={{position: "absolute", top:"120px", left: "-20%"}} w="140%" h="19px" backgroundColor={"brand.blue"} overflow={"visible"}/>
+      <Box style={{ position: "relative" }} w="100%" h="0">
+        <Box
+          style={{ position: "absolute", top: "70px", left: "-20%" }}
+          w="140%"
+          h="19px"
+          backgroundColor={"brand.purple"}
+          overflow={"visible"}
+        />
+        <Box
+          style={{ position: "absolute", top: "95px", left: "-20%" }}
+          w="140%"
+          h="19px"
+          backgroundColor={"brand.green"}
+          overflow={"visible"}
+        />
+        <Box
+          style={{ position: "absolute", top: "120px", left: "-20%" }}
+          w="140%"
+          h="19px"
+          backgroundColor={"brand.blue"}
+          overflow={"visible"}
+        />
       </Box>
       <Card
         sx={useStyleConfig("Card")}
@@ -275,11 +290,19 @@ export default function Form() {
         id="letstalk"
         scrollMarginTop={"5vh"}
         backdropFilter="auto"
-        backdropBlur={"14px"}>
+        backdropBlur={"14px"}
+      >
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
-          <Heading variant="layer2">{data.form_titles.sub3head2}</Heading>
 
+          <Heading variant="layer2">
+            {data.form_titles.sub3head2.map((item, i) => (
+              <React.Fragment key={i}>
+                {item}
+                <br />
+              </React.Fragment>
+            ))}
+          </Heading>
           <Text variant="lessEmphasized" my="5">
             {data.form_titles.sub3head3.map((item, i) => (
               <React.Fragment key={i}>

@@ -52,21 +52,31 @@ export default function ColumnCard() {
         {desktop ? (
           <Grid
             templateRows="1fr 1fr 1fr 1fr"
-            templateColumns="1.2fr 0.5fr 2.7fr 1fr 1.5fr 1fr 0.5fr 1.2fr"
+            templateColumns="1.2fr 0.5fr 2.7fr 1fr 1.5fr 1fr 0.5fr 1.5fr"
             gap={5}
             autoFlow="column"
           >
-            <GridItem>
+            {/* <GridItem>
               <Flex alignItems="center" justifyContent="center" h="100%">
                 <Text variant="stronglyEmphasized">
                   {data.maincard.head3[0]}
                 </Text>
               </Flex>
-            </GridItem>
+            </GridItem> */}
 
             {/*column 1: lifecycle*/}
-            <GridItem rowSpan={3}>
-              <Flex alignItems="center" h="100%">
+            <GridItem rowSpan={3} position="relative">
+              <Flex alignItems="center" justifyContent="center">
+                <Text variant="stronglyEmphasized" position="absolute">
+                  {data.maincard.head3[0]}
+                </Text>
+              </Flex>
+              <Flex
+                alignItems="center"
+                h="100%"
+                justifyContent="center"
+                flexFlow={"column"}
+              >
                 <Image
                   src={data.maincard.table.element5}
                   alt={data.maincard.table.element5}
@@ -232,22 +242,6 @@ export default function ColumnCard() {
 
             {/*column 7: arrow*/}
 
-            <GridItem colSpan={2} >
-              <Flex
-                alignItems="center"
-                justifyContent="center"
-                h="100%"
-                /* transition="transform 1s"
-              _hover={{
-                transform: "scale(1.2)",
-              }} */
-              >
-                <Text variant="stronglyEmphasized">
-                  {data.maincard.head3[1]}
-                </Text>
-              </Flex>
-            </GridItem>
-
             <GridItem rowSpan={3} width="100%">
               <Flex alignItems="center" justifyContent="center" h="100%">
                 <Image
@@ -256,32 +250,66 @@ export default function ColumnCard() {
                   height="73%"
                   opacity="20%"
                   filter={"invert(1)"}
+                  zIndex="3"
                 />
               </Flex>
             </GridItem>
 
             {/*column 8: image*/}
 
-            <GridItem rowSpan={3} w="100%" style={{ position: "relative"}}>
+            <GridItem rowSpan={3} w="100%" style={{ position: "relative" }}>
               <Box
                 overflow={"visible"}
-                h="180%"
-                w="180%"
+                h="145%"
+                w="145%"
                 filter={"blur(50px)"}
+                opacity="60%"
                 style={{
                   backgroundImage: `url("images/blur.svg")`,
                   backgroundSize: "100% auto",
                   backgroundRepeat: "no-repeat",
-                  position: "absolute", top: "25%", right: "-25%"
+                  position: "absolute",
+                  top: "18.5%",
+                  right: "-75%",
                 }}
               />
-              <Flex alignItems="center" justifyContent="center" h="100%">
+              <Flex justifyContent="center" alignContent="center">
+                <Text variant="stronglyEmphasized" position="absolute">
+                  {data.maincard.head3[1]}
+                </Text>
+              </Flex>
+
+              {/*               <Box
+                overflow={"visible"}
+                h="260%"
+                w="260%"
+                filter={"blur(50px)"}
+                opacity="20%"
+                style={{
+                  backgroundImage: `url("images/blur.svg")`,
+                  backgroundSize: "100% auto",
+                  backgroundRepeat: "no-repeat",
+                  position: "absolute",
+                  top: "10%",
+                  right: "460%",
+                }}
+              /> */}
+              <Flex
+                alignItems="center"
+                justifyContent="center"
+                flexFlow="column"
+                h="100%"
+              >
                 <Box
                   position="relative"
                   transition="transform 1s"
                   _hover={{
                     transform: "scale(1.1)",
                   }}
+                  borderWidth="2px"
+                  borderColor={"#707070"}
+                  borderRadius={16}
+                  backgroundColor="brand.white"
                 >
                   <Image
                     src={data.maincard.table.element5}
@@ -290,7 +318,8 @@ export default function ColumnCard() {
                     borderRadius={5}
                     dropShadow="2xl"
                     /* filter="brightness(1.6)" */
-                    filter="brightness(1.835)"
+                    /* filter="brightness(1.835)" */
+                    filter="brightness(0.9)"
                   />
                   <MotionBox />
                 </Box>
