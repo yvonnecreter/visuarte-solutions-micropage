@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 213.73 213.73">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9e9d9e;
+      }
+
+      .cls-2 {
+        fill: #e0dfdf;
+        font-family: OpenSans-Regular, 'Open Sans';
+        font-size: 97.59px;
+        font-variation-settings: 'wght' 400, 'wdth' 100;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-1" width="213.73" height="213.73"/>
+      <text class="cls-2" transform="translate(85.8 140.54)"><tspan x="0" y="0">?</tspan></text>
+    </g>
+  </g>
+</svg>

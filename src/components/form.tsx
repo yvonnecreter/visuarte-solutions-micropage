@@ -93,7 +93,7 @@ export default function Form() {
     div.style.height = "100%";
     div.style.transform = `rotate(${Math.random()*20-10}deg)`;
     const image = document.createElement("img");
-    image.src = "images/placeholder.png";
+    image.src = "images/placeholder_flat.svg";
     image.alt = "placeholder";
     image.height = 220;
     image.width = 200;
@@ -148,7 +148,7 @@ export default function Form() {
         div.style.height = "100%";
         div.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
         const image = document.createElement("img");
-        image.src = "images/placeholder.png";
+        image.src = "images/placeholder_question.svg";
         image.alt = "placeholder";
         image.height = 220;
         image.width = 200;
