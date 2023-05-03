@@ -272,7 +272,7 @@ export default function ColumnCard() {
                   backgroundRepeat: "no-repeat",
                   position: "absolute",
                   top: "18.5%",
-                  right: "-75%",
+                  right: "-25%",
                 }}
               />
               <Flex justifyContent="center" alignContent="center">
