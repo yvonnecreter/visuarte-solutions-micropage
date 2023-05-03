@@ -47,23 +47,18 @@ export default function ColumnCard() {
         <Heading variant="layer3">{data.maincard.head2}</Heading>
       </CardHeader>
 
-      <CardBody>
+      <CardBody 
+            height={"430px"}
+            pb="25px">
         {/* Condition: {true && <div/>}, Condition + Else: {true ? <div/> : <div/>} */}
 
         {desktop ? (
           <Grid
-            templateRows="1fr 1fr 1fr 1fr"
+            templateRows="0.3 1fr 1fr 1fr"
             templateColumns="1.2fr 0.5fr 2.7fr 1fr 1.5fr 1fr 0.5fr 1.5fr"
             gap={5}
             autoFlow="column"
           >
-            {/* <GridItem>
-              <Flex alignItems="center" justifyContent="center" h="100%">
-                <Text variant="stronglyEmphasized">
-                  {data.maincard.head3[0]}
-                </Text>
-              </Flex>
-            </GridItem> */}
 
             {/*column 1: lifecycle*/}
             <GridItem rowSpan={3} position="relative">
@@ -90,20 +85,6 @@ export default function ColumnCard() {
                   }}
                 />
               </Flex>
-            </GridItem>
-
-            {/*column 2: arrow*/}
-            <GridItem colSpan={5}>
-              {/* <Flex justifyContent={"center"} h="100%">
-                <Image
-                  src={data.maincard.arrow}
-                  alt={data.maincard.arrow}
-                  opacity="20%"
-                  width="50%"
-                  maxW="7vH"
-                  filter={"invert(1)"}
-                />
-              </Flex> */}
             </GridItem>
 
             <GridItem rowSpan={3} width="100%">
