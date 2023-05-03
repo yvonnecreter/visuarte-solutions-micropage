@@ -48,8 +48,8 @@ export default function ColumnCard() {
       </CardHeader>
 
       <CardBody 
-            height={"430px"}
-            pb="25px">
+            height={"440px"}
+            pb="35px">
         {/* Condition: {true && <div/>}, Condition + Else: {true ? <div/> : <div/>} */}
 
         {desktop ? (
@@ -58,6 +58,7 @@ export default function ColumnCard() {
             templateColumns="1.2fr 0.5fr 2.7fr 1fr 1.5fr 1fr 0.5fr 1.5fr"
             gap={5}
             autoFlow="column"
+            mt="20px"
           >
 
             {/*column 1: lifecycle*/}
@@ -291,7 +292,7 @@ export default function ColumnCard() {
                   }}
                   borderWidth="2px"
                   borderColor={"#707070"}
-                  borderRadius={16}
+                  borderRadius={13}
                   backgroundColor="brand.white"
                 >
                   <Image
