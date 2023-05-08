@@ -15,10 +15,10 @@ export default function UnityGame() {
   const boxRef = React.useRef<HTMLDivElement>(null);
 
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl: "Build/build-darkmode.loader.js",
-    dataUrl: "Build/build-darkmode.data",
-    frameworkUrl: "Build/build-darkmode.framework.js",
-    codeUrl: "Build/build-darkmode.wasm",
+    loaderUrl: "Build/build.loader.js",
+    dataUrl: "Build/build.data",
+    frameworkUrl: "Build/build.framework.js",
+    codeUrl: "Build/build.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
   const loadingPercentage = Math.round(loadingProgression * 100);

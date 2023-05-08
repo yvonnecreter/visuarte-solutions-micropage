@@ -22,6 +22,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import Header from "@/components/header";
+import UnityGame from "@/components/unitygame";
 import UnityGame2 from "@/components/unitygame2";
 import Form from "@/components/form";
 import Footer from "@/components/footer";
@@ -33,7 +34,6 @@ import ColumnCard2 from "@/components/columncard2";
 import LinkCards from "@/components/linkcards";
 import MotionBox from "@/components/motionbox";
 import { ArrowDownIcon } from "@chakra-ui/icons";
-
 import { MapIcon, VidIcon, TapIcon } from "@/components/icons";
 
 export default function Home() {
@@ -129,7 +129,7 @@ export default function Home() {
 
           mt="-1"
         >
-          <UnityGame2 />
+          <UnityGame2/>
           <CustomSpacerOne />
 
           {/* <ColumnCard2 /> */}
