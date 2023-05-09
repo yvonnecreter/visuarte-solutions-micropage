@@ -7,6 +7,7 @@ import {
   Heading,
   SimpleGrid,
   GridItem,
+  GridItemProps,
 } from "@chakra-ui/react";
 import useStore from "./store";
 
@@ -28,6 +29,21 @@ export default function ColorPicker() {
     setColors(["#ce93d8", "#a5d6a7", "#81d4fa"]);
   }
     
+  const openColorSelection = (i: number, gridItem) => {
+    let colorInput = document.createElement("input");
+    colorInput.type = "color";
+    colorInput.addEventListener("change", function(event) {
+    if (event.target) 
+    {let inputElement = event.target as HTMLInputElement;
+      let selectedColor = inputElement.value;
+    let c = colors;
+    c[i]=selectedColor;
+    setColors(c)
+    /* gridItem.appendChild(colorInput); */
+  }
+  });
+  colorInput.click();
+  }
 
   return (
     <Box>
@@ -62,9 +78,9 @@ export default function ColorPicker() {
                 my="3px"
               />
             </GridItem>
-            <GridItem bg={colors[0]} m="15px" borderRadius={"full"}></GridItem>
-            <GridItem bg={colors[1]} m="15px" borderRadius={"full"}></GridItem>
-            <GridItem bg={colors[2]} m="15px" borderRadius={"full"}></GridItem>
+            <GridItem onClick={() => openColorSelection(0, GridItem)} bg={colors[0]} m="15px" borderRadius={"full"}></GridItem>
+            <GridItem onClick={() => openColorSelection(1, GridItem)} bg={colors[1]} m="15px" borderRadius={"full"}></GridItem>
+            <GridItem onClick={() => openColorSelection(2, GridItem)} bg={colors[2]} m="15px" borderRadius={"full"}></GridItem>
           </SimpleGrid>
           <Button type="submit" onClick={handleReset} w="100%" my="3px">
             reset
