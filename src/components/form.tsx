@@ -28,6 +28,7 @@ import Diagram1 from "./diagram";
 import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
 import theme from "@/styles/theme";
 import Link from "next/link";
+import ReactDOM from 'react-dom';
 
 let amount = 0;
 
@@ -47,15 +48,14 @@ export default function Form() {
     setValue(inputValue);
   };
 
-  let handleCheckboxChange = (e: {
+  let handleCheckboxChange = (index: number, e: {
     target: { id: any; value: any; checked: any };
   }) => {
     let checkboxValue = e.target.value;
     let checkboxId = e.target.id;
-
     if (e.target.checked) {
       setValue((prevValue) => prevValue + "" + checkboxValue + ". \n");
-      handlePolaroidChecked(checkboxId);
+      handlePolaroidChecked(checkboxId, index);
       setFormTextElements((prevFormTextElements) => [
         ...prevFormTextElements,
         checkboxValue,
@@ -79,11 +79,16 @@ export default function Form() {
   const [polaroidMap, setPolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
+  /* const [activePolaroidMap, setActivePolaroidMap] = useState<{
+    [key: string]: React.ReactElement<typeof Image>;
+  }>({}); */
   const [activePolaroidMap, setActivePolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
-  const handlePolaroidChecked = (checkboxId: string) => {
-    const box = document.createElement("div");
+  const handlePolaroidChecked = (checkboxId: string, index: number) => {
+
+    /* RANDOM GENERATOR */
+    /* const box = document.createElement("div");
     box.style.marginTop = `${
       0 + Math.random() * (gridItemDimensions.height - 200.5)
     }px`;
@@ -97,7 +102,7 @@ export default function Form() {
     div.style.height = "100%";
     div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
     const image = document.createElement("img");
-    image.src = "images/placeholder.png";
+    image.src = "images/polaroids/Variant"+index+".png";
     image.alt = "placeholder";
     image.height = 220;
     image.width = 200;
@@ -105,7 +110,27 @@ export default function Form() {
     image.style.backgroundColor = "brand.white";
     image.style.paddingBottom = "50px";
     div.appendChild(image);
-    box.appendChild(div);
+    box.appendChild(div); */
+
+    const box = document.createElement("img");
+    box.src = "images/polaroids/Variant"+index+".png";
+    box.style.maxHeight = "100%";
+    box.style.maxWidth = "100%";
+    box.style.position = "absolute";
+    box.style.top = "0px";
+    box.alt = "placeholder";
+
+   /*  const box = (
+      <Image
+        src={`images/polaroids/Variant${index}.png`}
+        h="100%"
+        w="100%"
+        position="absolute"
+        top="0px"
+        alt="placeholder"
+      />
+    ); */
+
     setActivePolaroidMap((prevState) => ({
       ...prevState,
       [checkboxId]: box,
@@ -140,7 +165,7 @@ export default function Form() {
       }
 
       if (Object.keys(activePolaroidMap).length === 0) {
-        const box = document.createElement("div");
+        /* const box = document.createElement("div");
         box.style.marginTop = `${50}px`;
         box.style.marginLeft = `${50}px`;
         box.style.position = "absolute";
@@ -158,11 +183,29 @@ export default function Form() {
         image.style.paddingBottom = "50px";
         div.appendChild(image);
         box.appendChild(div);
-        gridItemRef.current.appendChild(box);
+        gridItemRef.current.appendChild(box); */
+
+        /* html */
+        const box = document.createElement("img"); box.src = "images/polaroids/Variant"+2+".png"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
+        gridItemRef.current.appendChild(box); 
+
+        /* CHAKRAUI */
+        /* const box = (
+          <Image
+            src={`images/polaroids/Variant3.png`}
+            h="100%"
+            w="100%"
+            position="absolute"
+            top="0px"
+            alt="placeholder"
+          />
+        );
+        ReactDOM.render(box, gridItemRef.current); */
       } else {
         Object.values(activePolaroidMap).forEach((divElement) => {
           if (gridItemRef.current) {
             gridItemRef.current.appendChild(divElement);
+            /* ReactDOM.render(divElement, gridItemRef.current); */
           }
         });
       }
@@ -191,8 +234,15 @@ export default function Form() {
         {/* HEADLINE */}
         <CardBody mb={5}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
-            <GridItem h="100%" w="100%" ref={gridItemRef}>
-              {/* <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} gap={6} ref={gridItemRef}>
+            <GridItem h="100%" w="100%" ref={gridItemRef} 
+              position={"relative"}>
+              {/* <AspectRatio  ratio={1 / 2} w="100%" ref={gridItemRef} 
+              position={"relative"}>
+
+              </AspectRatio> */}
+              {/* 
+              FOR ORGANIZED GRID
+              <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} gap={6} ref={gridItemRef}>
               </SimpleGrid> */}
             </GridItem>
 
@@ -214,7 +264,7 @@ export default function Form() {
                         variant={col[index]}
                         key={"form1" + index}
                         value={textElement}
-                        onChange={handleCheckboxChange}
+                        onChange={(e) => handleCheckboxChange(index+1, e)} 
                       >
                         <Text pl="2" variant="regular" key={"t" + index}>
                           {textElement}
@@ -242,7 +292,7 @@ export default function Form() {
                         /* {...register("Anforderung " + index)} */
                         value={textElement}
                         colorScheme="brand.slightgrey"
-                        onChange={handleCheckboxChange}
+                        onChange={(e) => handleCheckboxChange(index+4, e)}
                       >
                         <Text variant="regular" pl="2" key={"t2" + index}>
                           {textElement}
