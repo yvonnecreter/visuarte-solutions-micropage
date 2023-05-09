@@ -35,8 +35,42 @@ import LinkCards from "@/components/linkcards";
 import MotionBox from "@/components/motionbox";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import { MapIcon, VidIcon, TapIcon } from "@/components/icons";
+import * as React from "react";
+import { create } from "zustand";
+import { Button } from "chakra-ui";
+import ColorPicker from "@/components/colorpicker";
 
-export default function Home() {
+/* interface MyState {
+  bears: number;
+  increasePopulation: () => void;
+}
+
+const useStore = create((set) => ({
+  colors: ["red", "green", "blue"],
+  addColor: (color: string) => set((state: MyState) => ({ colors: [...state.colors, color] })),
+}));
+
+function ColorsList() {
+  const colors = useStore((state) => state.colors);
+  return (
+    <ul>
+      {colors.map((color: string) => (
+        <li key={color}>{color}</li>
+      ))}
+    </ul>
+  );
+}
+
+
+/*   const [color, setColor] = React.useState("");
+  const addColor = useStore((state) => state.addColor);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    addColor(color)
+    setColor('')
+  } */
+  export default function Home() {
   return (
     <ChakraProvider theme={theme}>
       {/*info*/}
@@ -48,19 +82,17 @@ export default function Home() {
       </Head>
 
       {/*header*/}
-      <Header navItems={data.navigation}/>
+      <Header navItems={data.navigation} />
 
       {/* INFO 
-    
-    const breakpoints = {
-      sm: '30em', // 480px
-      md: '48em', // 768px
-      lg: '62em', // 992px
-      xl: '80em', // 1280px
-      '2xl': '96em', // 1536px*/}
+      const breakpoints = {
+        sm: '30em', // 480px
+        md: '48em', // 768px
+        lg: '62em', // 992px
+        xl: '80em', // 1280px
+        '2xl': '96em', // 1536px*/}
 
-
-    {/* <ArrowDownIcon
+      {/* <ArrowDownIcon
               w={8}
               h={8}
               color="black"
@@ -99,7 +131,7 @@ export default function Home() {
           }}
           maxWidth={{
             sm: "95%",
-            md: "95%", 
+            md: "95%",
             lg: "95%",
             xl: "95%",
             "2xl": "80%",
@@ -126,10 +158,9 @@ export default function Home() {
               md:"100vw",
               lg: "80vw" */
           /* lg: "120vh" */
-
           mt="-1"
         >
-          <UnityGame2/>
+          <UnityGame2 />
           <CustomSpacerOne />
 
           {/* <ColumnCard2 /> */}
@@ -147,6 +178,16 @@ export default function Home() {
 
           <CustomSpacerOne />
           <LinkCards />
+{/* 
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={color}
+            onChange={(event) => setColor(event.target.value)}
+          />
+          <button type="submit">Add Color</button>
+        </form> */}
+        <ColorPicker/>
         </Stack>
       </Center>
       {/*FOOTER*/}

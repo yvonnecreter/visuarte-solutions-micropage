@@ -80,8 +80,8 @@ export default function UnityGame2() {
             />
 
             {/* PROGRESSBAR */}
-            <Box position={"absolute"} top="70%" left="5%">
-            <Text zIndex="5" color="black" my={"15px"}>
+            <Box position={"absolute"} top="70%" left="5%" zIndex="5">
+            <Text  color="black" my={"15px"}>
               Loading... ({loadingPercentage}%)
             </Text>
               <ProgressBar progress={loadingPercentage} onClick={handleButtonClick}/>

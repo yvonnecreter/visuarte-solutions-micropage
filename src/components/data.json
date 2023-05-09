@@ -6,43 +6,43 @@
   "videoplayer_placeholder": {
     "video": "images/placeholder_video.mp4",
     "subtitle": "3 Kernkompetenzen",
-    "infotext": "für Erlebniswelten mit System"
+    "infotext": "Erlebniswelten mit System"
   },
   "videoplayer_videos": [
     {
-      "video": "https://player.vimeo.com/video/675910139",
-      "subtitle": "Jungheinrich CeMAT 2018",
-      "infotext": "interaktive AR Anwendung",
+      "video": "images/Storytelling.mp4",
+      "subtitle": "visuarte Konzeption & Strategie",
+      "infotext": "Zielführendes, strategisches Storytelling",
       "image": "images/portfolio-image-1.jpg"
     },
     {
-      "video": "https://player.vimeo.com/video/787902161",
-      "subtitle": "visuarte ProScope QR",
-      "infotext": "interaktive Inhalte auf Knopfdruck",
+      "video": "images/Messerarchitektur-Erlebnisswelt.mp4", 
+      "subtitle": "visuarte Medienproduktion",
+      "infotext": "Wirksame Bildwelten, die bewegen",
       "image": "images/portfolio-image-2.jpg"
     },
     {
-      "video": "https://player.vimeo.com/video/768721892",
-      "subtitle": "Daimler bauma 2022",
-      "infotext": "immersive LED Flächeninstallation",
+      "video": "images/Interaktives_01.mp4",
+      "subtitle": "visuarte Digitale Lösungen",
+      "infotext": "Interaktive Erlebnisse, die man sich merkt",
       "image": "images/portfolio-image-3.jpg"
     },
     {
-      "video": "https://player.vimeo.com/video/987654321",
-      "subtitle": "Projektbeschreibung 4",
+      "video": "images/Erklärungswürdige Produkte_02.mp4",
+      "subtitle": "visuarte Konzeption & Strategie",
       "infotext": "Infotext 4",
-      "image": "images/portfolio-image-1.jpg"
+      "image": "images/portfolio-image-4.jpg"
     },
     {
-      "video": "https://player.vimeo.com/video/987654321",
-      "subtitle": "Projektbeschreibung 5",
-      "infotext": "Infotext 5",
-      "image": "images/portfolio-image-1.jpg"
+      "video": "images/Motion Design_02.mp4",
+      "subtitle": "visuarte Medienproduktion",
+      "infotext": "Wirksame Bildwelten, die bewegen",
+      "image": "images/portfolio-image-5.jpg"
     },
     {
-      "video": "https://player.vimeo.com/video/165005613",
-      "subtitle": "Landtag NRW",
-      "infotext": "interaktives Besucherzentrum",
+      "video": "images/Interaktives_02.mp4",
+      "subtitle": "visuarte Digitale Lösungen",
+      "infotext": "Interaktive Erlebnisse, die man sich merkt",
       "image": "images/portfolio-image-6.jpg"
     }
   ],
@@ -106,7 +106,7 @@
       "table":{
         "element1":"images/showroom_new.png",
         "element2":["Konzept & Strategie", "Medienproduktion", "Digitale Lösungen"],
-        "element3":["Ihre Individuelle Kreativstrategie", "Ihre Inhalte, die bewegen", "Ihre Interaktive Anwendungen"],
+        "element3":["Ihre individuelle Kreativstrategie", "Ihre Inhalte, die bewegen", "Ihre interaktiven Erlebnisse"],
         "element3subtext":["Text", "Text", "Text"],
         "element4":["images/icon_purple.svg", "images/icon_green.svg", "images/icon_blue.svg"],
         "element5":"images/showoom_1.svg"

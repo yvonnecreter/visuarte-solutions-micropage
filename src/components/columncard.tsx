@@ -31,11 +31,15 @@ import {
   AnimateSharedLayout,
 } from "framer-motion";
 import MotionBox from "./motionbox";
+import { useStore } from "zustand";
 
-/* defining motionbox w framer */
+interface MyState {
+  colors: string[];
+}
 
 export default function ColumnCard() {
   const desktop = useBreakpointValue({ base: false, md: true });
+  /* const [colors] = useStore((state) => [state.colors]); */
 
   return (
     <Card sx={useStyleConfig("Card")} id="waswirtun" scrollMarginTop={"5vh"} zIndex="1"
@@ -133,7 +137,7 @@ export default function ColumnCard() {
                       }}
                       h="50%"
                       boxShadow="2xl"
-                      /* background={data.maincard.colors[i]} */
+                      /* background={window.data.maincard.colors[i]} */
                       opacity="90%"
                     >
                       <Text
