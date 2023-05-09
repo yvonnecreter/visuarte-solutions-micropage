@@ -16,6 +16,7 @@ import * as React from "react";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Box, Image } from "@chakra-ui/react";
+import useStore from "./store"
 
 const MotionB = motion(Box);
 
@@ -70,13 +71,15 @@ export default function MotionBox() {
     >
       <Box 
     as="a"
-    href="#webgl-content">
+    href="#webgl-content"
+    position="relative">
       <Image
         src={"images/showroom_overlay.png"}
         alt={"showroom_mark"}
         w="100%"
         borderRadius={5}
-      /></Box>
+      />
+      </Box>
     </MotionB>
   );
 }

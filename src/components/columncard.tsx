@@ -32,22 +32,22 @@ import {
 } from "framer-motion";
 import MotionBox from "./motionbox";
 import useStore from "./store";
-
-
+import { CheckCircleIcon } from "@chakra-ui/icons";
 
 export default function ColumnCard() {
-  /* const [colors, setColors] = useStore((state) => [
-    state.colors,
-    state.setColors,
-  ]); */
-
-  /* let colors = [""]; */
+  /* COLOR MANAGEMENT*/
   const desktop = useBreakpointValue({ base: false, md: true });
-  const [colors]= useStore((state) => [state.colors]);
+  const [colors] = useStore((state) => [state.colors]);
 
   return (
-    <Card sx={useStyleConfig("Card")} id="waswirtun" scrollMarginTop={"5vh"} zIndex="1"
-    backdropFilter={"auto"} backdropBlur={"0px"}>
+    <Card
+      sx={useStyleConfig("Card")}
+      id="waswirtun"
+      scrollMarginTop={"5vh"}
+      zIndex="1"
+      backdropFilter={"auto"}
+      backdropBlur={"0px"}
+    >
       <CardHeader>
         <Heading variant="layer1">{data.maincard.head1}</Heading>
         <Heading variant="layer2">{data.maincard.head1_2}</Heading>
@@ -55,9 +55,7 @@ export default function ColumnCard() {
         <Heading variant="layer3">{data.maincard.head2}</Heading>
       </CardHeader>
 
-      <CardBody 
-            height={"440px"}
-            pb="35px">
+      <CardBody height={"440px"} pb="35px">
         {/* Condition: {true && <div/>}, Condition + Else: {true ? <div/> : <div/>} */}
 
         {desktop ? (
@@ -68,7 +66,6 @@ export default function ColumnCard() {
             autoFlow="column"
             mt="20px"
           >
-
             {/*column 1: lifecycle*/}
             <GridItem rowSpan={3} position="relative">
               <Flex alignItems="center" justifyContent="center">
@@ -216,12 +213,21 @@ export default function ColumnCard() {
                   as="a"
                   href="#impressionen"
                 >
-                  <Image
+                  {/* <Image
                     src={data.maincard.table.element4[i]}
                     alt=" "
                     h="55%"
                     opacity={"90%"}
                     transition="transform 1s"
+                    _hover={{
+                      transform: "scale(1.1)",
+                    }}
+                    dropShadow="2xl"
+                  /> */}
+                  <CheckCircleIcon
+                    color={colors[i]}
+                    transition="transform 1s"
+                    boxSize={"75%"}
                     _hover={{
                       transform: "scale(1.1)",
                     }}
@@ -270,7 +276,7 @@ export default function ColumnCard() {
                   {data.maincard.head3[1]}
                 </Text>
               </Flex>
-              
+
               <Flex
                 alignItems="center"
                 justifyContent="center"
@@ -299,7 +305,7 @@ export default function ColumnCard() {
                     filter="brightness(0.9)"
                   />
                   {<MotionBox />}
-                  </Box>
+                </Box>
               </Flex>
             </GridItem>
           </Grid>
