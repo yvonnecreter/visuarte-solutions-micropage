@@ -187,6 +187,7 @@ function ColorsList() {
           />
           <button type="submit">Add Color</button>
         </form> */}
+        <Spacer h="14vh" />
         <ColorPicker/>
         </Stack>
       </Center>

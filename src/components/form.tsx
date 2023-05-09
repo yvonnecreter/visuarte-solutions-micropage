@@ -29,10 +29,14 @@ import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
 import theme from "@/styles/theme";
 import Link from "next/link";
 import ReactDOM from 'react-dom';
+import useStore from "./store";
 
 let amount = 0;
 
 export default function Form() {
+  /* COLOR MANGAGEMENT */
+  const [colors]= useStore((state) => [state.colors]);
+
    /* FORM FUNCTIONS */
    const {
     handleSubmit,
@@ -318,21 +322,21 @@ export default function Form() {
           style={{ position: "absolute", top: "70px", left: "-20%" }}
           w="140%"
           h="19px"
-          backgroundColor={"brand.purple"}
+          backgroundColor={colors[0]}
           overflow={"visible"}
         />
         <Box
           style={{ position: "absolute", top: "95px", left: "-20%" }}
           w="140%"
           h="19px"
-          backgroundColor={"brand.green"}
+          backgroundColor={colors[1]}
           overflow={"visible"}
         />
         <Box
           style={{ position: "absolute", top: "120px", left: "-20%" }}
           w="140%"
           h="19px"
-          backgroundColor={"brand.blue"}
+          backgroundColor={colors[2]}
           overflow={"visible"}
         />
       </Box>

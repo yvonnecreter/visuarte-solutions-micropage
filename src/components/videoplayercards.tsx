@@ -21,8 +21,12 @@ import {
 import data from "../components/data.json";
 import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
+import useStore from "./store";
 
 export default function VideoPlayer() {
+  /* COLOR MANGAGEMENT */
+  const [colors]= useStore((state) => [state.colors]);
+
   const [currentVideoIndex, setCurrentVideoIndex] = useState(99);
   const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(
     null
@@ -93,15 +97,15 @@ export default function VideoPlayer() {
             <GridItem height="100%">
               <Grid templateColumns="repeat(3, 1fr)" h="2%" gap="1">
                 <GridItem
-                  bg={data.maincard.colors[0]}
+                  bg={colors[0]}
                   h="50%" 
                 />
                 <GridItem
-                  bg={data.maincard.colors[1]}
+                  bg={colors[1]}
                   h="50%" 
                 />
                 <GridItem
-                  bg={data.maincard.colors[2]}
+                  bg={colors[2]}
                   h="50%"
                 />
               </Grid>
@@ -184,17 +188,17 @@ export default function VideoPlayer() {
               <Grid templateColumns="repeat(3, 1fr)" gap="1"
               h={2}>
                 <GridItem
-                  bg={data.maincard.colors[0]}
+                  bg={colors[0]}
                   h="50%" 
                   borderRadius={"full"}
                 />
                 <GridItem
-                  bg={data.maincard.colors[1]}
+                  bg={colors[1]}
                   h="50%" 
                   borderRadius={"full"}
                 />
                 <GridItem
-                  bg={data.maincard.colors[2]}
+                  bg={colors[2]}
                   h="50%"
                   borderRadius={"full"}
                 />

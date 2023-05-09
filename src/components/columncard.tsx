@@ -31,15 +31,19 @@ import {
   AnimateSharedLayout,
 } from "framer-motion";
 import MotionBox from "./motionbox";
-import { useStore } from "zustand";
+import useStore from "./store";
 
-interface MyState {
-  colors: string[];
-}
+
 
 export default function ColumnCard() {
+  /* const [colors, setColors] = useStore((state) => [
+    state.colors,
+    state.setColors,
+  ]); */
+
+  /* let colors = [""]; */
   const desktop = useBreakpointValue({ base: false, md: true });
-  /* const [colors] = useStore((state) => [state.colors]); */
+  const [colors]= useStore((state) => [state.colors]);
 
   return (
     <Card sx={useStyleConfig("Card")} id="waswirtun" scrollMarginTop={"5vh"} zIndex="1"
@@ -111,7 +115,7 @@ export default function ColumnCard() {
                   <Flex alignItems="center" justifyContent="center" h="100%">
                     <Box
                       borderRadius={"full"}
-                      background={data.maincard.colors[i]}
+                      background={colors[i]}
                       h="15px"
                       w="15px"
                       mr="20px"
@@ -130,14 +134,14 @@ export default function ColumnCard() {
                       px="5"
                       /* borderWidth={3} */ borderWidth={2}
                       borderRadius="12"
-                      borderColor={data.maincard.colors[i]}
+                      borderColor={colors[i]}
                       transition="transform 1s"
                       _hover={{
                         transform: "scale(1.1)",
                       }}
                       h="50%"
                       boxShadow="2xl"
-                      /* background={window.data.maincard.colors[i]} */
+                      /* background={window.colors[i]} */
                       opacity="90%"
                     >
                       <Text
@@ -145,7 +149,7 @@ export default function ColumnCard() {
                         textTransform={"uppercase"}
                         letterSpacing={"wider"}
                         /* color="#212121" */
-                        color={data.maincard.colors[i]}
+                        color={colors[i]}
                         fontWeight={"bold"}
                       >
                         {item}
@@ -188,7 +192,7 @@ export default function ColumnCard() {
                     >
                       <Text
                         variant="regular"
-                        color={data.maincard.colors[i]}
+                        color={colors[i]}
                         transition="transform 1s"
                         _hover={{
                           transform: "scale(1.1)",
@@ -365,13 +369,13 @@ export default function ColumnCard() {
                         h="100%"
                         w="100%"
                         borderRadius="3"
-                        borderColor={data.maincard.colors[i]}
+                        borderColor={colors[i]}
                         transition="transform 1s"
                         _hover={{
                           transform: "scale(1.1)",
                         }}
                         boxShadow="2xl"
-                        background={data.maincard.colors[i]}
+                        background={colors[i]}
                         opacity="90%"
                       >
                         <Text
