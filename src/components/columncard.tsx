@@ -266,30 +266,17 @@ export default function ColumnCard() {
                   {data.maincard.head3[1]}
                 </Text>
               </Flex>
-
-              {/*               <Box
-                overflow={"visible"}
-                h="260%"
-                w="260%"
-                filter={"blur(50px)"}
-                opacity="20%"
-                style={{
-                  backgroundImage: `url("images/blur.svg")`,
-                  backgroundSize: "100% auto",
-                  backgroundRepeat: "no-repeat",
-                  position: "absolute",
-                  top: "10%",
-                  right: "460%",
-                }}
-              /> */}
+              
               <Flex
                 alignItems="center"
                 justifyContent="center"
                 flexFlow="column"
                 h="100%"
+                w="100%"
               >
                 <Box
                   position="relative"
+                  w="100%"
                   transition="transform 1s"
                   _hover={{
                     transform: "scale(1.1)",
@@ -305,12 +292,10 @@ export default function ColumnCard() {
                     w="100%"
                     borderRadius={5}
                     dropShadow="2xl"
-                    /* filter="brightness(1.6)" */
-                    /* filter="brightness(1.835)" */
                     filter="brightness(0.9)"
                   />
-                  <MotionBox />
-                </Box>
+                  {<MotionBox />}
+                  </Box>
               </Flex>
             </GridItem>
           </Grid>
@@ -433,7 +418,7 @@ export default function ColumnCard() {
                     src={data.maincard.table.element5}
                     alt={data.maincard.table.element5}
                     w="100%"
-                    borderRadius={5}
+                    /* borderRadius={5} */
                     dropShadow="2xl"
                     /* filter="brightness(1.6)" */
                     filter="brightness(1.835)"

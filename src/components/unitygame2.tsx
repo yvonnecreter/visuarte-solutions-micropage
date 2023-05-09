@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef  } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import {
   Box,
@@ -31,23 +31,32 @@ export default function UnityGame2() {
   });
 
   const loadingPercentage = Math.round(loadingProgression * 100);
+  let unloaded = true;
+  const unityRef = React.useRef<HTMLDivElement>(null);
+  const imgRef = React.useRef<HTMLImageElement>(null);
+  const loadRef = React.useRef<HTMLDivElement>(null);
 
-    /* useEffect(() => {
-    if (loadingPercentage > 100) {
-      boxRef.current.style.width = '100%';
+  /* useEffect(() => {
+    if (
+      loadingPercentage > 99 && unloaded) {
+      console.log(`Loading ${loadingPercentage}`);
+      if (loadRef.current) {
+        loadRef.current.style.opacity = "0%";
+        loadRef.current.style.transition = "opacity 2s";
+        unloaded = false;
+      }
     }
   }, [loadingPercentage]); */
 
   /* PROGRESSBAR */
   const [progress, setProgress] = useState(0);
-  const unityRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLDivElement>(null);
 
   const handleButtonClick = () => {
-    if (boxRef.current && imgRef.current) {
-      boxRef.current.style.width = '100%';
-      imgRef.current.style.opacity = '0';
-      imgRef.current.style.transition = 'opacity 2s';
+    if (loadRef.current) {
+      /* boxRef.current.style.width = '100%'; */
+      loadRef.current.style.width = "0px";
+      loadRef.current.style.transition = "opacity 2s";
+      loadRef.current.style.zIndex = "-5";
     }
   };
 
@@ -63,40 +72,46 @@ export default function UnityGame2() {
       <div
         className="container"
         id="boxRef"
-        style={{ width: "100%", height: "100%", position: "absolute"}}
+        style={{ width: "100%", height: "100%", position: "absolute" }}
       >
-        {isLoaded === false && (
-          <div
-            className="loading-overlay"
-            style={{ width: "100%", height: "100%", position: "absolute" }}
+        {/* {isLoaded === false && ( */}
+        <div
+          className="loading-overlay"
+          ref={loadRef}
+          style={{ width: "100%", height: "100%", position: "absolute", zIndex: 5}}
+        >
+          {/* BG */}
+          <Image
+            ref={imgRef}
+            src="images/loading.png"
+            alt="loading"
+            height="100%"
+            width="100%"
+            position="absolute"
+            /* opacity={1 - loadingPercentage / 100} */
+          />
+
+          {/* PROGRESSBAR */}
+          <Box
+            position={"absolute"}
+            top="70%"
+            left="5%"
+            id="progRef"
           >
-
-            {/* BG */}
-            <Image
-              id="imgRef"
-              src="images/loading.png"
-              alt="loading"
-              height="100%"
-              width="100%"
-              position="absolute"
-              /* opacity={1 - loadingPercentage / 100} */
-              zIndex="4"
-            />
-
-            {/* PROGRESSBAR */}
-            <Box position={"absolute"} top="70%" left="5%" zIndex="5">
-            <Text  color="black" my={"15px"}>
+            <Text color="black" my={"15px"}>
               Loading... ({loadingPercentage}%)
             </Text>
-              <ProgressBar progress={loadingPercentage} onClick={handleButtonClick}/>
-            </Box>
-
-          </div>
-         )} 
+            <ProgressBar
+              progress={loadingPercentage}
+              onClick={handleButtonClick}
+            />
+          </Box>
+        </div>
+        {/* )}  */}
         <Unity
           className="unity"
           unityProvider={unityProvider}
-          style={{ width: "100%"}}
+          style={{ width: "100%" }}
         />
       </div>
     </AspectRatio>

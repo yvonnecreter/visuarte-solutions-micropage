@@ -57,6 +57,7 @@ export default function MotionBox() {
       right={0}
       bottom={0}
       initial={{ opacity: 0 }}
+      height="100%"
       cursor={hoverAnimation.cursor}
       transition={transition}
       /* onMouseEnter={onMouseEnter} */
