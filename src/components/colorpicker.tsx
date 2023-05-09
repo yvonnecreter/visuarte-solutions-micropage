@@ -29,7 +29,7 @@ export default function ColorPicker() {
     setColors(["#ce93d8", "#a5d6a7", "#81d4fa"]);
   }
     
-  const openColorSelection = (i: number, gridItem) => {
+  const openColorSelection = (i: number) => {
     let colorInput = document.createElement("input");
     colorInput.type = "color";
     colorInput.addEventListener("change", function(event) {
@@ -78,9 +78,9 @@ export default function ColorPicker() {
                 my="3px"
               />
             </GridItem>
-            <GridItem onClick={() => openColorSelection(0, GridItem)} bg={colors[0]} m="15px" borderRadius={"full"}></GridItem>
-            <GridItem onClick={() => openColorSelection(1, GridItem)} bg={colors[1]} m="15px" borderRadius={"full"}></GridItem>
-            <GridItem onClick={() => openColorSelection(2, GridItem)} bg={colors[2]} m="15px" borderRadius={"full"}></GridItem>
+            <GridItem onClick={() => openColorSelection(0)} bg={colors[0]} m="15px" borderRadius={"full"}></GridItem>
+            <GridItem onClick={() => openColorSelection(1)} bg={colors[1]} m="15px" borderRadius={"full"}></GridItem>
+            <GridItem onClick={() => openColorSelection(2)} bg={colors[2]} m="15px" borderRadius={"full"}></GridItem>
           </SimpleGrid>
           <Button type="submit" onClick={handleReset} w="100%" my="3px">
             reset
