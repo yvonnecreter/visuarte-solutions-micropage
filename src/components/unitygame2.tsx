@@ -35,6 +35,7 @@ export default function UnityGame2() {
   const unityRef = React.useRef<HTMLDivElement>(null);
   const imgRef = React.useRef<HTMLImageElement>(null);
   const loadRef = React.useRef<HTMLDivElement>(null);
+  const progBar = React.useRef<HTMLDivElement>(null);
 
   /* useEffect(() => {
     if (
@@ -52,11 +53,11 @@ export default function UnityGame2() {
   const [progress, setProgress] = useState(0);
 
   const handleButtonClick = () => {
-    if (loadRef.current) {
-      /* boxRef.current.style.width = '100%'; */
+    if (loadRef.current && progBar.current) {
       loadRef.current.style.width = "0px";
-      loadRef.current.style.transition = "opacity 2s";
-      loadRef.current.style.zIndex = "-5";
+      loadRef.current.style.transition = "opacity 5s";
+      loadRef.current.style.transitionDelay = "10s";
+      progBar.current.style.zIndex = "-5";
     }
   };
 
@@ -78,7 +79,7 @@ export default function UnityGame2() {
         <div
           className="loading-overlay"
           ref={loadRef}
-          style={{ width: "100%", height: "100%", position: "absolute", zIndex: 5}}
+          style={{ width: "100%", height: "100%", position: "absolute"}}
         >
           {/* BG */}
           <Image
@@ -93,10 +94,10 @@ export default function UnityGame2() {
 
           {/* PROGRESSBAR */}
           <Box
+            ref={progBar}
             position={"absolute"}
             top="70%"
             left="5%"
-            id="progRef"
           >
             <Text color="black" my={"15px"}>
               Loading... ({loadingPercentage}%)
