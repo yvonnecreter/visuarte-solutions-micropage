@@ -41,10 +41,13 @@ export default function UnityGame2() {
   /* PROGRESSBAR */
   const [progress, setProgress] = useState(0);
   const unityRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
   const handleButtonClick = () => {
-    if (boxRef.current) {
+    if (boxRef.current && imgRef.current) {
       boxRef.current.style.width = '100%';
+      imgRef.current.style.opacity = '0';
+      imgRef.current.style.transition = 'opacity 2s';
     }
   };
 
@@ -70,12 +73,13 @@ export default function UnityGame2() {
 
             {/* BG */}
             <Image
+              id="imgRef"
               src="images/loading.png"
               alt="loading"
               height="100%"
               width="100%"
               position="absolute"
-              opacity={1 - loadingPercentage / 100}
+              /* opacity={1 - loadingPercentage / 100} */
               zIndex="4"
             />
 
