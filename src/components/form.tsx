@@ -64,7 +64,6 @@ export default function Form() {
         ...prevFormTextElements,
         checkboxValue,
       ]);
-      /* console.log("id: "+checkboxId); */
     } else {
       handlePolaroidUnchecked(checkboxId);
       setValue((prevValue) => prevValue.replace(checkboxValue + ". \n", ""));

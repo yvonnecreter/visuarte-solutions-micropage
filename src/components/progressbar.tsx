@@ -24,6 +24,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onClick }) => {
           variant="progressbar"
           textTransform="uppercase"
           color="white"
+          style={{cursor: "pointer"}}
           letterSpacing={"1px"}>
             Entdecken
           </Text>

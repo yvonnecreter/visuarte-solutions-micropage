@@ -66,7 +66,7 @@ export default function UnityGame2() {
     <AspectRatio
       ratio={16 / 9}
       w="100%"
-      bg="#828080"
+      /* bg="#828080" */
       id="werte"
       scrollMarginTop={"5vh"}
       position="relative"

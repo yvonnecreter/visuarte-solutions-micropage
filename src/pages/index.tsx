@@ -103,7 +103,8 @@ function ColorsList() {
 
       {/*bg*/}
       <Box
-        bgGradient="linear(to-t, #212121, #424242)"
+        /* bgGradient="linear(to-t, #212121, #424242)" */
+        bgGradient="linear(to-t, #212121, #1e1e1f)"
         w={"100vw"}
         h={"100vh"}
         position={"fixed"}
