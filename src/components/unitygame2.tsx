@@ -9,6 +9,7 @@ import {
   Spacer,
   AspectRatio,
   Text,
+  Heading
 } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import data from "./data.json";
@@ -96,19 +97,25 @@ export default function UnityGame2() {
           <Box
             ref={progBar}
             position={"absolute"}
-            top="70%"
-            left="5%"
+            bottom="50px"
+            left="50px"
           >
-            <Text color="black" my={"15px"}>
-              Loading... ({loadingPercentage}%)
+            <Heading color="brand.black">
+              visuarte Solutions
+            </Heading>
+            <Text 
+              mb="20px">
+              visuarte Solutions
             </Text>
+            {/* <Text color="black" my={"15px"}>
+              Loading...
+            </Text> */}
             <ProgressBar
               progress={loadingPercentage}
               onClick={handleButtonClick}
             />
           </Box>
         </div>
-        {/* )}  */}
         <Unity
           className="unity"
           unityProvider={unityProvider}

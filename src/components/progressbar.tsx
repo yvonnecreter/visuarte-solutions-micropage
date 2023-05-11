@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import theme from '@/styles/theme';
-import { Box, Button } from '@chakra-ui/react';
+import React, { useState } from "react";
+import theme from "@/styles/theme";
+import { Box, Button, Text } from "@chakra-ui/react";
 
 interface ProgressBarProps {
   progress: number;
@@ -15,12 +15,24 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onClick }) => {
   }
 
   return (
-    <Box>
-      {completed ? (
-        <Button onClick={onClick}>Click me!</Button>
-      ) : (
-        <Box style={{ width: `${progress}%`, backgroundColor: 'blue', height: '20px'}} />
-      )}
+    <Box maxW="200px">
+      <Box  borderRadius="full" backgroundColor="brand.black"
+      style={{ width: `${progress}%`, }}
+      p="1">
+        {completed ? (
+          <Text onClick={onClick} align="center" 
+          variant="progressbar"
+          textTransform="uppercase"
+          color="white"
+          letterSpacing={"1px"}>
+            Entdecken
+          </Text>
+        ) : (
+          <Text variant="progressbar" align="end" mr="-7">
+            {progress}
+          </Text>
+        )}
+      </Box>
     </Box>
   );
 };
