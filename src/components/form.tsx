@@ -20,13 +20,13 @@ import {
   Flex,
   CardFooter,
   AspectRatio,
-  background,
+  background,color, extendTheme, defineStyleConfig
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import data from "./data.json";
 import Diagram1 from "./diagram";
 import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
-import theme from "@/styles/theme";
+import { theme as chakraTheme } from "@chakra-ui/react";
 import Link from "next/link";
 import ReactDOM from 'react-dom';
 import useStore from "./store";
@@ -35,7 +35,7 @@ let amount = 0;
 
 export default function Form() {
   /* COLOR MANGAGEMENT */
-  const [colors]= useStore((state) => [state.colors]);
+  const [colors] = useStore((state) => [state.colors]);
 
    /* FORM FUNCTIONS */
    const {
@@ -46,7 +46,7 @@ export default function Form() {
   const [formTextElements, setFormTextElements] = useState(
     data.form_textElements1
   );
-  let [value, setValue] = React.useState("Hallo Ilja, \n \n");
+  let [value, setValue] = React.useState("Hallo Ilja,\nLass uns doch mal sprechen, ...\n\n\nLösungen hierzu würden mich interessieren:\n");
   let handleInputChange = (e: { target: { value: any } }) => {
     let inputValue = e.target.value;
     setValue(inputValue);
@@ -340,15 +340,15 @@ export default function Form() {
         />
       </Box>
       <Card
-        sx={useStyleConfig("Card")}
-        transition="transform .5s"
-        _hover={{
-          transform: "scale(1.01)",
-        }}
-        id="letstalk"
-        scrollMarginTop={"5vh"}
-        backdropFilter="auto"
-        backdropBlur={"14px"}
+          sx={useStyleConfig("Card")}
+          transition="transform .5s"
+          _hover={{
+            transform: "scale(1.01)",
+          }}
+          id="letstalk"
+          scrollMarginTop={"5vh"}
+          backdropFilter="auto"
+          backdropBlur={"14px"}
       >
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>

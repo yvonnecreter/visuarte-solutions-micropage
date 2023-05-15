@@ -1,8 +1,8 @@
 import { color, extendTheme, defineStyleConfig } from "@chakra-ui/react";
 import "@fontsource/open-sans";
 import "@fontsource/rubik";
-
-/* <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>This is responsive text</Text> */
+import useStore from "@/components/store";
+const colors = ['brand.purple', 'brand.blue', 'brand.green'];
 
 const Heading = defineStyleConfig({
   baseStyle: {
@@ -35,6 +35,64 @@ const Heading = defineStyleConfig({
   },
   defaultProps: {
     variant: "layer1",
+  },
+  
+})
+
+const Checkbox = defineStyleConfig({
+  baseStyle: {
+    control: {
+      borderColor: "brand.slightgrey",
+      bg: "transparent",
+      borderWidth: "2",
+      transition: "background-color 0.1s ease-in-out",
+      _active: {
+        bg: "brand.slightgrey",
+      },
+    },
+    icon: {
+      color: "brand.slightgrey",
+    }
+  },
+  sizes: {},
+  variants: {
+    regular: {},
+    purple: {
+      control: {
+        borderColor: colors[0],
+        _active: {
+          bg: colors[0],
+        },
+      },
+      icon: {
+        color: colors[0],
+      }
+    },
+    blue: {
+      control: {
+        borderColor: colors[1],
+        _active: {
+          bg: colors[1],
+        },
+      },
+      icon: {
+        color: colors[1],
+      }
+    },
+    green: {
+      control: {
+        borderColor: colors[2],
+        _active: {
+          bg: colors[2],
+        },
+      },
+      icon: {
+        color: colors[2],
+      }
+    },
+  },
+  defaultProps: {
+    variant: "regular",
   },
 });
 
@@ -129,92 +187,6 @@ const Card = defineStyleConfig({
   },
 });
 
-/* Cheatsheet for Checkbox: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
-const Checkbox = defineStyleConfig({
-  baseStyle: {
-    control: {
-      borderColor: "brand.slightgrey",
-      bg: "transparent",
-      borderWidth: "2",
-      transition: "background-color 0.1s ease-in-out",
-      _active: {
-        bg: "brand.slightgrey",
-      },
-    },
-    icon: {
-      color: "brand.slightgrey",
-    }
-  },
-  sizes: {},
-  variants: {
-    regular: {},
-    /* purple: {
-      control: {
-        borderColor: "brand.purple", //main color
-        bg: "transparent",
-        borderWidth: "2",
-        transition: "background-color 0.1s ease-in-out",
-        _checked: {
-          bg: "brand.purple",
-          borderColor: "brand.purple",
-        },
-        _hover: {
-          bg:"transparent",
-          borderColor: "brand.purple",
-        },
-        _active: {
-          bg: "brand.purple",
-          borderColor: "brand.purple",
-        },
-        _focus: {
-          bg:"transparent",
-          borderColor: "brand.purple",
-        },
-        _after: {
-          bg: "brand.purple",
-          borderColor: "brand.purple",
-        },
-      },
-    }, */
-    purple: {
-      control: {
-        borderColor: "brand.purple",
-        _active: {
-          bg: "brand.purple",
-        },
-      },
-      icon: {
-        color: "brand.purple",
-      }
-    },
-    blue: {
-      control: {
-        borderColor: "brand.blue",
-        _active: {
-          bg: "brand.blue",
-        },
-      },
-      icon: {
-        color: "brand.blue",
-      }
-    },
-    green: {
-      control: {
-        borderColor: "brand.green",
-        _active: {
-          bg: "brand.green",
-        },
-      },
-      icon: {
-        color: "brand.green",
-      }
-    },
-  },
-  defaultProps: {
-    variant: "regular",
-  },
-});
-
 const Input = defineStyleConfig({
   baseStyle: {
     _focus: {},
@@ -276,7 +248,6 @@ const Button = defineStyleConfig({
   },
   variants: {
     regular: {},
-    // variant-specific styles
   },
   defaultProps: {
     // default values for props

@@ -97,7 +97,7 @@ export default function ColorPicker() {
             borderRadius={"full"}
           ></GridItem>
         </SimpleGrid>
-        <Button type="submit" onClick={handleReset} w="100%" my="3px">
+        <Button type="submit" onClick={handleReset} w="100%" my="3px" background={"blackAlpha.500"}>
           reset
         </Button>
       </FormControl>
