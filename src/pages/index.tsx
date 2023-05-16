@@ -1,5 +1,4 @@
 import Head from "next/head";
-import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
 import {
   ChakraProvider,
@@ -39,6 +38,9 @@ import * as React from "react";
 import { create } from "zustand";
 import { Button } from "chakra-ui";
 import ColorPicker from "@/components/colorpicker";
+import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
+import useStore from "@/components/store";
+import theme from "@/styles/theme";
 
 /* interface MyState {
   bears: number;
@@ -71,8 +73,20 @@ function ColorsList() {
     setColor('')
   } */
   export default function Home() {
+    /* COLOR MANGAGEMENT */
+    const [colors] = useStore((state) => [state.colors]);
+    const theme2 = extendTheme({
+      colors: {
+        brand: {
+          purple: colors[0],
+          green: colors[1],
+          blue: colors[2],
+        },
+      },
+    }, theme);
+
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme2}>
       {/*info*/}
       <Head>
         <title>visuarte Solutions</title>

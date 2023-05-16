@@ -261,14 +261,7 @@ const theme = extendTheme({
       purple: "#ce93d8",
       green: "#a5d6a7",
       blue: "#81d4fa",
-      /* OLD COLOR PALETTE
-      white: "#e0e0e0",
-      lightgrey: "#bdbdbd",
-      grey: "#9e9e9e",
-      darkgrey: "#616161",
-      slightgrey: "#757575",
-      black: "#000000",
-      lightblack: "#212121" */
+      
       white: "#e0e0e0",
       lightgrey: "#e0e0e0",
       grey: "#bdbdbd",

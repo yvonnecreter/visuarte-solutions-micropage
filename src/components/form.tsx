@@ -20,23 +20,25 @@ import {
   Flex,
   CardFooter,
   AspectRatio,
-  background,color, extendTheme, defineStyleConfig
+  background,color, extendTheme, defineStyleConfig, useColorModeValue
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import data from "./data.json";
 import Diagram1 from "./diagram";
 import { useStyleConfig, CheckboxGroup } from "@chakra-ui/react";
-import { theme as chakraTheme } from "@chakra-ui/react";
 import Link from "next/link";
 import ReactDOM from 'react-dom';
 import useStore from "./store";
+import { useTheme } from '@chakra-ui/react'
+import theme from "@/styles/theme";
+
 
 let amount = 0;
 
 export default function Form() {
   /* COLOR MANGAGEMENT */
   const [colors] = useStore((state) => [state.colors]);
-
+  
    /* FORM FUNCTIONS */
    const {
     handleSubmit,
@@ -264,6 +266,9 @@ export default function Form() {
                     >
                       <Checkbox
                         colorScheme={hexcol[index]}
+                        style={{
+                          borderColor: col[index]
+                        }}
                         variant={col[index]}
                         key={"form1" + index}
                         value={textElement}

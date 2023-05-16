@@ -27,6 +27,7 @@ export default function VideoPlayer() {
   /* COLOR MANGAGEMENT */
   const [colors]= useStore((state) => [state.colors]);
 
+  /* VIDEO MANAGEMENT */
   const [currentVideoIndex, setCurrentVideoIndex] = useState(99);
   const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(
     null
@@ -34,7 +35,15 @@ export default function VideoPlayer() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
-  const [imageSelected, setImageSelected] = useState(false);
+
+  const handleVideoEnd = () => {
+    setCurrentVideoIndex(99);
+    setHoveredImageIndex(null);
+  }
+
+  const loadNewVideo = () => {
+    
+  }
 
   const desktop = useBreakpointValue({ base: false, md: true });
 
@@ -87,6 +96,7 @@ export default function VideoPlayer() {
                   <iframe
                     src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
                     allowFullScreen
+                    onEnded={handleVideoEnd}
                   />
                 </AspectRatio>
               )}

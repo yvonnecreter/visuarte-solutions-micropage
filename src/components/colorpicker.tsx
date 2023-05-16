@@ -10,8 +10,11 @@ import {
   GridItemProps,
 } from "@chakra-ui/react";
 import useStore from "./store";
+import { useState } from "react";
+import * as React from "react";
 
 export default function ColorPicker() {
+
   const [colors, setColors] = useStore((state) => [
     state.colors,
     state.setColors,
@@ -36,10 +39,12 @@ export default function ColorPicker() {
       if (event.target) {
         let inputElement = event.target as HTMLInputElement;
         let selectedColor = inputElement.value;
-        let c = colors;
+        /* let c = colors;
         c[i] = selectedColor;
-        setColors(c);
-        /* gridItem.appendChild(colorInput); */
+        setColors(c); */
+        let newColors = [...colors];
+        newColors[i] = selectedColor;
+        setColors(newColors);
       }
     });
     colorInput.click();
@@ -97,7 +102,7 @@ export default function ColorPicker() {
             borderRadius={"full"}
           ></GridItem>
         </SimpleGrid>
-        <Button type="submit" onClick={handleReset} w="100%" my="3px" background={"blackAlpha.500"}>
+        <Button variant="regular" onClick={handleReset} w="100%" my="3px" background={"blackAlpha.500"}>
           reset
         </Button>
       </FormControl>
