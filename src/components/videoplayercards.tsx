@@ -54,21 +54,21 @@ export default function VideoPlayer() {
         {/*if else condition, ? = then, ():() = if else, <> is jsx wrapping*/}
         {currentVideoIndex == 99 ? (
           <>
-            <Heading variant="layer3">
+            <Heading variant="layer1">
               {data.videoplayer_placeholder.subtitle}
             </Heading>
-            <Text variant="lessEmphasized" mt="2">
+            <Heading variant="layer2" mt="2">
               {data.videoplayer_placeholder.infotext}
-            </Text>
+            </Heading>
           </>
         ) : (
           <>
-            <Heading variant="layer3">
+            <Heading variant="layer1">
               {data.videoplayer_videos[currentVideoIndex].subtitle}
             </Heading>
-            <Text variant="lessEmphasized" mt="2">
+            <Heading variant="layer2" mt="2">
               {data.videoplayer_videos[currentVideoIndex].infotext}
-            </Text>
+            </Heading>
           </>
         )}
       </CardHeader>
