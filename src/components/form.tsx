@@ -191,7 +191,7 @@ export default function Form() {
         gridItemRef.current.appendChild(box); */
 
         /* html */
-        const box = document.createElement("img"); box.src = "images/polaroids/Variant"+2+".png"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
+        const box = document.createElement("img"); box.src = "images/polaroids/placeholder.png"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
         gridItemRef.current.appendChild(box); 
 
         /* CHAKRAUI */

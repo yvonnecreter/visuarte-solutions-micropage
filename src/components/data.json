@@ -5,7 +5,7 @@
   "box":"images/box.svg",
   "videoplayer_placeholder": {
     "video": "videos/placeholder_loop.mp4",
-    "subtitle": "3 Kernkompetenzen",
+    "subtitle": "3 Kernkompetenzen - Vielseitige Lösungen",
     "infotext": "Erlebniswelten mit System"
   },
   "videoplayer_videos": [
@@ -25,7 +25,7 @@
       "video": "images/Interaktives_01.mp4",
       "subtitle": "visuarte Digitale Lösungen",
       "infotext": "Interaktive Erlebnisse, die man sich merkt",
-      "image": "images/portfolio-image-3.jpg"
+      "image": "images/portfolio-image-3.png"
     },
     {
       "video": "images/Erklärungswürdige Produkte_02.mp4",
@@ -101,7 +101,7 @@
     "maincard":{
       "head1":"Was wir tun",
       "head1_2": "In erster Linie sind wir Partner mit Verantwortung",
-      "head2":"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - für Sie und Ihre Kunden.",
+      "head2":"\"Mit unseren 3 Kernkompetenzen erschaffen wir seit über 20 Jahren mediale Erlebniswelten - für Sie und Ihre Kunden.\"",
       "head3":["Ihre Mission", "Ihr Markenerlebnis"],
       "table":{
         "element1":"images/showroom_transp.svg",
