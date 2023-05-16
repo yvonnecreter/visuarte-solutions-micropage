@@ -24,7 +24,7 @@ const hoverAnimation = {
   start: [{ opacity: [0, 1, 0] }, { repeat: Infinity, duration: 1 }],
   cursor: "pointer",
 };
-const strokeW = "4"
+const strokeW = "5"
 
 export default function MotionBox() {
   const controls = useAnimation();
@@ -34,7 +34,7 @@ export default function MotionBox() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-       
+  /*  OPTIONAL    
  const onMouseOut = (e) => {
     controls.start(initialState).then(() => {
       controls.stop();
@@ -43,7 +43,7 @@ export default function MotionBox() {
 
   const onMouseEnter = (e) => {
     controls.start(hoverAnimation);
-  };
+  }; */
 
   return (
     <MotionB
@@ -57,13 +57,14 @@ export default function MotionBox() {
       width="100%"
       cursor={hoverAnimation.cursor}
       transition={{duration: 0.2}}
-      onMouseEnter={onMouseEnter}
-      onMouseOut={onMouseOut}
+      /* onMouseEnter={onMouseEnter} */
+      /* onMouseOut={onMouseOut} */
       /* animate={{opacity:1}} */
-      /* animate={{
+      animate={{
         opacity: [0.2, 0.7, 0.2],
+        /* transition: { duration: 1, repeat: Infinity }, */
         transition: { duration: 1.8, repeat: Infinity },
-      }} */
+      }}
     >
       <Box
         as="a"
