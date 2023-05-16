@@ -16,7 +16,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onClick }) => {
 
   return (
     <Box maxW="200px">
-      <Box  borderRadius="full" backgroundColor="brand.black"
+      <Box  borderRadius="full" backgroundColor="#1f1f20"
       style={{ width: `${progress}%`, }}
       p="1">
         {completed ? (

@@ -4,7 +4,7 @@
   "diagramIMG":"images/diagram.png",
   "box":"images/box.svg",
   "videoplayer_placeholder": {
-    "video": "images/placeholder_video.mp4",
+    "video": "videos/placeholder_loop.mp4",
     "subtitle": "3 Kernkompetenzen",
     "infotext": "Erlebniswelten mit System"
   },

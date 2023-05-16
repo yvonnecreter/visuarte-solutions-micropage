@@ -2,11 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import {
   Box,
-  Center,
   Image,
-  Button,
-  Flex,
-  Spacer,
   AspectRatio,
   Text,
   Heading
@@ -97,16 +93,16 @@ export default function UnityGame2() {
           <Box
             ref={progBar}
             position={"absolute"}
-            bottom="50px"
-            left="50px"
+            bottom={{base:"10", md:"11%"}}
+            left={{base:"10", md:"6%"}}
           >
-            <Heading color="brand.black">
+            <Heading color="#1f1f20" mb={"5"} fontSize={{base: "40", lg: "60"}}>
               visuarte Solutions
             </Heading>
-            <Text 
+            {/* <Text 
               mb="20px">
               visuarte Solutions
-            </Text>
+            </Text> */}
             {/* <Text color="black" my={"15px"}>
               Loading...
             </Text> */}
