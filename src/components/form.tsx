@@ -84,12 +84,34 @@ export default function Form() {
   const [polaroidMap, setPolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
-  /* const [activePolaroidMap, setActivePolaroidMap] = useState<{
-    [key: string]: React.ReactElement<typeof Image>;
-  }>({}); */
+  
   const [activePolaroidMap, setActivePolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
+
+  const handleMouseOver = (index: number, checkboxId: string) => {
+    const box = document.createElement("img");
+    box.src = "images/polaroids/Variant"+index+".png";
+    box.style.maxHeight = "100%";
+    box.style.maxWidth = "100%";
+    box.style.position = "absolute";
+    box.style.filter = "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3))";
+    box.style.top = "0px";
+    box.alt = "placeholder";
+    
+    setActivePolaroidMap((prevState) => ({
+      ...prevState,
+      [checkboxId]: box,
+    }));
+  }
+  const handleMouseOut = (checkboxId: string) => {
+    setActivePolaroidMap((prevState) => {
+      const newState = { ...prevState };
+      delete newState[checkboxId];
+      return newState;
+    });
+  }
+
   const handlePolaroidChecked = (checkboxId: string, index: number) => {
 
     /* RANDOM GENERATOR */
@@ -122,6 +144,7 @@ export default function Form() {
     box.style.maxHeight = "100%";
     box.style.maxWidth = "100%";
     box.style.position = "absolute";
+    box.style.filter = "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3))";
     box.style.top = "0px";
     box.alt = "placeholder";
 
@@ -140,17 +163,19 @@ export default function Form() {
       ...prevState,
       [checkboxId]: box,
     }));
-    console.log(activePolaroidMap);
+    /* console.log(activePolaroidMap); */
   };
+
   const handlePolaroidUnchecked = (checkboxId: string) => {
     setActivePolaroidMap((prevState) => {
       const newState = { ...prevState };
       delete newState[checkboxId];
       return newState;
     });
-    console.log(activePolaroidMap);
+    /* console.log(activePolaroidMap); */
   };
   const gridItemRef = useRef<HTMLDivElement>(null);
+  const [hoveredElement, setHoveredElement] = useState(null);
 
   /* STYLING */
   const col = ["purple", "green", "blue"];
@@ -194,6 +219,7 @@ export default function Form() {
         const box = document.createElement("img"); box.src = "images/polaroids/placeholder.png"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
         gridItemRef.current.appendChild(box); 
 
+        box.style.filter = "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))";
         /* CHAKRAUI */
         /* const box = (
           <Image
@@ -213,9 +239,12 @@ export default function Form() {
             /* ReactDOM.render(divElement, gridItemRef.current); */
           }
         });
+        if (hoveredElement) {
+          gridItemRef.current.appendChild(hoveredElement);
+        }
       }
     }
-  }, [activePolaroidMap]);
+  }, [activePolaroidMap, hoveredElement]);
   const [polaroidValue, setPolaroidValue] = useState("");
 
   
@@ -274,7 +303,11 @@ export default function Form() {
                         value={textElement}
                         onChange={(e) => handleCheckboxChange(index+1, e)} 
                       >
-                        <Text pl="2" variant="regular" key={"t" + index}>
+                        <Text pl="2" variant="regular" key={"t" + index}
+                        onMouseEnter={ () => {
+                          handleMouseOver(index+1, "Prev"+index+1); }}
+                        onMouseOut={ () => {
+                        handleMouseOut("Prev"+index+1); }}>
                           {textElement}
                         </Text>
                       </Checkbox>
@@ -302,7 +335,12 @@ export default function Form() {
                         colorScheme="brand.slightgrey"
                         onChange={(e) => handleCheckboxChange(index+4, e)}
                       >
-                        <Text variant="regular" pl="2" key={"t2" + index}>
+                        <Text variant="regular" pl="2" key={"t2" + index}
+                        onMouseEnter={ () => {
+                          handleMouseOver(index+4, "Prev"+index+4); }}
+                        onMouseOut={ () => {
+                        handleMouseOut("Prev"+index+4); }}
+                        >
                           {textElement}
                         </Text>
                       </Checkbox>
