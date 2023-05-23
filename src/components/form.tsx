@@ -335,10 +335,6 @@ export default function Form() {
                         onChange={(e) => handleCheckboxChange(index+4, e)}
                       >
                         <Text variant="regular" pl="2" key={"t2" + index}
-                        onMouseEnter={ () => {
-                          handleMouseOver(index+4, "Prev"+index+4); }}
-                        onMouseOut={ () => {
-                        handleMouseOut("Prev"+index+4); }}
                         >
                           {textElement}
                         </Text>
