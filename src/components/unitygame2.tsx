@@ -20,10 +20,10 @@ export default function UnityGame2() {
   const boxRef = React.useRef<HTMLDivElement>(null);
 
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl: "Build/build-dev.loader.js",
-    dataUrl: "Build/build-dev.data",
-    frameworkUrl: "Build/build-dev.framework.js",
-    codeUrl: "Build/build-dev.wasm",
+    loaderUrl: "Build/Builds.loader.js",
+    dataUrl: "Build/Builds.data",
+    frameworkUrl: "Build/Builds.framework.js",
+    codeUrl: "Build/Builds.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
 

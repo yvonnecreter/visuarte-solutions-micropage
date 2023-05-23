@@ -315,7 +315,7 @@ export default function ColumnCard() {
                       />
                       <path
                         d="m6.32,3.58v1.56c-.01.07-.02.13-.06.19-.03.06-.08.11-.14.15l-1.36.77c-.06.04-.13.06-.19.06v-1.95l1.68-.98h.01c.04.07.05.14.06.2Z"
-                        fill={i === 1 ? colors[i] : "none"}
+                        fill={i === 2 ? colors[i] : "none"}
                         stroke={colors[i]}
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -323,7 +323,7 @@ export default function ColumnCard() {
                       />
                       <path
                         d="m4.57,4.36v1.95c-.07,0-.14-.02-.2-.06l-1.36-.77c-.06-.04-.11-.09-.14-.15-.04-.06-.05-.12-.05-.19v-1.56c0-.06.01-.13.05-.19h0s.01-.01.01-.01l1.69.98Z"
-                        fill={i === 2 ? colors[i] : "none"}
+                        fill={i === 1 ? colors[i] : "none"}
                         stroke={colors[i]}
                         stroke-linecap="round"
                         stroke-linejoin="round"

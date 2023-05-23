@@ -25,7 +25,7 @@ import useStore from "./store";
 
 export default function VideoPlayer() {
   /* COLOR MANGAGEMENT */
-  const [colors] = useStore((state) => [state.colors]);
+  const [colors]= useStore((state) => [state.colors]);
 
   /* VIDEO MANAGEMENT */
   const [currentVideoIndex, setCurrentVideoIndex] = useState(99);
@@ -39,12 +39,13 @@ export default function VideoPlayer() {
   const handleVideoEnd = () => {
     setCurrentVideoIndex(99);
     setHoveredImageIndex(null);
-  };
+  }
 
-  const loadNewVideo = () => {};
+  const loadNewVideo = () => {
+    
+  }
 
   const desktop = useBreakpointValue({ base: false, md: true });
-  const [description, setDescription] = useState("");
 
   return (
     <Card sx={useStyleConfig("Card")} id="impressionen" scrollMarginTop={"5vh"}>
@@ -56,39 +57,18 @@ export default function VideoPlayer() {
             <Heading variant="layer1">
               {data.videoplayer_placeholder.subtitle}
             </Heading>
-            {/* 
-            <Grid
-              gridAutoFlow={"column"}
-              gridTemplateColumns={desktop ? "2fr 1fr" : "1fr"}
-            >
-              <GridItem>
-                <Heading variant="layer2" mt="2">
-                  {data.videoplayer_placeholder.infotext}
-                </Heading>
-              </GridItem>
-              <GridItem textAlign="end">
-                <Text>{description}</Text>
-              </GridItem>
-            </Grid> */}
+            <Heading variant="layer2" mt="2">
+              {data.videoplayer_placeholder.infotext}
+            </Heading>
           </>
         ) : (
           <>
-            {/* <Heading variant="layer1">
+            <Heading variant="layer1">
               {data.videoplayer_videos[currentVideoIndex].subtitle}
-            </Heading> */}
-            <Grid
-              gridAutoFlow={"column"}
-              gridTemplateColumns={desktop ? "2fr 1fr" : "1fr"}
-            >
-              <GridItem>
-                <Heading variant="layer2" mt="2">
-                  {data.videoplayer_videos[currentVideoIndex].infotext}
-                </Heading>
-              </GridItem>
-              <GridItem textAlign="end">
-                <Text>{description}</Text>
-              </GridItem>
-            </Grid>
+            </Heading>
+            <Heading variant="layer2" mt="2">
+              {data.videoplayer_videos[currentVideoIndex].infotext}
+            </Heading>
           </>
         )}
       </CardHeader>
@@ -97,27 +77,8 @@ export default function VideoPlayer() {
           <SimpleGrid
             columns={{ sm: 1, md: 2 }}
             gap="10"
-            templateColumns="1.5fr 1fr"
-          >
-            <GridItem>
-              {currentVideoIndex == 99 ? (
-                <>
-                  <Heading variant="layer2" mt="2">
-                    {data.videoplayer_placeholder.infotext}
-                  </Heading>
-                </>
-              ) : (
-                <>
-                  <Heading variant="layer2" mt="2">
-                    {data.videoplayer_videos[currentVideoIndex].infotext}
-                  </Heading>
-                </>
-              )}
-            </GridItem>
-            <GridItem>
-              <Text>{description}</Text>
-            </GridItem>
-
+            templateColumns="1.5fr 1fr">
+            
             <GridItem>
               {/** VIDEO LEFT */}
               {currentVideoIndex == 99 ? (
@@ -145,9 +106,18 @@ export default function VideoPlayer() {
             {/** THUMBNAILS ON THE RIGHT */}
             <GridItem height="100%">
               <Grid templateColumns="repeat(3, 1fr)" h="2%" gap="1">
-                <GridItem bg={colors[0]} h="50%" />
-                <GridItem bg={colors[1]} h="50%" />
-                <GridItem bg={colors[2]} h="50%" />
+                <GridItem
+                  bg={colors[0]}
+                  h="50%" 
+                />
+                <GridItem
+                  bg={colors[1]}
+                  h="50%" 
+                />
+                <GridItem
+                  bg={colors[2]}
+                  h="50%"
+                />
               </Grid>
 
               {/*add images*/}
@@ -162,14 +132,8 @@ export default function VideoPlayer() {
                           ? "scale(0.95)"
                           : ""
                       }
-                      onMouseEnter={() => {
-                        setHoveredImageIndex(i);
-                        setDescription(data.videoplayer_videos[i].infotext);
-                      }}
-                      onMouseLeave={() => {
-                        setHoveredImageIndex(null);
-                        setDescription("");
-                      }}
+                      onMouseEnter={() => setHoveredImageIndex(i)}
+                      onMouseLeave={() => setHoveredImageIndex(null)}
                       _hover={{
                         filter: "brightness(1)",
                         transform: "scale(1.05)",
@@ -203,94 +167,108 @@ export default function VideoPlayer() {
             </GridItem>
           </SimpleGrid>
         ) : (
+
           /* MOBILE */
 
           <Box>
-            {/** VIDEO */}
-            {currentVideoIndex == 99 ? (
-              <AspectRatio maxW="100%" ratio={16 / 9}>
-                <video
-                  src={data.videoplayer_placeholder.video}
-                  style={{ objectFit: "contain", aspectRatio: "16/9" }}
-                  loop
-                  autoPlay
-                  muted
-                />
-              </AspectRatio>
-            ) : (
-              <AspectRatio maxW="100%" ratio={16 / 9}>
-                <iframe
-                  src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
-                  allowFullScreen
-                />
-              </AspectRatio>
-            )}
-            <Spacer />
+              {/** VIDEO */}
+              {currentVideoIndex == 99 ? (
+                <AspectRatio maxW="100%" ratio={16 / 9}>
+                  <video
+                    src={data.videoplayer_placeholder.video}
+                    style={{ objectFit: "contain", aspectRatio: "16/9" }}
+                    loop
+                    autoPlay
+                    muted
+                  />
+                </AspectRatio>
+              ) : (
+                <AspectRatio maxW="100%" ratio={16 / 9}>
+                  <iframe
+                    src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
+                    allowFullScreen
+                  />
+                </AspectRatio>
+              )}
+              <Spacer />
 
             <Divider opacity="0" h={"35"} />
 
             {/** THUMBNAILS ON THE RIGHT */}
-            <Grid templateColumns="repeat(3, 1fr)" gap="1" h={2}>
-              <GridItem bg={colors[0]} h="50%" borderRadius={"full"} />
-              <GridItem bg={colors[1]} h="50%" borderRadius={"full"} />
-              <GridItem bg={colors[2]} h="50%" borderRadius={"full"} />
-            </Grid>
+              <Grid templateColumns="repeat(3, 1fr)" gap="1"
+              h={2}>
+                <GridItem
+                  bg={colors[0]}
+                  h="50%" 
+                  borderRadius={"full"}
+                />
+                <GridItem
+                  bg={colors[1]}
+                  h="50%" 
+                  borderRadius={"full"}
+                />
+                <GridItem
+                  bg={colors[2]}
+                  h="50%"
+                  borderRadius={"full"}
+                />
+              </Grid>
 
-            {/*add images*/}
-            <Grid templateColumns="repeat(3, 1fr)" gap={1} height="98%">
-              {data.videoplayer_videos.map((item, i) => (
-                <GridItem key={i} height="100%">
-                  <Box
-                    height="100%"
-                    transition="transform .3s"
-                    transform={
-                      hoveredImageIndex !== null && hoveredImageIndex !== i
-                        ? "scale(0.95)"
-                        : ""
-                    }
-                    onMouseEnter={() => setHoveredImageIndex(i)}
-                    onMouseLeave={() => setHoveredImageIndex(null)}
-                    _hover={{
-                      filter: "brightness(1)",
-                      transform: "scale(1.05)",
-                    }}
-                    _active={{
-                      transform: "scale(0.95)",
-                    }}
-                    filter={
-                      selectedImageIndex !== null && selectedImageIndex == i
-                        ? "brightness(0.5)"
-                        : ""
-                    }
-                  >
-                    {/* Size of Images here */}
-                    <Image
-                      fit="cover"
-                      src={item.image}
-                      alt={`Image ${i + 1}`}
+              {/*add images*/}
+              <Grid templateColumns="repeat(3, 1fr)" gap={1} height="98%">
+                {data.videoplayer_videos.map((item, i) => (
+                  <GridItem key={i} height="100%">
+                    <Box
                       height="100%"
-                      // boxSize={{
-                      //   base: "30vw",
-                      //   md: "10vw",
-                      //   lg: "10vw",
-                      // }}
-                      // maxH={{
-                      //   base: "30vw",
-                      //   md: "20vh",
-                      //   lg: "20vh",
-                      // }}
-                      objectFit="cover"
-                      // borderRadius="5"
-                      borderRadius="0"
-                      onClick={() => {
-                        setCurrentVideoIndex(i);
-                        setSelectedImageIndex(i);
+                      transition="transform .3s"
+                      transform={
+                        hoveredImageIndex !== null && hoveredImageIndex !== i
+                          ? "scale(0.95)"
+                          : ""
+                      }
+                      onMouseEnter={() => setHoveredImageIndex(i)}
+                      onMouseLeave={() => setHoveredImageIndex(null)}
+                      _hover={{
+                        filter: "brightness(1)",
+                        transform: "scale(1.05)",
                       }}
-                    />
-                  </Box>
-                </GridItem>
-              ))}
-            </Grid>
+                      _active={{
+                        transform: "scale(0.95)",
+                      }}
+                      filter={
+                        selectedImageIndex !== null && selectedImageIndex == i
+                          ? "brightness(0.5)"
+                          : ""
+                      }
+                    >
+                      {/* Size of Images here */}
+                      <Image
+                        fit="cover"
+                        src={item.image}
+                        alt={`Image ${i + 1}`}
+                        height="100%"
+                        // boxSize={{
+                        //   base: "30vw",
+                        //   md: "10vw",
+                        //   lg: "10vw",
+                        // }}
+                        // maxH={{
+                        //   base: "30vw",
+                        //   md: "20vh",
+                        //   lg: "20vh",
+                        // }}
+                        objectFit="cover"
+                        // borderRadius="5"
+                        borderRadius="0"
+                        onClick={() => {
+                          setCurrentVideoIndex(i);
+                          setSelectedImageIndex(i);
+                        }}
+                      />
+                    </Box>
+                  </GridItem>
+                ))}
+              </Grid>
           </Box>
         )}
       </CardBody>

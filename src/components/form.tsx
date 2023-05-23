@@ -98,11 +98,14 @@ export default function Form() {
     box.style.filter = "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3))";
     box.style.top = "0px";
     box.alt = "placeholder";
+    box.style.opacity = "0";
+    box.style.transition = "opacity 1s";
     
     setActivePolaroidMap((prevState) => ({
       ...prevState,
       [checkboxId]: box,
     }));
+    box.style.opacity = '1';
   }
   const handleMouseOut = (checkboxId: string) => {
     setActivePolaroidMap((prevState) => {
@@ -303,12 +306,8 @@ export default function Form() {
                         value={textElement}
                         onChange={(e) => handleCheckboxChange(index+1, e)} 
                       >
-                        <Text pl="2" variant="regular" key={"t" + index}
-                        onMouseEnter={ () => {
-                          handleMouseOver(index+1, "Prev"+index+1); }}
-                        onMouseOut={ () => {
-                        handleMouseOut("Prev"+index+1); }}>
-                          {textElement}
+                        <Text pl="2" variant="regular" key={"t" + index} >
+                          {textElement} 
                         </Text>
                       </Checkbox>
                     </FormControl>
