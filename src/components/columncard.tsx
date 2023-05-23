@@ -34,9 +34,11 @@ import {
 } from "framer-motion";
 import MotionBox from "./motionbox";
 import useStore from "./store";
+import theme from "@/styles/theme";
 
 const opacity = "50%"
 const strokeW = "4";
+const wallcolor = "#6d6d6d"
 
 export default function ColumnCard() {
   /* COLOR MANAGEMENT*/
@@ -88,7 +90,7 @@ export default function ColumnCard() {
         {desktop ? (
           <Grid
             templateRows="0.3 1fr 1fr 1fr"
-            templateColumns="1.2fr 0.4fr 2fr 0.7fr 1.2fr 0.7fr 0.4fr 1.9fr"
+            templateColumns="1.2fr 0.4fr 0.4fr 2fr 0.7fr 1.2fr 0.7fr 0.4fr 1.9fr"
             gap={5}
             autoFlow="column"
             mt="20px"
@@ -153,29 +155,38 @@ export default function ColumnCard() {
               </Flex>
             </GridItem>
 
-            {/*column 3: categories*/}
             {data.maincard.table.element2.map((item, i) => (
               <React.Fragment key={i}>
-                <GridItem width="100%" textAlign="center">
-                  <Flex alignItems="center" justifyContent="center" h="100%">
-                    <Box
-                      w="15px"
-                      mr="20px"
+                <GridItem h="100%">
+                <Flex
                       _hover={{
                         transform: "scale(1.14)",
                       }}
                       as="a"
                       transition="transform 0.5s ease-in-out"
                       href="#impressionen"
+                      w = "100%" h="100%"
+                      alignItems={"center"}
+                      justifyContent={"center"}
                     >
                       <svg
                         viewBox="0 0 100 100"
                         xmlns="http://www.w3.org/2000/svg"
                         fill={colors[i]}
+                        height="15px"
                       >
                         <circle cx="50" cy="50" r="50" />
                       </svg>
-                    </Box>
+                    </Flex>
+                </GridItem>
+            </React.Fragment>
+            ))}
+
+            {/*column 3: categories*/}
+            {data.maincard.table.element2.map((item, i) => (
+              <React.Fragment key={i}>
+                <GridItem width="100%" textAlign="center">
+                  <Flex alignItems="center" justifyContent="center" h="100%">
                     <Flex
                       alignItems="center"
                       justifyContent="center"
@@ -185,7 +196,7 @@ export default function ColumnCard() {
                       borderWidth={2}
                       borderRadius="12"
                       borderColor={colors[i]}
-                      transition="transform 0.5s ease-in-out"
+                      transition="transform 1s ease-in-out"
                       _hover={{
                         transform: "scale(1.1)",
                       }}
@@ -297,6 +308,7 @@ export default function ColumnCard() {
                         stroke-width="0.236943"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                      
                       />
                       <path
                         d="M4.73111 6.50062V4.54065"
@@ -427,10 +439,10 @@ export default function ColumnCard() {
         left={0}
         right={0}
         bottom={0}
-        opacity="0"
-        _hover={{
+        /* opacity="0" */
+        /* _hover={{
           opacity:"1"
-        }}
+        }} */
         transition="opacity 1s ease-in-out"
       >
         <svg
@@ -597,7 +609,7 @@ export default function ColumnCard() {
                           />
                           <path
                             d="m556.4,444.4h0s-1.8,98-1.8,98c12.5-.5,50.4-1.2,65.9-1.5,1.88-.05,3.56.66,4.8,1.85,1.26,1.21,2.05,2.93,2.1,4.85l2.1,157.1v.1h0l343.4,11v-.07s-20.69-297.23-20.69-297.23h0s-395.8,25.9-395.8,25.9Zm361,158.4h-142.2c-7.2,0-13.2-5.7-13.5-13l-2.9-73.6c-.3-7.5,5.5-13.8,13-14l139.8-4.7c7.3-.2,13.4,5.3,13.9,12.6l5.2,78.3c.7,7.8-5.5,14.4-13.3,14.4Z"
-                            fill="#6d6d6d"
+                            fill={wallcolor}
                           />
                           <polygon
                             points="1021.5 385.7 1021.5 385.8 952.21 418.5 972.9 715.7 985.98 719.25 1021.5 728.9 1021.5 385.7 1021.5 385.7"
@@ -801,10 +813,10 @@ export default function ColumnCard() {
         left={0}
         right={0}
         bottom={0}
-        opacity="0"
+        /* opacity="0"
         _hover={{
           opacity:"1",
-        }}
+        }} */
         transition="opacity 0.4s ease-in-out"
       >
         <svg
