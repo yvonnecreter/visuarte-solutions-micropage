@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import {
-  Box,
+  Box,useBreakpointValue,
   Image,
   AspectRatio,
   Text,
@@ -19,6 +19,7 @@ interface ParentComponentProps {
 export default function UnityGame2() {
   const boxRef = React.useRef<HTMLDivElement>(null);
 
+  const desktop = useBreakpointValue({ base: false, lg: true });
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "Build/Builds.loader.js",
     dataUrl: "Build/Builds.data",
@@ -59,6 +60,8 @@ export default function UnityGame2() {
   };
 
   return (
+
+    desktop ? (
     <AspectRatio
       ratio={16 / 9}
       w="100%"
@@ -97,7 +100,7 @@ export default function UnityGame2() {
             left={{base:"10", md:"6%"}}
           >
             <Heading color="#1f1f20" mb={"5"} fontSize={{base: "40", lg: "60"}}>
-              visuarte Solutions
+              Solutions
             </Heading>
             {/* <Text 
               mb="20px">
@@ -118,6 +121,8 @@ export default function UnityGame2() {
           style={{ width: "100%" }}
         />
       </div>
-    </AspectRatio>
+    </AspectRatio>):(
+      null
+    )
   );
 }

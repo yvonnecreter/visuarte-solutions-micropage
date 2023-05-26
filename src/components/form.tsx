@@ -48,7 +48,7 @@ export default function Form() {
   const [formTextElements, setFormTextElements] = useState(
     data.form_textElements1
   );
-  let [value, setValue] = React.useState("Hallo Ilja,\nLass uns doch mal sprechen, ...\n\n\nLösungen hierzu würden mich interessieren:\n");
+  let [value, setValue] = React.useState("Hallo liebes visuarte-Team, \nLasst uns doch mal sprechen , ... \n\n\nLösungen hierzu würden mich interessieren:\n");
   let handleInputChange = (e: { target: { value: any } }) => {
     let inputValue = e.target.value;
     setValue(inputValue);
@@ -269,7 +269,7 @@ export default function Form() {
         </CardHeader>
 
         {/* HEADLINE */}
-        <CardBody mb={5}>
+        <CardBody mb={5} mt={{base: "-14", lg:"0"}}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
             <GridItem h="100%" w="100%" ref={gridItemRef} 
               position={"relative"}>

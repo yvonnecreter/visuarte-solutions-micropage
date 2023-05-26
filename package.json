@@ -26,6 +26,7 @@
     "ftp": "^0.3.10",
     "next": "^13.2.4",
     "react": "^18.2.0",
+    "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.5",
     "react-redux": "^8.0.5",
@@ -38,6 +39,7 @@
     "@svgr/webpack": "^6.5.1",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/node": "18.15.3",
-    "@types/react": "18.0.28"
+    "@types/react": "18.0.28",
+    "@types/react-burger-menu": "^2.8.3"
   }
 }

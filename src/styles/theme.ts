@@ -11,7 +11,7 @@ const Heading = defineStyleConfig({
   },
   variants: {
     layer1: {
-      fontSize: "4xl",
+      fontSize: { base: "2xl", lg: "2xl" },
       fontWeight: "black",
       color: "brand.white",
       mb: "2",

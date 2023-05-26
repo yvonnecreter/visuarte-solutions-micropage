@@ -16,7 +16,7 @@ import {
   CardBody,
   CardHeader,
   CardFooter,
-  Heading,
+  Heading, useBreakpointValue,
   Flex,
   Center,
 } from "@chakra-ui/react";
@@ -41,6 +41,8 @@ import ColorPicker from "@/components/colorpicker";
 import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
 import useStore from "@/components/store";
 import theme from "@/styles/theme";
+
+
 
 /* interface MyState {
   bears: number;
@@ -73,6 +75,7 @@ function ColorsList() {
     setColor('')
   } */
   export default function Home() {
+
     /* COLOR MANGAGEMENT */
     const [colors] = useStore((state) => [state.colors]);
     const theme2 = extendTheme({
@@ -84,6 +87,7 @@ function ColorsList() {
         },
       },
     }, theme);
+    
 
   return (
     <ChakraProvider theme={theme2}>
@@ -126,8 +130,8 @@ function ColorsList() {
       />
       <Spacer
         height={{
-          base: "6vh",
-          md: "6vh",
+          base: "8vh",
+          md: "8vh",
           lg: "6vh",
         }}
       />
@@ -154,6 +158,7 @@ function ColorsList() {
 
           mt="-1"
         >
+          
           <UnityGame2 />
           <CustomSpacerOne />
 
