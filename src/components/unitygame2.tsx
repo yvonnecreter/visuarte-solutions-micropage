@@ -11,6 +11,7 @@ import { ArrowDownIcon } from "@chakra-ui/icons";
 import data from "./data.json";
 import theme from "@/styles/theme";
 import ProgressBar from "./progressbar";
+import { Button } from "chakra-ui";
 
 interface ParentComponentProps {
   loadingPercentage: number;
@@ -19,7 +20,10 @@ interface ParentComponentProps {
 export default function UnityGame2() {
   const boxRef = React.useRef<HTMLDivElement>(null);
 
+  /* MOBILE / DESKTOP */
   const desktop = useBreakpointValue({ base: false, lg: true });
+
+  /* LOADING IN UNITY */
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "Build/Builds.loader.js",
     dataUrl: "Build/Builds.data",
@@ -27,29 +31,15 @@ export default function UnityGame2() {
     codeUrl: "Build/Builds.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
-
   const loadingPercentage = Math.round(loadingProgression * 100);
   let unloaded = true;
   const unityRef = React.useRef<HTMLDivElement>(null);
   const imgRef = React.useRef<HTMLImageElement>(null);
   const loadRef = React.useRef<HTMLDivElement>(null);
   const progBar = React.useRef<HTMLDivElement>(null);
-
-  /* useEffect(() => {
-    if (
-      loadingPercentage > 99 && unloaded) {
-      console.log(`Loading ${loadingPercentage}`);
-      if (loadRef.current) {
-        loadRef.current.style.opacity = "0%";
-        loadRef.current.style.transition = "opacity 2s";
-        unloaded = false;
-      }
-    }
-  }, [loadingPercentage]); */
-
-  /* PROGRESSBAR */
   const [progress, setProgress] = useState(0);
 
+  /* CLICK */
   const handleButtonClick = () => {
     if (loadRef.current && progBar.current) {
       loadRef.current.style.width = "0px";
@@ -60,12 +50,11 @@ export default function UnityGame2() {
   };
 
   return (
-
     desktop ? (
+    /* CONTAINER LAYOUT */
     <AspectRatio
       ratio={16 / 9}
       w="100%"
-      /* bg="#828080" */
       id="werte"
       scrollMarginTop={"5vh"}
       position="relative"
@@ -75,13 +64,16 @@ export default function UnityGame2() {
         id="boxRef"
         style={{ width: "100%", height: "100%", position: "absolute" }}
       >
+
+        {/* LOADING SCREEN */}
         {/* {isLoaded === false && ( */}
         <div
           className="loading-overlay"
           ref={loadRef}
           style={{ width: "100%", height: "100%", position: "absolute"}}
         >
-          {/* BG */}
+
+          {/* BACKGROUND */}
           <Image
             ref={imgRef}
             src="images/loading.png"
@@ -92,7 +84,7 @@ export default function UnityGame2() {
             /* opacity={1 - loadingPercentage / 100} */
           />
 
-          {/* PROGRESSBAR */}
+          {/* LOADING OVERLAY */}
           <Box
             ref={progBar}
             position={"absolute"}
@@ -102,19 +94,15 @@ export default function UnityGame2() {
             <Heading color="#1f1f20" mb={"5"} fontSize={{base: "40", lg: "60"}}>
               Solutions
             </Heading>
-            {/* <Text 
-              mb="20px">
-              visuarte Solutions
-            </Text> */}
-            {/* <Text color="black" my={"15px"}>
-              Loading...
-            </Text> */}
+            
             <ProgressBar
               progress={loadingPercentage}
               onClick={handleButtonClick}
             />
           </Box>
         </div>
+
+        {/* UNITY */}
         <Unity
           className="unity"
           unityProvider={unityProvider}
@@ -122,7 +110,29 @@ export default function UnityGame2() {
         />
       </div>
     </AspectRatio>):(
-      null
+      <AspectRatio
+      ratio={16 / 9}
+      w="100%"
+      id="werte"
+      scrollMarginTop={"5vh"}
+      position="relative">
+
+         <div ref={loadRef}
+          style={{ width: "100%", height: "100%", position: "absolute"}}>
+
+      <Image ref={imgRef}
+            src="images/loading.png"
+            alt="loading"
+            height="100%"
+            width="100%"
+            position="absolute"/>
+        <Unity className="unity"
+          unityProvider={unityProvider}
+          style={{ width: "100%" }}
+        />
+      </div>
+      </AspectRatio>
+            
     )
   );
 }

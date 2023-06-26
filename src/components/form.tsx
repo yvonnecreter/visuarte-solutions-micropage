@@ -38,7 +38,7 @@ let amount = 0;
 export default function Form() {
   /* COLOR MANGAGEMENT */
   const [colors] = useStore((state) => [state.colors]);
-  
+
    /* FORM FUNCTIONS */
    const {
     handleSubmit,
@@ -175,7 +175,6 @@ export default function Form() {
       delete newState[checkboxId];
       return newState;
     });
-    /* console.log(activePolaroidMap); */
   };
   const gridItemRef = useRef<HTMLDivElement>(null);
   const [hoveredElement, setHoveredElement] = useState(null);
@@ -271,7 +270,7 @@ export default function Form() {
         {/* HEADLINE */}
         <CardBody mb={5} mt={{base: "-14", lg:"0"}}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
-            <GridItem h="100%" w="100%" ref={gridItemRef} 
+            <GridItem h="100%" w={{base:"0", lg: "100%"}} ref={gridItemRef} /* mt={{base:"20px", md:"20px", lg:"0"}}  */
               position={"relative"}>
               {/* <AspectRatio  ratio={1 / 2} w="100%" ref={gridItemRef} 
               position={"relative"}>

@@ -101,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
           </Link>
         </Box>
       ))}
-      <Divider w={{ base: "3", md: "4", "2xl": "1%" }} opacity={0} />
+      <Divider w={{ base: "3", md: "4", "2xl": "1%" }} opacity={0}/>
     </Flex>
     </>
   ) : (
@@ -112,6 +112,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
             key={item.label}
             className="menu-item"
             href={item.href}
+            style={{ display: 'block' }}
           >
             {item.label}
           </a>
