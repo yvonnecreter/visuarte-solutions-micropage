@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         lg: "6vh",
       }}
       position="fixed"
-      py={{ base: "0px", md: "12px", xl: "10px", "2xl": "12px" }}
+      py={{ base: "0px", md: "8px", xl: "10px", "2xl": "12px" }}
       px={{ base: "0px", md: "0px", xl: "10px", "2xl": "12px" }}
       display="flex"
       flex-wrap="true"

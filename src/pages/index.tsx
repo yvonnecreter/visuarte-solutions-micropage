@@ -22,7 +22,6 @@ import {
 } from "@chakra-ui/react";
 import Header from "@/components/header";
 import UnityGame from "@/components/unitygame";
-import UnityGame2 from "@/components/unitygame2";
 import Form from "@/components/form";
 import Footer from "@/components/footer";
 import VideoPlayer from "@/components/videoplayercards";
@@ -159,7 +158,7 @@ function ColorsList() {
           mt="-1"
         >
           
-          <UnityGame2 />
+          <UnityGame />
           <CustomSpacerOne />
 
           {/* <ColumnCard2 /> */}

@@ -267,24 +267,18 @@ export default function Form() {
           <Heading>{data.form_titles.head2}</Heading>
         </CardHeader>
 
+
         {/* HEADLINE */}
         <CardBody mb={5} mt={{base: "-14", lg:"0"}}>
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} gap={6}>
-            <GridItem h="100%" w={{base:"0", lg: "100%"}} ref={gridItemRef} /* mt={{base:"20px", md:"20px", lg:"0"}}  */
+          <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} gap={6}>
+            <GridItem h="100%" w={{base:"0", lg: "100%"}} ref={gridItemRef}
               position={"relative"}>
-              {/* <AspectRatio  ratio={1 / 2} w="100%" ref={gridItemRef} 
-              position={"relative"}>
-
-              </AspectRatio> */}
-              {/* 
-              FOR ORGANIZED GRID
-              <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} gap={6} ref={gridItemRef}>
-              </SimpleGrid> */}
             </GridItem>
 
+            
+        {/* FORM 1 */}
             <GridItem>
               <Box>
-                {/* FORM 1 */}
                 <Heading variant="layer3">{data.form_titles.sub1head1}</Heading>
                 <Text variant="regular" mb="5">
                   {data.form_titles.sub1head2}
@@ -317,7 +311,8 @@ export default function Form() {
                   {data.form_titles.sub2head1}
                 </Heading>
 
-                {/* FORM 2 */}
+
+        {/* FORM 2 */}
                 <Text variant="regular" mb="5">
                   {data.form_titles.sub2head2}
                 </Text>
@@ -328,7 +323,6 @@ export default function Form() {
                       <Checkbox
                         variant="regular"
                         key={"f2" + index}
-                        /* {...register("Anforderung " + index)} */
                         value={textElement}
                         colorScheme="brand.slightgrey"
                         onChange={(e) => handleCheckboxChange(index+4, e)}
@@ -344,8 +338,7 @@ export default function Form() {
               </Box>
               <Link href="#letstalk" passHref>
                 <Button /* as="a" */ w="100%" mt="5%" key="b">
-                  {" "}
-                  Na dann los!{" "}
+                  {" "} Na dann los!{" "}
                 </Button>
               </Link>
             </GridItem>
@@ -376,6 +369,7 @@ export default function Form() {
           overflow={"visible"}
         />
       </Box>
+
       <Card
           sx={useStyleConfig("Card")}
           transition="transform .5s"
@@ -387,6 +381,7 @@ export default function Form() {
           backdropFilter="auto"
           backdropBlur={"14px"}
       >
+
         <CardHeader>
           <Heading>{data.form_titles.sub3head1}</Heading>
 
@@ -430,6 +425,7 @@ export default function Form() {
                 />
               </FormControl>
             </GridItem>
+
 
             <GridItem rowSpan={2}>
               {" "}
