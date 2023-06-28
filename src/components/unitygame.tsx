@@ -23,7 +23,7 @@ export default function UnityGame() {
   /* MOBILE / DESKTOP */
   const desktop = useBreakpointValue({ base: false, lg: true });
 
-  /* LOADING IN UNITY */
+  /* UNITY */
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "Build/Builds.loader.js",
     dataUrl: "Build/Builds.data",
@@ -31,20 +31,21 @@ export default function UnityGame() {
     codeUrl: "Build/Builds.wasm",
     streamingAssetsUrl: "StreamingAssets",
   });
+
+  /* LOADING IN UNITY */
   const loadingPercentage = Math.round(loadingProgression * 100);
   let unloaded = true;
   const unityRef = React.useRef<HTMLDivElement>(null);
   const imgRef = React.useRef<HTMLImageElement>(null);
   const loadRef = React.useRef<HTMLDivElement>(null);
   const progBar = React.useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
 
   /* CLICK */
   const handleButtonClick = () => {
     if (loadRef.current && progBar.current) {
+      loadRef.current.style.transitionDelay = "10s";
       loadRef.current.style.width = "0px";
       loadRef.current.style.transition = "opacity 5s";
-      loadRef.current.style.transitionDelay = "10s";
       progBar.current.style.zIndex = "-5";
     }
   };
@@ -131,7 +132,7 @@ export default function UnityGame() {
           unityProvider={unityProvider}
           style={{ width: "100%" }}
         />
-        <Text position={"absolute"} left="0" bottom="0" m="7" mx="5vw" variant="small" color="#898989" bg="rgba(22,22,22,0.5)" p="1" px="2" borderRadius={"1"}> Auf einem Desktop Monitor siehst Du hier mehr ;) </Text>
+        <Text position={"absolute"} left="0" bottom="0" m="7" mx="5vw" variant="small" color="#e0e0e0" bg="rgba(22,22,22,0.5)" p="1" px="2" borderRadius={"1"}> Auf einem Desktop Monitor siehst Du hier mehr ;) </Text>
       </div>
       </AspectRatio>
             
