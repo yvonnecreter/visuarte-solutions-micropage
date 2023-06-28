@@ -223,7 +223,7 @@ export default function ColumnCard() {
                         fontWeight={"bold"}
                         /* fontSize="md" */
                       >
-                        {item}
+                        {data.maincard.table.element2[i]}
                       </Text>
                     </Flex>
                   </Flex>
