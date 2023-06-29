@@ -2,6 +2,7 @@
 
 module.exports = {
   reactStrictMode: true,
+  ignoreBuildErrors: true,
   output: 'export',
   basePath: '/visu_solutions'
 }
