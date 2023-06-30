@@ -2,7 +2,6 @@
 
 module.exports = {
   reactStrictMode: true,
-  ignoreBuildErrors: true,
   output: 'export',
-  basePath: '/'
+  ignoreBuildErrors: true,
 }
