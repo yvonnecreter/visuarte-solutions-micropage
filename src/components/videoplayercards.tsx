@@ -94,7 +94,7 @@ export default function VideoPlayer() {
               ) : (
                 <AspectRatio maxW="100%" ratio={16 / 9}>
                   <iframe
-                    src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0`}
+                    src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0&muted=1`}
                     allowFullScreen
                     onEnded={handleVideoEnd}
                   />

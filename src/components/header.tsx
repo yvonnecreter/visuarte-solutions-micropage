@@ -85,7 +85,6 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         color="white"
         alignItems="center"
       >
-        <a href="#werte">
           <Image
             src="images/logo.png"
             ml={{ base: "3", md: "4", "2xl": "1%" }}
@@ -93,7 +92,6 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
             alt="visuarte"
             maxH={{ base: "25px", md: "40px", "2xl": "100%" }}
           />
-        </a>
         <Spacer />
         {navItems.map((item) => (
           <Box key={item.href} ml={4} maxW={{ base: "12%" }}>
