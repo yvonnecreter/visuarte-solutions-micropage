@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useStyleConfig } from "@chakra-ui/react";
 import {
-  ChakraProvider,
+  ChakraProvider, Show, Hide,
   Box,
   Divider,
   Spacer,
@@ -16,7 +16,8 @@ import {
   CardBody,
   CardHeader,
   CardFooter,
-  Heading, useBreakpointValue,
+  Heading,
+  useBreakpointValue,
   Flex,
   Center,
 } from "@chakra-ui/react";
@@ -74,7 +75,6 @@ function ColorsList() {
     setColor('')
   } */
   export default function Home() {
-
     /* COLOR MANGAGEMENT */
     const [colors] = useStore((state) => [state.colors]);
     const theme2 = extendTheme({
@@ -86,7 +86,6 @@ function ColorsList() {
         },
       },
     }, theme);
-    
 
   return (
     <ChakraProvider theme={theme2}>
@@ -157,13 +156,12 @@ function ColorsList() {
 
           mt="-1"
         >
-          
           <UnityGame />
+          <Show  above='lg'>
           <CustomSpacerOne />
 
           {/* <ColumnCard2 /> */}
           <ColumnCard />
-
           <CustomSpacerOne />
 
           {/*projectsamples*/}
@@ -173,24 +171,16 @@ function ColorsList() {
           {/*contact*/}
 
           <Form />
-
           <CustomSpacerOne />
           <LinkCards />
-{/* 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={color}
-            onChange={(event) => setColor(event.target.value)}
-          />
-          <button type="submit">Add Color</button>
-        </form> */}
+    
         <Spacer h="14vh" />
         <ColorPicker/>
+        </Show>
         </Stack>
       </Center>
       {/*FOOTER*/}
-      <Spacer h="14vh" />
+      <Spacer h={{base:"0", lg:"14vh" }}/>
       <Footer />
     </ChakraProvider>
   );

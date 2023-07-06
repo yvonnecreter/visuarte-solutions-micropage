@@ -13,6 +13,8 @@ import theme from "@/styles/theme";
 import ProgressBar from "./progressbar";
 import { Button } from "chakra-ui";
 
+
+
 interface ParentComponentProps {
   loadingPercentage: number;
 }
@@ -65,7 +67,7 @@ export default function UnityGame() {
         id="boxRef"
         style={{ width: "100%", height: "100%", position: "absolute" }}
       >
-
+        <meta http-equiv="content-encoding" content="gzip" />
         {/* LOADING SCREEN */}
         {/* {isLoaded === false && ( */}
         <div

@@ -27,8 +27,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onClick }) => {
   
     }}, [progress, completed, countdown]);
   
-  let barW = progress*0.8+Math.round(((3-countdown)/3)*20);
-  
+  let barW = progress*0.8+((3-countdown)/3)*20;
 
   return (
     <Box maxW="200px">
@@ -46,7 +45,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress, onClick }) => {
           </Text>
         ) : ( 
           <Text variant="progressbar" align="end" mr="-12" color="black">
-            { barW<100 ? (barW+"%") : (100+"%")}
+            { barW<100 ? (Math.round(barW)+"%") : (100+"%")}
           </Text>
         )}
       </Box>
