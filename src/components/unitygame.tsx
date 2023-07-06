@@ -12,6 +12,7 @@ import data from "./data.json";
 import theme from "@/styles/theme";
 import ProgressBar from "./progressbar";
 import { Button } from "chakra-ui";
+import Head from "next/head";
 
 
 
@@ -20,11 +21,9 @@ interface ParentComponentProps {
 }
 
 export default function UnityGame() {
-  const boxRef = React.useRef<HTMLDivElement>(null);
-
   /* MOBILE / DESKTOP */
   const desktop = useBreakpointValue({ base: false, lg: true });
-
+  const boxRef = React.useRef<HTMLDivElement>(null);
   /* UNITY */
   const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "Build/Builds.loader.js",
@@ -51,7 +50,6 @@ export default function UnityGame() {
       progBar.current.style.zIndex = "-5";
     }
   };
-
   return (
     desktop ? (
     /* CONTAINER LAYOUT */
@@ -67,7 +65,6 @@ export default function UnityGame() {
         id="boxRef"
         style={{ width: "100%", height: "100%", position: "absolute" }}
       >
-        <meta http-equiv="content-encoding" content="gzip" />
         {/* LOADING SCREEN */}
         {/* {isLoaded === false && ( */}
         <div
@@ -115,12 +112,9 @@ export default function UnityGame() {
     </AspectRatio>):(
       <AspectRatio
       ratio={16 / 9}
-      w="100%"
       id="werte"
       scrollMarginTop={"5vh"}
       position="relative">
-
-
       <div ref={loadRef}
           style={{ width: "100%", height: "100%", position: "absolute"}}>
       <Image ref={imgRef}
@@ -129,10 +123,9 @@ export default function UnityGame() {
             height="100%"
             width="100%"
             position="absolute"/>
-
         <Unity className="unity"
           unityProvider={unityProvider}
-          style={{ width: "100%" }}
+          style={{ width: "0px", position: "absolute", right:"-100px"}}
         />
         <Text position={"absolute"} left="0" bottom="0" m="7" mx="5vw" variant="small" color="#e0e0e0" bg="rgba(22,22,22,0.5)" p="1" px="2" borderRadius={"1"}> Auf einem Desktop Monitor siehst Du hier mehr ;) </Text>
       </div>

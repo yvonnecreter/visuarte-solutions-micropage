@@ -140,24 +140,24 @@ function ColorsList() {
           my={19}
           zIndex={6}
           minWidth={{
-            sm: "95%",
+            base: "95%",
             md: "95%",
             lg: "95%",
             xl: "85%",
             "2xl": "70%",
           }}
           maxWidth={{
-            sm: "95%",
+            base: "95%",
             md: "95%",
             lg: "95%",
             xl: "95%",
             "2xl": "80%",
           }}
-
           mt="-1"
+          /* minHeight={"50vw"} */
         >
           <UnityGame />
-          <Show  above='lg'>
+          <Show above='lg'>
           <CustomSpacerOne />
 
           {/* <ColumnCard2 /> */}
