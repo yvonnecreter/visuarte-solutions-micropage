@@ -4,5 +4,5 @@ module.exports = {
   reactStrictMode: true,
   output: 'export',
   ignoreBuildErrors: true,
-  basePath: "/visu_solutions_v1_1"
+  /* basePath: "/visu_solutions_v1_1" */
 }

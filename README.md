@@ -1,6 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## PLAYWRIGHT
+
+run playwright ui test for safari with:
+
+```bash
+npx playwright test --ui
+```
+
+screenshots will show under applitools under the apikey login account
+
+
 ## Getting Started
+
 
 First, run the development server:
 
