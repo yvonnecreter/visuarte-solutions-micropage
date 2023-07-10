@@ -25,6 +25,7 @@
     "framer-motion": "^10.10.0",
     "ftp": "^0.3.10",
     "next": "^13.2.4",
+    "playwright": "^1.35.1",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
@@ -36,10 +37,13 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@applitools/eyes-playwright": "^1.17.11",
+    "@playwright/test": "^1.35.1",
     "@svgr/webpack": "^6.5.1",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
-    "@types/react-burger-menu": "^2.8.3"
+    "@types/react-burger-menu": "^2.8.3",
+    "@web/test-runner-playwright": "^0.10.1"
   }
 }

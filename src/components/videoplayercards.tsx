@@ -78,7 +78,6 @@ export default function VideoPlayer() {
             columns={{ sm: 1, md: 2 }}
             gap="10"
             templateColumns="1.5fr 1fr">
-            
             <GridItem>
               {/** VIDEO LEFT */}
               {currentVideoIndex == 99 ? (
@@ -103,6 +102,7 @@ export default function VideoPlayer() {
               <Spacer />
             </GridItem>
 
+
             {/** THUMBNAILS ON THE RIGHT */}
             <GridItem height="100%">
               <Grid templateColumns="repeat(3, 1fr)" h="2%" gap="1">
@@ -123,7 +123,8 @@ export default function VideoPlayer() {
               {/*add images*/}
               <Grid templateColumns="repeat(3, 1fr)" gap={1} height="98%">
                 {data.videoplayer_videos.map((item, i) => (
-                  <GridItem key={i} height="100%">
+                  <GridItem key={i} height="100%"
+                  >
                     <Box
                       height="100%"
                       transition="transform .3s"
@@ -146,8 +147,9 @@ export default function VideoPlayer() {
                           ? "brightness(0.5)"
                           : ""
                       }
+                      display="flex" alignItems={"flex-start"}
+                      
                     >
-                      {/* Size of Images here */}
                       <Image
                         fit="cover"
                         src={item.image}
