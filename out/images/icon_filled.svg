@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.68 8.86">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path d="m6.25,3.38l-1.68.98-1.69-.98c.03-.06.07-.1.13-.13l1.36-.78c.06-.03.13-.05.2-.05.06,0,.13.02.19.05l1.36.78c.06.03.1.07.13.13Z" fill="#bf8cbe" stroke="#bf8cbf" stroke-linecap="round" stroke-linejoin="round" stroke-width=".24"/>
+      <path d="m6.32,3.58v1.56c-.01.07-.02.13-.06.19-.03.06-.08.11-.14.15l-1.36.77c-.06.04-.13.06-.19.06v-1.95l1.68-.98h.01c.04.07.05.14.06.2Z" fill="#7cc5e6" stroke="#bf8cbf" stroke-linecap="round" stroke-linejoin="round" stroke-width=".24"/>
+      <path d="m4.57,4.36v1.95c-.07,0-.14-.02-.2-.06l-1.36-.77c-.06-.04-.11-.09-.14-.15-.04-.06-.05-.12-.05-.19v-1.56c0-.06.01-.13.05-.19h0s.01-.01.01-.01l1.69.98Z" fill="#9ac89e" stroke="#bf8cbf" stroke-linecap="round" stroke-linejoin="round" stroke-width=".24"/>
+      <line x1="4.57" y1="6.32" x2="4.57" y2="6.31" fill="none" stroke="#bf8cbf" stroke-linecap="round" stroke-linejoin="round" stroke-width=".24"/>
+      <circle cx="4.43" cy="4.43" r="4.23" fill="none" stroke="#bf8cbf" stroke-width=".39"/>
+      <path d="m13.68.81c0-.11-.09-.2-.2-.2h-1.78c-.11,0-.2.09-.2.2s.09.2.2.2h1.58v1.58c0,.11.09.2.2.2s.2-.09.2-.2V.81Zm-5.09,5.17L13.62.94l-.28-.28-5.03,5.03.28.28Z" fill="#bf8cbf"/>
+    </g>
+  </g>
+</svg>
