@@ -13,6 +13,8 @@ import theme from "@/styles/theme";
 import ProgressBar from "./progressbar";
 import { Button } from "chakra-ui";
 import Head from "next/head";
+import { addPointerEvent } from "framer-motion";
+import styled from "@emotion/styled";
 
 
 
@@ -41,6 +43,15 @@ export default function UnityGame() {
   const loadRef = React.useRef<HTMLDivElement>(null);
   const progBar = React.useRef<HTMLDivElement>(null);
 
+  const [pointerEvents, setPointerEvents] = useState<'auto' | 'none'>('none');
+  const handleWheel = () => {
+      setPointerEvents('none');
+ }
+ const handleClick = () => {
+  setPointerEvents('auto');
+}
+
+
   /* CLICK */
   const handleButtonClick = () => {
     if (loadRef.current && progBar.current) {
@@ -59,11 +70,13 @@ export default function UnityGame() {
       id="werte"
       scrollMarginTop={"5vh"}
       position="relative"
+      onPointerMove = { handleClick }
+      onWheel = { handleWheel }
     >
       <div
         className="container"
         id="boxRef"
-        style={{ width: "100%", height: "100%", position: "absolute" }}
+        style={{ width: "100%", height: "100%", position: "absolute", pointerEvents: pointerEvents }}
       >
         {/* LOADING SCREEN */}
         {/* {isLoaded === false && ( */}

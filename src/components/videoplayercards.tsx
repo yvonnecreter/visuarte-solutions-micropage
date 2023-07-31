@@ -22,7 +22,6 @@ import data from "../components/data.json";
 import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
 import useStore from "./store";
-import IframeResizer from "iframe-resizer-react";
 
 export default function VideoPlayer() {
   /* COLOR MANGAGEMENT */
