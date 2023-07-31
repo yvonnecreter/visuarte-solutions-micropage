@@ -336,11 +336,11 @@ export default function Form() {
                   ))}
                 </VStack>
               </Box>
-              <Link href="#letstalk" passHref>
-                <Button /* as="a" */ w="100%" mt="5%" key="b">
+              {/* <Link href="#letstalk" passHref> */}
+                <Button as="a" w="100%" mt="5%" key="b" href="#impressionen">
                   {" "} Na dann los!{" "}
                 </Button>
-              </Link>
+              {/* </Link> */}
             </GridItem>
           </SimpleGrid>
         </CardBody>
