@@ -22,6 +22,7 @@ import data from "../components/data.json";
 import theme from "@/styles/theme";
 import { useStyleConfig } from "@chakra-ui/react";
 import useStore from "./store";
+import IframeResizer from "iframe-resizer-react";
 
 export default function VideoPlayer() {
   /* COLOR MANGAGEMENT */
@@ -39,10 +40,7 @@ export default function VideoPlayer() {
   const handleVideoEnd = () => {
     setCurrentVideoIndex(99);
     setHoveredImageIndex(null);
-  }
-
-  const loadNewVideo = () => {
-    
+    setSelectedImageIndex(null);
   }
 
   const desktop = useBreakpointValue({ base: false, md: true });
@@ -91,11 +89,14 @@ export default function VideoPlayer() {
                   />
                 </AspectRatio>
               ) : (
-                <AspectRatio maxW="100%" ratio={16 / 9}>
-                  <iframe
-                    src={`${data.videoplayer_videos[currentVideoIndex].video}?title=0&byline=0&portrait=0&muted=1`}
-                    allowFullScreen
+                <AspectRatio minHeight="100%" minWidth="100%" height="100%" width="100%" maxW="100%" ratio={16 / 9}>
+                  <video
+                    src={`${data.videoplayer_videos[currentVideoIndex].video}`}
+                    style={{ objectFit: "fill", aspectRatio: "16/9", height:"100%", width:"100%"}}
                     onEnded={handleVideoEnd}
+                    autoPlay
+                    muted
+                    /* controls */
                   />
                 </AspectRatio>
               )}
