@@ -91,7 +91,7 @@ export default function Form() {
 
   const handleMouseOver = (index: number, checkboxId: string) => {
     const box = document.createElement("img");
-    box.src = "images/polaroids/Variant"+index+".png";
+    box.src = "images/polaroids/Variant"+index+".webp";
     box.style.maxHeight = "100%";
     box.style.maxWidth = "100%";
     box.style.position = "absolute";
@@ -132,7 +132,7 @@ export default function Form() {
     div.style.height = "100%";
     div.style.transform = `rotate(${Math.random() * 40 - 40}deg)`;
     const image = document.createElement("img");
-    image.src = "images/polaroids/Variant"+index+".png";
+    image.src = "images/polaroids/Variant"+index+".webp";
     image.alt = "placeholder";
     image.height = 220;
     image.width = 200;
@@ -143,7 +143,7 @@ export default function Form() {
     box.appendChild(div); */
 
     const box = document.createElement("img");
-    box.src = "images/polaroids/Variant"+index+".png";
+    box.src = "images/polaroids/Variant"+index+".webp";
     box.style.maxHeight = "100%";
     box.style.maxWidth = "100%";
     box.style.position = "absolute";
@@ -153,7 +153,7 @@ export default function Form() {
 
    /*  const box = (
       <Image
-        src={`images/polaroids/Variant${index}.png`}
+        src={`images/polaroids/Variant${index}.webp`}
         h="100%"
         w="100%"
         position="absolute"
@@ -206,7 +206,7 @@ export default function Form() {
         div.style.height = "100%";
         div.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
         const image = document.createElement("img");
-        image.src = "images/placeholder.png";
+        image.src = "images/placeholder.webp";
         image.alt = "placeholder";
         image.height = 220;
         image.width = 200;
@@ -218,14 +218,14 @@ export default function Form() {
         gridItemRef.current.appendChild(box); */
 
         /* html */
-        const box = document.createElement("img"); box.src = "images/polaroids/placeholder.png"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
+        const box = document.createElement("img"); box.src = "images/polaroids/placeholder.webp"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
         gridItemRef.current.appendChild(box); 
 
         box.style.filter = "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))";
         /* CHAKRAUI */
         /* const box = (
           <Image
-            src={`images/polaroids/Variant3.png`}
+            src={`images/polaroids/Variant3.webp`}
             h="100%"
             w="100%"
             position="absolute"

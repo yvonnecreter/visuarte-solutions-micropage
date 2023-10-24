@@ -86,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         alignItems="center"
       >
           <Image
-            src="images/logo.png"
+            src="images/logo.webp"
             ml={{ base: "3", md: "4", "2xl": "1%" }}
             h="100%"
             alt="visuarte"
@@ -117,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         style={{ display: "block" }}
       >
         <Image
-          src="images/logo.png"
+          src="images/logo.webp"
           ml={{ base: "3", md: "4", "2xl": "1%" }}
           h="100%"
           alt="visuarte"

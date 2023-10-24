@@ -89,7 +89,7 @@ export default function UnityGame() {
           {/* BACKGROUND */}
           <Image
             ref={imgRef}
-            src="images/loading.png"
+            src="images/loading.webp"
             alt="loading"
             height="100%"
             width="100%"
@@ -131,7 +131,7 @@ export default function UnityGame() {
       <div ref={loadRef}
           style={{ width: "100%", height: "100%", position: "absolute"}}>
       <Image ref={imgRef}
-            src="images/Showroom_DarkMode.png"
+            src="images/Showroom_DarkMode.webp"
             alt="loading"
             height="100%"
             width="100%"

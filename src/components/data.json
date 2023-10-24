@@ -1,7 +1,6 @@
 {
-  "logo":"images/logo.png",
-  "logo_g":"images/logo_g.png",
-  "diagramIMG":"images/diagram.png",
+  "logo":"images/logo.webp",
+  "logo_g":"images/logo_g.webp",
   "box":"images/box.svg",
   "videoplayer_placeholder": {
     "video": "videos/placeholder_loop.mp4",
@@ -13,37 +12,37 @@
       "video": "images/Storytelling.mp4",
       "subtitle": "visuarte Konzeption & Strategie",
       "infotext": "Zielführendes, strategisches Storytelling",
-      "image": "images/portfolio-image-1.jpg"
+      "image": "images/portfolio-image-1.webp"
     },
     {
       "video": "images/Messerarchitektur-Erlebnisswelt.mp4", 
       "subtitle": "visuarte Medienproduktion",
       "infotext": "Wirksame Bildwelten, die bewegen",
-      "image": "images/portfolio-image-2.jpg"
+      "image": "images/portfolio-image-2.webp"
     },
     {
       "video": "images/Interaktives_01.mp4",
       "subtitle": "visuarte Digitale Lösungen",
       "infotext": "Interaktive Erlebnisse, die man sich merkt",
-      "image": "images/portfolio-image-3.png"
+      "image": "images/portfolio-image-3.webp"
     },
     {
       "video": "images/Erklärungswürdige Produkte_02.mp4",
       "subtitle": "visuarte Konzeption & Strategie",
       "infotext": "Zielführendes, strategisches Storytelling",
-      "image": "images/portfolio-image-4.jpg"
+      "image": "images/portfolio-image-4.webp"
     },
     {
       "video": "images/Motion Design_02.mp4",
       "subtitle": "visuarte Medienproduktion",
       "infotext": "Wirksame Bildwelten, die bewegen",
-      "image": "images/portfolio-image-5.jpg"
+      "image": "images/portfolio-image-5.webp"
     },
     {
       "video": "images/Interaktives_02.mp4",
       "subtitle": "visuarte Digitale Lösungen",
       "infotext": "Interaktive Erlebnisse, die man sich merkt",
-      "image": "images/portfolio-image-6.jpg"
+      "image": "images/portfolio-image-6.webp"
     }
   ],
   "navigation": [
