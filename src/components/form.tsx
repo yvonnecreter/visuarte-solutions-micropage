@@ -48,7 +48,7 @@ export default function Form() {
   const [formTextElements, setFormTextElements] = useState(
     data.form_textElements1
   );
-  let [value, setValue] = React.useState("Hallo liebes visuarte-Team, \nLasst uns doch mal sprechen , ... \n\n\nLösungen hierzu würden mich interessieren:\n");
+  let [value, setValue] = React.useState("Hallo liebes visuarte-Team, \nLasst uns doch mal sprechen , ...\n\n—————————————————————————\nLösungen hierzu würden mich interessieren:\n");
   let handleInputChange = (e: { target: { value: any } }) => {
     let inputValue = e.target.value;
     setValue(inputValue);
@@ -422,6 +422,8 @@ export default function Form() {
                   {...register("E-Mail")}
                   key="emailinput"
                   /* value="E-Mail" */ variant="regular"
+
+                  fontSize= "sm"
                 />
               </FormControl>
             </GridItem>
@@ -473,6 +475,7 @@ export default function Form() {
                   onChange={handleInputChange}
                   key="textarea"
                   variant="regular"
+                  fontSize= "sm"
                   h="300px"
                 />
               </FormControl>
