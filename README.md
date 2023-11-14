@@ -1,18 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## PLAYWRIGHT
-
-run playwright ui test for safari with:
-
-```bash
-npx playwright test --ui
-```
-
-screenshots will show under applitools under the apikey login account
-
-
 ## Getting Started
-
 
 First, run the development server:
 
@@ -49,8 +37,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 ## if your vsc marks certain areas red for no reason you have to install ts etc globally
+
 npm install next react react-dom
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 

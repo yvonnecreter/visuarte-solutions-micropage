@@ -85,13 +85,13 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         color="white"
         alignItems="center"
       >
-          <Image
-            src="images/logo.webp"
-            ml={{ base: "3", md: "4", "2xl": "1%" }}
-            h="100%"
-            alt="visuarte"
-            maxH={{ base: "25px", md: "40px", "2xl": "100%" }}
-          />
+        <Image
+          src="images/logo.webp"
+          ml={{ base: "3", md: "4", "2xl": "1%" }}
+          h="100%"
+          alt="visuarte"
+          maxH={{ base: "25px", md: "40px", "2xl": "100%" }}
+        />
         <Spacer />
         {navItems.map((item) => (
           <Box key={item.href} ml={4} maxW={{ base: "12%" }}>
@@ -125,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         />
       </a>
 
-      <Spacer h="20px"/>
+      <Spacer h="20px" />
       {navItems.map((item) => (
         <a
           id={item.label}

@@ -74,18 +74,18 @@ function ColorsList() {
     addColor(color)
     setColor('')
   } */
-  export default function Home() {
-    /* COLOR MANGAGEMENT */
-    const [colors] = useStore((state) => [state.colors]);
-    const theme2 = extendTheme({
-      colors: {
-        brand: {
-          purple: colors[0],
-          green: colors[1],
-          blue: colors[2],
-        },
+export default function Home() {
+  /* COLOR MANGAGEMENT */
+  const [colors] = useStore((state) => [state.colors]);
+  const theme2 = extendTheme({
+    colors: {
+      brand: {
+        purple: colors[0],
+        green: colors[1],
+        blue: colors[2],
       },
-    }, theme);
+    },
+  }, theme);
 
   return (
     <ChakraProvider theme={theme2}>
@@ -154,33 +154,33 @@ function ColorsList() {
             "2xl": "80%",
           }}
           mt="-1"
-          /* minHeight={"50vw"} */
+        /* minHeight={"50vw"} */
         >
           <UnityGame />
           <Show above='lg'>
-          <CustomSpacerOne />
+            <CustomSpacerOne />
 
-          {/* <ColumnCard2 /> */}
-          <ColumnCard />
-          <CustomSpacerOne />
+            {/* <ColumnCard2 /> */}
+            <ColumnCard />
+            <CustomSpacerOne />
 
-          {/*projectsamples*/}
-          <VideoPlayer />
+            {/*projectsamples*/}
+            <VideoPlayer />
 
-          <CustomSpacerOne />
-          {/*contact*/}
+            <CustomSpacerOne />
+            {/*contact*/}
 
-          <Form />
-          <CustomSpacerOne />
-          <LinkCards />
-    
-        <Spacer h="14vh" />
-        <ColorPicker/>
-        </Show>
+            <Form />
+            <CustomSpacerOne />
+            <LinkCards />
+
+            <Spacer h="14vh" />
+            <ColorPicker />
+          </Show>
         </Stack>
       </Center>
       {/*FOOTER*/}
-      <Spacer h={{base:"0", lg:"14vh" }}/>
+      <Spacer h={{ base: "0", lg: "14vh" }} />
       <Footer />
     </ChakraProvider>
   );

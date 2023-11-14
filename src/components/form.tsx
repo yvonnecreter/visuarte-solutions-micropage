@@ -20,7 +20,7 @@ import {
   Flex,
   CardFooter,
   AspectRatio,
-  background,color, extendTheme, defineStyleConfig, useColorModeValue
+  background, color, extendTheme, defineStyleConfig, useColorModeValue
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import data from "./data.json";
@@ -39,8 +39,8 @@ export default function Form() {
   /* COLOR MANGAGEMENT */
   const [colors] = useStore((state) => [state.colors]);
 
-   /* FORM FUNCTIONS */
-   const {
+  /* FORM FUNCTIONS */
+  const {
     handleSubmit,
     register,
     formState: { errors },
@@ -84,14 +84,14 @@ export default function Form() {
   const [polaroidMap, setPolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
-  
+
   const [activePolaroidMap, setActivePolaroidMap] = useState<{
     [key: string]: HTMLDivElement;
   }>({});
 
   const handleMouseOver = (index: number, checkboxId: string) => {
     const box = document.createElement("img");
-    box.src = "images/polaroids/Variant"+index+".webp";
+    box.src = "images/polaroids/Variant" + index + ".webp";
     box.style.maxHeight = "100%";
     box.style.maxWidth = "100%";
     box.style.position = "absolute";
@@ -100,7 +100,7 @@ export default function Form() {
     box.alt = "placeholder";
     box.style.opacity = "0";
     box.style.transition = "opacity 1s";
-    
+
     setActivePolaroidMap((prevState) => ({
       ...prevState,
       [checkboxId]: box,
@@ -143,7 +143,7 @@ export default function Form() {
     box.appendChild(div); */
 
     const box = document.createElement("img");
-    box.src = "images/polaroids/Variant"+index+".webp";
+    box.src = "images/polaroids/Variant" + index + ".webp";
     box.style.maxHeight = "100%";
     box.style.maxWidth = "100%";
     box.style.position = "absolute";
@@ -151,16 +151,16 @@ export default function Form() {
     box.style.top = "0px";
     box.alt = "placeholder";
 
-   /*  const box = (
-      <Image
-        src={`images/polaroids/Variant${index}.webp`}
-        h="100%"
-        w="100%"
-        position="absolute"
-        top="0px"
-        alt="placeholder"
-      />
-    ); */
+    /*  const box = (
+       <Image
+         src={`images/polaroids/Variant${index}.webp`}
+         h="100%"
+         w="100%"
+         position="absolute"
+         top="0px"
+         alt="placeholder"
+       />
+     ); */
 
     setActivePolaroidMap((prevState) => ({
       ...prevState,
@@ -219,7 +219,7 @@ export default function Form() {
 
         /* html */
         const box = document.createElement("img"); box.src = "images/polaroids/placeholder.webp"; box.style.maxHeight = "100%"; box.style.maxWidth = "100%"; box.style.position = "absolute"; box.style.top = "0px"; box.alt = "placeholder";
-        gridItemRef.current.appendChild(box); 
+        gridItemRef.current.appendChild(box);
 
         box.style.filter = "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))";
         /* CHAKRAUI */
@@ -249,7 +249,7 @@ export default function Form() {
   }, [activePolaroidMap, hoveredElement]);
   const [polaroidValue, setPolaroidValue] = useState("");
 
-  
+
   return (
     <form
       action="https://getform.io/f/6219fac4-4909-412f-8374-57fc5195395a"
@@ -269,14 +269,14 @@ export default function Form() {
 
 
         {/* HEADLINE */}
-        <CardBody mb={5} mt={{base: "-14", lg:"0"}}>
+        <CardBody mb={5} mt={{ base: "-14", lg: "0" }}>
           <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} gap={6}>
-            <GridItem h="100%" w={{base:"0", lg: "100%"}} ref={gridItemRef}
+            <GridItem h="100%" w={{ base: "0", lg: "100%" }} ref={gridItemRef}
               position={"relative"}>
             </GridItem>
 
-            
-        {/* FORM 1 */}
+
+            {/* FORM 1 */}
             <GridItem>
               <Box>
                 <Heading variant="layer3">{data.form_titles.sub1head1}</Heading>
@@ -297,10 +297,10 @@ export default function Form() {
                         variant={col[index]}
                         key={"form1" + index}
                         value={textElement}
-                        onChange={(e) => handleCheckboxChange(index+1, e)} 
+                        onChange={(e) => handleCheckboxChange(index + 1, e)}
                       >
                         <Text pl="2" variant="regular" key={"t" + index} >
-                          {textElement} 
+                          {textElement}
                         </Text>
                       </Checkbox>
                     </FormControl>
@@ -312,7 +312,7 @@ export default function Form() {
                 </Heading>
 
 
-        {/* FORM 2 */}
+                {/* FORM 2 */}
                 <Text variant="regular" mb="5">
                   {data.form_titles.sub2head2}
                 </Text>
@@ -325,7 +325,7 @@ export default function Form() {
                         key={"f2" + index}
                         value={textElement}
                         colorScheme="brand.slightgrey"
-                        onChange={(e) => handleCheckboxChange(index+4, e)}
+                        onChange={(e) => handleCheckboxChange(index + 4, e)}
                       >
                         <Text variant="regular" pl="2" key={"t2" + index}
                         >
@@ -337,9 +337,9 @@ export default function Form() {
                 </VStack>
               </Box>
               {/* <Link href="#letstalk" passHref> */}
-                <Button as="a" w="100%" mt="5%" key="b" href="#impressionen">
-                  {" "} Na dann los!{" "}
-                </Button>
+              <Button as="a" w="100%" mt="5%" key="b" href="#impressionen">
+                {" "} Na dann los!{" "}
+              </Button>
               {/* </Link> */}
             </GridItem>
           </SimpleGrid>
@@ -371,15 +371,15 @@ export default function Form() {
       </Box>
 
       <Card
-          sx={useStyleConfig("Card")}
-          transition="transform .5s"
-          _hover={{
-            transform: "scale(1.01)",
-          }}
-          id="letstalk"
-          scrollMarginTop={"5vh"}
-          backdropFilter="auto"
-          backdropBlur={"14px"}
+        sx={useStyleConfig("Card")}
+        transition="transform .5s"
+        _hover={{
+          transform: "scale(1.01)",
+        }}
+        id="letstalk"
+        scrollMarginTop={"5vh"}
+        backdropFilter="auto"
+        backdropBlur={"14px"}
       >
 
         <CardHeader>
@@ -423,7 +423,7 @@ export default function Form() {
                   key="emailinput"
                   /* value="E-Mail" */ variant="regular"
 
-                  fontSize= "sm"
+                  fontSize="sm"
                 />
               </FormControl>
             </GridItem>
@@ -442,8 +442,8 @@ export default function Form() {
                     minW={{ xl: "50px", "2xl": "50px" }}
                     maxW={{ base: "260px", xl: "200px", "2xl": "250px" }}
                     mb="25"
-                    /* filter="invert(0.50)" */
-                    /* filter="invert(0.87)" */
+                  /* filter="invert(0.50)" */
+                  /* filter="invert(0.87)" */
                   />
                   <Text variant="small">
                     Hofmannstrasse 10 | 81379 München <br />
@@ -475,7 +475,7 @@ export default function Form() {
                   onChange={handleInputChange}
                   key="textarea"
                   variant="regular"
-                  fontSize= "sm"
+                  fontSize="sm"
                   h="300px"
                 />
               </FormControl>
